@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="Omar_AMH_Shishani_CSS.css">
+<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/dey6cub.css">
+<title>⭐⭐⚒ Omar Shishani ⚒⭐⭐</title>
+</head>
+<body>
+	<div id="sidebar">
+		<a href="">Hobbies</a>
+		<a target="_blank" href="Resume_Omar Shishani_WebDev_27_Oct_2019.pdf">Resume</a>
+		<a href="">Projects</a>
+		<a href="">Extracurriculars</a>
+		<a href="">Video: Who I am!</a>
+		<a href="">My first website project: RowdyArt.com</a>
+		<a href="https://www.youtube.com/channel/UCMpe5ls3yM1mFgLeW3rJ3JQ?view_as=subscriber" target="_blank">My Youtube Channel</a>
+		<a href="Debugging_Tactics.html">Debugging Tactics</a>
+		<a href="">NASA Community College Aerospace Scholars Program</a>
+	</div> <!-- <div id="sidebar"> -->
+
+	<div id="navbar">
+		<a class="navbarButtons" href="Medium_Articles.html">Medium Articles Here</a>
+		<a href="index.html">Homepage</a>
+	</div>
+
+	<div id="mainContent"> <!-- This div is here so sidebar works -->
+		<article id="center-text-and-logo">
+			<h2>How to center a line of text vertically, relative to an adjacent logo or image</h2>
+			<p>
+				It can be confusing to try and center inline text vertically.
+			</p>
+			<p>
+				Imagine you are trying to place a logo next to a line of text, and you want these two to be centered relative to each other. Take the text and the logo in the image below, for example:
+			</p>
+			<img id="linkedIn_line" src="linkedIn_line.png">
+			<p>
+				A way to center these that worked for me is to place the line of text within a &lt;span&gt; tag (while the logo is an image tag) and place both of them within a div. 
+			</p>
+			<p>
+				The div's height should then be specified. It doesn't matter what the value is, but it will be helpful to know what it is. 
+			</p>
+			<p>
+				The line height properties for the CSS of the span should then be set equal to the height of the div height. For example, if the div height is 50px, set the line-height of the &lt;span&gt; to 50px as well. This should center the line of text within the div. (By the way, it is helpful to give the div a different background color than the rest of the background, so you can see the space you're working in). If the line is not centering properly, you can try increasing or decreasing the line-height. 
+			</p>
+			<p>
+				To center the logo, you want to give the logo an id (e.g. 'LinkedIn_logo') and give it the 'display' property of 'inline-block' in the CSS document. Then, the 'vertical-align' property can be used to adjust the placement. The vertical-align property can actually be given numerical values (such as 'em'), instead of values like 'top', 'middle', etc. This will give you more control over your plaement. If the logo is not perfectly centered, you can simply adjust the value. For my line, the vertical-align value centered well at a negative value, of -0.6em. 
+			</p>
+			<p>
+				And that's it! If you have questions on how this method works, please email me at OmarShishaniSchool@gmail.com
+			</p>
+		</article>
+	</div> <!-- <div id="mainContent"> -->
+</body>
+</html>

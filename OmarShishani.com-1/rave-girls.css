@@ -1,0 +1,28 @@
+body {
+	background-color: pink;
+}
+h1 {
+	font-family: 'cooper black';
+}
+.btn-1 {
+	display: block;
+	margin: auto auto 1rem auto;
+}
+.color-input-1 {
+	display: block;
+	height: 5rem;
+	margin: auto auto 1rem auto;
+	width: 5rem;
+}
+.rave-girl-1 {
+	margin-bottom: 1rem;
+	width: 100%;
+}
+.rave-girl-pic-btn-1 {
+	position: absolute;
+	visibility: hidden;
+	width: 100%;
+}
+.visibility {
+	visibility: visible;
+}

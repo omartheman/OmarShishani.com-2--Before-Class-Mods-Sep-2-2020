@@ -1,0 +1,747 @@
+body {
+	background-color: #ffd396 /*#98d18e*/;
+	margin: 0;
+	height: 100%;
+}
+html {
+	height: 100%;
+}
+h1{
+	font-family: 'Comfortaa', cursive;
+}
+h2{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.3em;
+}
+#article1 {
+	padding: 0 40% 0 15%; 
+}
+#arnoldQuoteDiv {
+	border: 1px solid black;
+	border-radius: 20px;
+	display: block;
+	padding: 5px 30px;
+	width: 600px;
+}
+#arnoldName {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.0em;
+	position: relative;
+		left: 300px;
+}
+#center-text-and-logo p {
+	text-indent: 35px;
+}
+#content {
+	display: inline-block;
+	height: 100%;
+	overflow: auto;
+	vertical-align: top;
+	width: 82%;
+}
+#intro {
+	width: 80%;
+}
+#linkHobbies{
+	border: 3px solid black;
+	text-align: center;
+	width: 100px;
+}
+#linkedIn {
+	color: white;
+	font-family: myriad-pro, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 30px;
+	line-height: 30px;
+}
+#linkedInSpan {
+	background-color: #0077b5;
+	border-radius: 0.2em;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+}
+#linkedInAnchor {
+	display: inline-block;
+	vertical-align: -0.2em;
+	/*This selector vertically places the LinkedIn logo.*/
+	text-decoration: none;
+	/*This selector is used to remove the short underline that appears next to the linkedIn button, due to the anchor tag*/
+}
+#linkedInTextAnchor {
+	text-decoration: none;
+}
+#linkedIn_line {
+	width: 500px;
+}
+#linkedIn_text {
+	line-height: 50px;
+}
+/*---*/
+#linkedInPara {
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color: pink;
+	display: inline-block;
+	height: 50px;
+	padding: 0.5em 0.5em 0em 0.5em;
+	margin-left: 3%;
+	width: auto;
+}
+#linkedInPara:active {
+	animation-name: blowUpClick;
+	animation-duration: 500ms;
+}
+#linkedInPara:hover {
+	animation-name: blowUpHover;
+	animation-duration: 2s;
+}
+	@keyframes blowUpHover {
+		50% {
+			transform: scale(1.1);
+		}
+	}
+	@keyframes blowUpClick {
+		100% {
+			transform: scale(2);
+		}
+	}
+/*---*/
+#listOfThings {
+	background-color: #ffc400; 
+	border: 2px solid black;
+	border-radius: 20px;
+	padding: 20px 20px 20px 40px;
+}
+#mainContent {
+	margin-left: 160px;
+	padding: 50px 10px 0 10px;
+	/*padding: 0 10px; --This padding produces space above navbar for some reason...*/
+}
+#meImg {
+	border: 4px solid black;
+	border-radius: 1000px;
+	margin: 0 0 0 20px;
+	width: 20%;
+
+	right: 0;
+	position: absolute;
+		top: 420px;
+	width: 200px;
+	z-index: -1;
+}
+#meButtonText {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.1em;
+	position: absolute;
+	 top: -24px;
+	 left: 35px;
+}
+#meButton {
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+	border: 1px solid black;
+	border-radius: 50%;
+	position: relative;
+	margin-top: 40px;
+	margin-left: 30%;
+	margin-bottom: 40px;
+}
+#meButton:hover {
+	animation-name: meSplosion;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+#me_buttons_div {
+	animation-name: meSplosion;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color: pink;
+	display: inline-block;
+	height: 50px;
+	padding: 0em 0.5em;
+	margin-left: 3%;
+	width: 100px;
+	visibility: ;
+}
+.me_buttons_div2 {
+	animation-name: meSplosion;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+
+	border: 1px solid black;
+	border-radius: 100px;
+	background-color: pink;
+	display: inline-block;
+	padding: 0em 0.5em;
+	padding: 15px;
+	margin-left: 3%;
+	visibility: hidden;
+}
+	/*How to make buttons not appear until hover?*/
+	@keyframes  {
+		100% {	
+			transform: scale(2);
+			display: none;
+		}
+
+	}
+	#meDiv {
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		animation-name: faceRotate;
+		display: inline-block;
+		position: relative;
+			top: 27px;
+			left: 27px;
+	}
+	#face {
+		background-color: #ffea94;
+		border-radius: 50%;
+		border: 0.5px solid black;
+		box-shadow: inset 0 7px 0 2px #572816;
+		height: 45px;
+		position: relative;
+		width: 45px;
+	}
+	#eyes {
+		background-color: black;
+		border-radius: 50%;
+		box-shadow: 23px 0px black;
+		height: 8px;
+		position: absolute;
+			top: 18px;
+			left: 7px;
+		width: 8px;
+	}
+	#mouth {
+		background-color: transparent;
+		border-radius: 50%;
+		box-shadow: inset 0 -3px #f5825f;
+		height: 8px;
+		position: absolute;
+			top: 32px;
+			left: 14px;
+		width: 19px;
+	}
+		@keyframes faceRotate {
+			0% {
+				transform: rotate(45deg);
+			}
+			50% {
+				transform: rotate(-45deg);
+			}
+			100% {
+				transform: rotate(45deg);
+			}
+		}
+#medium_div {
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color: pink;
+	display: inline-block;
+	height: 50px;
+	padding: 0em 0.5em;
+	margin-left: 3%;
+	width: auto;
+}
+#medium_div:active {
+	animation-name: blowUpClick;
+	animation-duration: 500ms;
+}
+#medium_div:hover {
+	animation-name: blowUpHover;
+	animation-duration: 2s;
+}
+	@keyframes blowUpHover {
+		50% {
+			transform: scale(1.1);
+		}
+	}
+	@keyframes blowUpClick {
+		100% {
+			transform: scale(2);
+		}
+	}
+#medium_articles_head {
+	line-height: 50px;
+	text-decoration: none;
+}
+#medium_logo { 
+	display: inline-block;
+	vertical-align: -0.6em;
+	width: 30px;
+}
+	/*:---> NOTE FOR NAVBAR: <---:*/
+	/* !!!Remember that stuff in the navbar need to be margined, or gets overlapped by sidebar!!! */
+#navbar {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.1em;
+
+	position: fixed;
+	height: 50px;
+	width: 100%;
+
+	animation-name: navbarNightDay;
+	animation-duration: 30s;
+	animation-iteration-count: infinite;
+
+	z-index: 99;
+}
+.navbarButton {
+	background: #22076b;
+	border: 3px #ffc400 solid;
+	border-radius: 10px;
+	display: inline-block;
+	padding: 5px 7px;
+}
+.navbarButtonsContainer {
+	text-decoration: none;
+	position: absolute;
+		top: 5px;
+		left: 190px;
+}
+.navbarButtonsContainer a {
+	color: #ff8178;
+	text-decoration: none;
+}
+	#navbarMoon {
+		animation-name: moonrise;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		background-color: transparent; 
+		border-radius: 50%;
+		box-shadow: 6px 6px 0px 0px #ffd43b;
+		height: 30px;
+		margin-left: auto;
+		margin-right: 20px;
+		position: relative;
+			top: /*top in '@keyframes moonrise'*/;
+		width: 30px;
+	}
+	#navbarSun {
+		animation-name: sunrise;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		background-color: #fff700; 
+		border-radius: 50%;
+		height: 30px;
+		margin-left: auto;
+		margin-right: 20px;
+		position: relative;
+			top: -22px;
+		width: 30px;
+	}
+	#navbarStars {
+		animation-name: starset;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		background-color: white; 
+		box-shadow: -150px 15px white;
+		border-radius: 50%;
+		margin-left: auto;
+		margin-right: 20%;
+		position: relative;
+			top: -40px;
+		width: 4px;
+		height: 4px;
+	}
+	#navbarStars2 {
+		animation-name: starset;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		background-color: white; 
+		box-shadow: 190px 17px white, -400px 20px white;
+		border-radius: 50%;
+		margin-left: auto;
+		margin-right: 25%;
+		position: relative;
+			top: -20px;
+		width: 2px;
+		height: 2px;
+	}
+	#navbarStars3 {
+		animation-name: starset;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		background-color: white; 
+		box-shadow: -190px 17px white, 370px 0 white;
+		border-radius: 50%;
+		margin-left: auto;
+		margin-right: 30%;
+		position: relative;
+			top: -20px;
+		width: 3px;
+		height: 3px;
+	}
+	#navbarStars4 {
+		animation-name: starset;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		background-color: white; 
+		box-shadow: -175px 17px white, -250px -6px white;
+		border-radius: 50%;
+		margin-left: auto;
+		margin-right: 45%;
+		position: relative;
+			top: -20px;
+		width: 3px;
+		height: 3px;
+	}
+	#cloud1 {
+		animation-name: clouds;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		border-radius: 50%;
+		box-shadow:
+			9px -4px 0 1px white, 
+			11px 0px 2px -2px grey, 
+			13px 5px 0 2px white, 
+			25px -4px 0 3px white, 
+			26px -5px 0.5px 3px grey, 
+			30px 6px 0 -0.5px white, 
+			31px 7px 0.5px -0.5px grey;
+		margin-left: auto;
+		margin-right: 65px;
+		position: relative;
+			top: -60px;
+		background-color: white;
+		transform: scale(0.8);
+		height: 20px;
+		width: 20px;
+	}
+	#cloud2 {
+		animation-name: cloud2;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		border-radius: 50%;
+		box-shadow:
+			9px -4px 0 1px white,
+			9px -3px 3px 1px grey,
+			2px 13px 0 1px white,
+			2.5px 13px 3px .7px grey,
+			10px 5px 0 5px white, 
+			10px 4px 2px 1.5px grey, 
+			25px -4px 0 1.5px white, 
+			26px -5px 0.5px 1.5px grey, 
+			30px 9px 0 -0.5px white, 
+			31px 10px 0.5px -0.5px grey;
+		margin-left: auto;
+		margin-right: 300px;
+		position: relative;
+			top: -20px;
+		background-color: white;
+		transform: scale(0.8) scaleX(-1);
+		height: 25px;
+		width: 25px;
+	}
+	#cloud3 {
+		animation-name: cloud3;
+		animation-duration: 30s;
+		animation-iteration-count: infinite;
+
+		border-radius: 50%;
+		box-shadow:
+			9px -4px 0 1px white, 
+			-5px -6px 0 1px white, 
+			inset -0.5px 3px 2px -2.9px grey,
+			13px -2px 1px -2px grey, 
+			13px 5px 0 2px white, 
+			25px -4px 0 3px white, 
+			26px -5px 0.5px 3px grey, 
+			30px 6px 0 3px white, 
+			29px 7px 0 3px grey,
+			31px 7px 0.5px -0.5px grey;
+		margin-left: auto;
+		margin-right: 450px;
+		position: relative;
+			top: -60px;
+		background-color: white;
+		transform: scale(0.8) scaleY(-1);
+		height: 20px;
+		width: 20px;
+	}
+	@keyframes cloud3 {
+				0% { /*day*/
+					top: -100px;
+	      }
+	      25% { /*twilight*/
+	      }
+	      50% { /*night*/
+	      	top: -170px;
+	      }
+	      75% {  /*sunrise*/
+	      }
+	      100% { /*day*/
+	      	top: -100px;
+	      }
+	}
+	@keyframes cloud2 {
+				0% { /*day*/
+					top: -80px;
+	      }
+	      25% { /*twilight*/
+	      }
+	      50% { /*night*/
+	      	top: -200px;
+	      }
+	      75% {  /*sunrise*/
+	      }
+	      100% { /*day*/
+	      	top: -80px;
+	      }
+	}
+	@keyframes clouds {
+				0% { /*day*/
+					top: -65px;
+	      }
+	      25% { /*twilight*/
+	      }
+	      50% { /*night*/
+	      	top: -100px;
+	      }
+	      75% {  /*sunrise*/
+	      }
+	      100% { /*day*/
+	      	top: -65px;
+	      }
+	}
+	@keyframes starset {
+				0% { /*day*/
+					top: -300px;
+	      }
+	      25% { /*twilight*/
+	      }
+	      50% { /*night*/
+	      	top: -50px;
+	      }
+	      75% {  /*sunrise*/
+	      }
+	      100% { /*day*/
+	      	top: -300px;
+	      }
+		}
+	@keyframes sunrise {
+				0% { /*day*/
+					right: 0px;
+	      }
+	      25% { /*twilight*/
+	      }
+	      50% { /*night*/
+	      	right: -100px;
+	      }
+	      75% {  /*sunrise*/
+	      }
+	      100% { /*day*/
+	      	right: 0px;
+	      }
+		}
+		@keyframes moonrise {
+				0% { /*day*/
+					top: -100px;
+	      }
+	      25% { /*twilight*/
+	      }
+	      50% {
+	      	top: 0px;
+	      }
+	      75% {  /*night*/
+	      }
+	      100% { /*sunrise*/
+	      	top: -100px;
+	      }
+		}
+		@keyframes navbarNightDay {
+			  0% { /*day*/
+			  	background-color: #80cced;
+	      }
+	      25% { /*twilight*/
+	      	background-color: #74358c;
+	      }
+	      50% { /*night*/
+	        background-color: #0d3242;
+	      }
+	      75% { /*sunrise*/
+	      	background-color: #ff6f36;
+	      }
+	      100% { /*day*/
+	      	background-color: #80cced;
+	      }
+		}
+#OS {
+	border-radius: 30px;
+	right: 0;
+	position: absolute;
+		top: 260px;
+	width: 200px;
+	z-index: -1;
+}
+
+#OS_css {} /*This id just here for title*/
+	#OS_css_container_div {
+		position: absolute;
+			left: 83%;
+			top: 80px;
+		z-index: 1;
+	}
+	#OS_css_container_subtitle {
+		position: absolute;
+			right: 20px;
+			top: 220px;
+		text-align: right;
+		width: 220px;
+		z-index: 1;
+	}
+	#O {
+		border: 50px solid purple;
+    border-radius: 50%;
+    box-shadow: 0px 0 0 5px #ffd396;
+    display: inline-block;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 10px;
+    width: 20px;
+	}
+	#S_template {
+		background-color: #ffd396;
+		display: inline-block;
+		height: 30px;
+		position: absolute;
+			left: 80px;
+		width: 30px;
+	}
+	#S_bar_top {
+		background-color: purple;
+		border-radius: 0 20px 20px 0;
+		display: inline-block;
+		height: 32px;
+		position: absolute;
+			left: 60px;
+		width: 140px;
+	}
+	#S_bars_top_spacing_fill {
+		background-color: purple;
+		display: inline-block;
+		height: 12px;
+		position: absolute;
+			left: 30px;
+			top: 32px;
+		width: 125px;
+	}
+	#S_bars_top_spacing_circle_cut {
+		background-color: #ffd396;
+		border-radius: 6px;
+		display: inline-block;
+		height: 12px;
+		position: absolute;
+			left: 150px;
+			top: 32px;
+		width: 30px;
+	}
+	#S_bars_bottom_spacing {
+		background-color: #ffd396;
+		border-radius: 0 6px 6px 0;
+		display: inline-block;
+		height: 12px;
+		position: absolute;
+			left: 35px;
+			top: 74px;
+		width: 140px;
+	}
+	#S_bars_bottom {
+		background-color: purple;
+		border-radius: 60px 20px 20px 0;
+		display: inline-block;
+		height: 76px;
+		position: absolute;
+			left: 70px;
+			top: 44px;
+		width: 130px;
+	}
+#production-images-container {
+	display: flex;
+		flex-wrap: wrap;
+}
+.production-images {
+	width: 25vw;
+}
+#schoolingTable td {
+	border: 1px solid black;
+	border-radius: 100px;
+	padding: 5px;
+}
+#sidebar {
+	background-color: #ff8178;
+	height: 100%;
+		width: 160px;
+	overflow-x: hidden; /*Disable horizontal scroll*/
+	padding-top: 5px;
+	position: fixed;  /*Fixed sidebar, stay in place on scroll*/
+		left: 0;
+		top: 0;	/*Stay at the top*/
+	z-index: 100; /*Stay on the top*/
+}
+#sidebar a {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.1em;
+	color: purple;
+
+	border: solid black;
+	border-width: 3px 3px 0 3px;
+  display: block;
+  margin: auto;
+  padding: 6px 6px 6px 6px;
+  text-decoration: none;
+  text-align: center;
+  width: 130px;
+}
+#sidebar a:hover {
+	color: #ffd396;
+}
+#sidebar a:first-of-type {
+	border-radius: 10px 10px 0 0;
+}
+#sidebar a:last-of-type {
+	border-width: 3px;
+	border-radius: 0 0 10px 10px;
+}
+#sidebarUL {
+	list-style-type: none;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#welcome {
+	background-color: pink;
+	border: solid black 2px;
+	border-radius: 20px;
+	display: inline-block;
+	line-height: 0px;
+	margin-left: 20%;
+	margin-top: 20px;
+	padding: 10px;
+}
