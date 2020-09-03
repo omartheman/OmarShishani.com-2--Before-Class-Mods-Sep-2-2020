@@ -1,0 +1,8 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/omarnaod/ejs_applications"
+PassengerBaseURI "/"
+PassengerNodejs "/home/omarnaod/nodevenv/ejs_applications/10/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+PassengerAppLogFile "/home/omarnaod/ejs_applications/logs/passenger.log"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
