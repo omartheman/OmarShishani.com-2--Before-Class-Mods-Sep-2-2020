@@ -456,6 +456,11 @@ html  {
   margin: 1rem 1rem 5rem 1rem;
   width: 25rem;
 }
+.project--1__thumbnail {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
 .reload-button {
   display: block;
   font-family: Comfortaa, 'Century Gothic 600', sans-serif; 
