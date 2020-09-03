@@ -44,13 +44,6 @@ html  {
   padding: 0 1rem;
   width: 20rem;
 }
-.animation--1 {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  float: left;
-  margin: 1rem 1rem 5rem 1rem;
-  width: 25rem;
-}
 .BN-button-container {
   margin: auto;
   width: 20em;
@@ -455,6 +448,13 @@ html  {
   height: var(--profile-pic-width);
   padding: 1em;
   width: var(--profile-pic-width);
+}
+.project--1 {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  float: left;
+  margin: 1rem 1rem 5rem 1rem;
+  width: 25rem;
 }
 .reload-button {
   display: block;
@@ -1504,6 +1504,9 @@ html  {
   .text-main__text--ps {
     width: 100%;
   }
+
+
+
 }
 @media (min-aspect-ratio: 16/9) {
   .myVideo {
