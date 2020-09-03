@@ -1,0 +1,93 @@
+.block-1 {
+  background-color: rgb(255, 0, 200);
+  border: 3px solid black;
+  border-radius: 10px;
+  height: 50px;
+  position: absolute;
+    top: 0px;
+    left: 0px;
+  width: 50px;
+}
+.block-2 {
+  background-color: red;
+  border: 2px solid black;
+  height: 50px;
+  position: absolute;
+    bottom: 200px;
+    left: 200px; 
+  width: 50px;
+}
+.finish-line {
+  background-color: rgb(9, 230, 9);
+  height: 10px; 
+  margin: auto;
+  position: absolute; 
+    bottom: 0px;
+  width: 98%;
+}
+.instructions {
+  background-color: lightgrey;
+  border-radius: 5px; 
+  display: inline-block;
+  font: 18px sans-serif;
+  margin: auto;
+  padding: 10px;
+}
+.level-counter {
+  background-color: mediumaquamarine;
+  border-radius: 5px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  font: 18px sans-serif;
+  font-weight: 700;
+  height: 100px;
+  position: absolute;
+    right: 0px;
+  width: 100px;
+}
+.newBlock {
+  /* animation: border_animate infinite 2s; */
+  border: 3px solid black; 
+}
+.power-up__speed {
+  animation: rainbow infinite 3s, border_flash infinite 1s;
+  border-radius: 1000px; 
+  height: 50px;
+  position: absolute; 
+    right: 0px;
+    top: 200px; 
+  width: 50px;
+}
+@keyframes border_animate {
+  from {
+    border: 3px solid black;
+  }
+  50% {
+    border: 15px solid black; 
+  }
+  to {
+    border: 3px solid black;
+  }
+}
+@keyframes border_flash {
+  from {
+    border: 3px solid black;
+  }
+  50% {
+    border: 4px solid rgb(255, 232, 26); 
+  }
+  to {
+    border: 3px solid black;
+  }
+}
+@keyframes rainbow {
+  0% {background-color:red;}
+  8.33%  {background-color:red;}
+  25%  {background-color:orange;}
+  41.66% {background-color:#e8d100;}
+  58.33%   {background-color:green;}
+  75%  {background-color:blue;}
+  91.66%  {background-color:purple;}
+  100% {background-color:red;}
+}

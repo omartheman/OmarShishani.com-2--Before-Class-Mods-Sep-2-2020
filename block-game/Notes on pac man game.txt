@@ -1,0 +1,13 @@
+
+Ideas: 
+
+Make a power-up that makes you move faster
+	Hide the powerup inside something that's hard to get to. 
+
+Make random functions that place different new types of blocks at different postiions for differennt levels. 
+
+Make the character rainbow animated when he gets power up 
+
+Make a powerup that slows down time
+
+Make doughnut powerup 
