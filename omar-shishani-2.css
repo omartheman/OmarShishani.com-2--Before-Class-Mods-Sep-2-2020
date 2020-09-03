@@ -46,10 +46,10 @@ html  {
 }
 .animation--1 {
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 0 0 10px 0;
+  border-radius: 10px;
   float: left;
-  margin-bottom: 5rem;
-  width: 20rem;
+  margin: 1rem 1rem 5rem 1rem;
+  width: 25rem;
 }
 .BN-button-container {
   margin: auto;
