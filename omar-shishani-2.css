@@ -234,8 +234,9 @@ html  {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
 }
 .jewel-svg {
-  max-width: 100%;
   height: 100%;
+  max-width: 100%;
+  transform: scale(0.8);
 }
 .main {
   /* $ Main har en klass, enligt BEM $ */
