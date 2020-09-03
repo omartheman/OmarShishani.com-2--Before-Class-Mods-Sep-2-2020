@@ -12,7 +12,93 @@ const sidebar = String.raw`
     </a>
   </div> <!-- <div class="os-v2-container"> -->
 
-
+  <a class="sidebar__link sidebar__link--about-me" href="about-me.html">
+    <svg
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    width="100"
+    height="100"
+    viewBox="0 0 26.458333 26.458334"
+    version="1.1"
+    id="svg8"
+    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+    sodipodi:docname="about-me.svg">
+    <defs
+      id="defs2" />
+    <sodipodi:namedview
+      id="base"
+      pagecolor="#ffffff"
+      bordercolor="#666666"
+      borderopacity="1.0"
+      inkscape:pageopacity="0.0"
+      inkscape:pageshadow="2"
+      inkscape:zoom="5.6"
+      inkscape:cx="43.83629"
+      inkscape:cy="45.114504"
+      inkscape:document-units="mm"
+      inkscape:current-layer="layer3"
+      showgrid="false"
+      units="px"
+      inkscape:window-width="1600"
+      inkscape:window-height="821"
+      inkscape:window-x="-9"
+      inkscape:window-y="-9"
+      inkscape:window-maximized="1" />
+    <metadata
+      id="metadata5">
+      <rdf:RDF>
+        <cc:Work
+          rdf:about="">
+          <dc:format>image/svg+xml</dc:format>
+          <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+          <dc:title></dc:title>
+        </cc:Work>
+      </rdf:RDF>
+    </metadata>
+    <g
+      inkscape:groupmode="layer"
+      id="layer3"
+      inkscape:label="star upper left">
+      <path
+        style="opacity:1;vector-effect:none;fill:#bc5fd3;fill-opacity:1;stroke:#000000;stroke-width:0.75590552;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+        d="M 50.267578 57.677734 A 32.589288 42.767854 0 0 0 19.449219 86.675781 L 24.464844 90.714844 L 31.25 93.75 L 41.072266 96.964844 L 49.822266 97.857422 L 60.177734 96.607422 L 70.892578 93.214844 L 79.285156 87.677734 L 80.927734 86.078125 A 32.589288 42.767854 0 0 0 50.267578 57.677734 z "
+        transform="scale(0.26458333)"
+        id="path869" />
+      <ellipse
+        style="opacity:1;vector-effect:none;fill:#bc5fd3;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+        id="path867"
+        cx="13.300036"
+        cy="10.512463"
+        rx="5.3992848"
+        ry="5.2207961" />
+    </g>
+    <g
+      inkscape:label="Layer 1"
+      inkscape:groupmode="layer"
+      id="layer1"
+      transform="translate(0,-270.54165)">
+      <circle
+        style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.86371595;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+        id="path815"
+        cx="13.245498"
+        cy="283.81671"
+        r="12.548462" />
+    </g>
+    <g
+      inkscape:groupmode="layer"
+      id="layer5"
+      inkscape:label="line for cutting profile" />
+  </svg>
+    <div class="sidebar__link sidebar__link--home sidebar__link--home-div">
+      About Me
+    </div>
+  </a>
 
   <a class="sidebar__link sidebar__link--contracting" href="construction.html">
     <svg class="sidebar__link--drill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458" height="100" width="100"><g stroke="#000"><path class="sidebar__link--drill-button sidebar__link--drill-piece" d="M11.118 15.112l1.525-.584c-.508-.822-.347-1.282-.287-1.98l-1.936.742.698 1.822" fill="#500" stroke-width=".263" stroke-linecap="round" stroke-linejoin="round"/><path class="sidebar__link--drill-piece" d="M9.37 11.767l-1.269.827-.335 1.01c.76 2.169 1.301 4.491 1.716 6.902l1.168.599 1.013-.006 1.138-.514.778-1.263c-.741-1.047-1.852-1.097-2.313-3.416-.27-1.182-.348-2.423.133-3.647l-.936-.518z" fill="#a00" stroke-width=".528"/><rect class="sidebar__link--drill-piece" ry=".629" transform="scale(1 -1) rotate(20.969)" y="-14.265" x="10.637" height="1.257" width="7.774" fill="#c8b7b7" stroke-width=".398" stroke-linecap="round" stroke-linejoin="round"/><path class="sidebar__link--drill-bit sidebar__link--drill-piece" d="M16.735 8.841l.414-1.423M17.552 8.434l.414-1.423M18.334 8.134l.413-1.423M19.13 7.83l.414-1.424M19.898 7.535l.414-1.424M20.67 7.24l.413-1.424M21.4 7.075l.414-1.423M15.94 9.212l.414-1.424" fill="none" stroke-width=".263"/><rect class="sidebar__link--drill-piece" transform="rotate(-20.97)" ry="1.494" y="21.501" x=".737" height="3.854" width="7.22" fill="#cd87de" stroke-width=".556" stroke-linecap="round" stroke-linejoin="round"/><path class="sidebar__link--drill-piece" d="M9.573 14.79l1.385-.53" fill="none" stroke-width=".244" stroke-linecap="round"/><path class="sidebar__link--drill-piece" d="M9.732 15.922l1.23-.471" fill="none" stroke-width=".273" stroke-linecap="round"/><path class="sidebar__link--drill-piece" d="M10.637 17.713l1.219-.467M10.063 16.88l1.28-.49" fill="none" stroke-width=".263" stroke-linecap="round"/><path class="sidebar__link--drill-piece" d="M10.474 19.962l.68 1.774 3.675-1.409" fill="none" stroke-width=".149" stroke-linecap="round" stroke-linejoin="round"/><path class="sidebar__link--drill-piece" d="M11.442 20.666l2.99-1.146M11.14 19.818l2.99-1.146" fill="none" stroke-width=".149" stroke-linecap="round"/><path class="sidebar__link--drill-piece" d="M8.845 21.022l1.116-.428-.438-1.14" fill="maroon" stroke-width=".263" stroke-linejoin="round"/><path class="sidebar__link--drill-piece" d="M6.069 10.102a1.49 1.49 0 00-.86 1.93l.465 1.215a1.49 1.49 0 001.93.86l5.422-2.079c.268-.102.488-.273.65-.484a2.144 1.927-20.97 00.063-.021 2.144 1.927-20.97 001.349-1.412 1.357 1.194-20.97 00.127-.043 1.357 1.194-20.97 00.84-1.6 1.357 1.194-20.97 00-1.695-.63 1.357 1.194-20.97 00-.254.127 2.144 1.927-20.97 00-1.746-.041 2.144 1.927-20.97 00-.064.027 1.488 1.488 0 00-.805.073z" fill="#cd87de" stroke-width=".4281381" stroke-linecap="round" stroke-linejoin="round"/><path class="sidebar__link--drill-piece" d="M6.316 10.91l1.23-.471M6.625 11.715l1.23-.472M6.912 12.434l1.23-.471M7.242 13.219l1.23-.471" fill="none" stroke-width=".27281358000000006" stroke-linecap="round"/><path class="sidebar__link--drill-piece" d="M12.296 7.95l1.372 3.58M14.106 7.965l.826 2.155" fill="none" stroke-width=".26385255"/><path class="sidebar__link--drill-piece" d="M13.513 8.015c-.06.054-.145.067-.216.101-.23.09-.462.178-.693.266l.118.308.953-.365c.045.012.049.08.001.09-.304.127-.614.24-.921.36l.123.322c.31-.115.616-.242.929-.35.04-.016.074.031.05.067-.087.046-.192.075-.286.115l-.66.253.115.3c.323-.121.642-.254.969-.364.044 0 .042.081-.004.085-.308.13-.622.241-.933.363l.112.292c.322-.12.641-.252.966-.364.04-.017.075.03.05.066-.086.046-.191.076-.285.115l-.699.268.127.33c.323-.12.64-.253.967-.362.055-.013.07.074.017.085-.313.132-.633.246-.949.37l.106.276.99-.38c.034.007.07.06.03.08-.325.138-.658.256-.987.385l.109.284.966-.37a1.74 1.74 0 00.26-.48c-.033.006-.047-.01-.055-.05L14.04 8.17a1.845 1.845 0 00-.521-.156h-.003zM12.533 8.197c.021.04.022.124.082.075l.734-.282a2.145 2.145 0 00-.852.113l.036.094zM13.683 11.197c.023.033.02.133.076.084.26-.119.502-.285.697-.495l-.812.31.039.101z" fill="maroon" stroke-width=".012" stroke-linecap="round" stroke-linejoin="round"/><path class="sidebar__link--drill-piece" d="M12.933 9.563l1.052-.403M12.766 9.19l1.052-.403M12.615 8.776l1.052-.403M13.412 10.716l1.051-.403M13.25 10.357l1.052-.403M13.096 9.936l1.052-.403M12.418 8.401l1.052-.403M13.61 11.058l1.053-.403" fill="none" stroke-width=".089" stroke-linecap="round"/><circle class="sidebar__link--drill-circle" r="12.548" cy="13.295" cx="13.361" fill="none" stroke-width=".864" stroke-linecap="round"/><path class="sidebar__link--broken-circle" d="M23.935 6.538c3.655 5.72 2.1 13.309-3.51 17.13h0c-5.729 3.9-13.535 2.419-17.436-3.31C-.91 14.63.57 6.825 6.3 2.924 11.428-.57 18.285.233 22.476 4.671l.12.13" fill="none" stroke="#000" stroke-width=".864"/>
@@ -41,7 +127,6 @@ const sidebar = String.raw`
     Construction
     </div>
   </a>
-
 
   
   <a class="sidebar__link sidebar__link--animations" href="animations.html">
