@@ -22,7 +22,6 @@ html  {
   scroll-behavior: smooth;
 }
 .article {
-  float: left;
   height: 100%;
   max-width: 100%;
 }
@@ -455,11 +454,16 @@ html  {
   border-radius: 10px;
   float: left;
   margin: 1rem 1rem 5rem 1rem;
-  width: 25rem;
+  width: calc(50% - 2rem);
 }
 .project--1__thumbnail {
   display: block;
   margin: auto;
+  width: 100%;
+}
+.projects__center-block {
+  margin: auto;
+  background-color: red;
   width: 100%;
 }
 .reload-button {
@@ -1031,11 +1035,6 @@ html  {
 .text-main--full-width {
   clear: both;
   width: calc(100% - 2rem);
-}
-.text-main--projects {
-  float: left;
-  margin: 5rem 1rem 1rem 1rem;
-  width: calc(50% - 1.5rem);
 }
 .text-main__content {
   background-color:rgba(238, 183, 255, 0.8);
