@@ -162,6 +162,7 @@ const footer = String.raw`
     <span><a class="footer__link-1" href="https://www.linkedin.com/in/omar-shishani-school/" target="_blank">LinkedIn</a></span>
     <span><a class="footer__link-1" href="https://www.instructables.com/member/omarshishanischool/" target="_blank">Instructables</a></span>
     <span><a class="footer__link-1" href="https://github.com/crazy-hobo" target="_blank">Github</a></span>
+    <span><a class="footer__link-1" href="https://medium.com/@omarshishanischool" target="_blank">Medium</a></span>
   </div>
 </footer>
 <div class="footer__updated">Last Updated September 2020</div>
