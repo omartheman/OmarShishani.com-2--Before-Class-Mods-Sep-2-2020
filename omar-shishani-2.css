@@ -459,6 +459,7 @@ html  {
 .project--1__thumbnail {
   display: block;
   margin: auto;
+  max-width: 100%;
   width: 100%;
 }
 .projects__center-block {
@@ -1075,6 +1076,13 @@ html  {
   }
   .main__section-construction-padded {
     padding: 0 0;
+  }
+  .project--1 {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    float: none;
+    margin: 1rem 1rem 5rem 1rem;
+    width: calc(100% - 2rem);
   }
   .text-main__grid--style-1 {
     grid-template-areas: 
