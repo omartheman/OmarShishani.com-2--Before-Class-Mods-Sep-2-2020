@@ -454,11 +454,16 @@ html  {
   border-radius: 10px;
   float: left;
   margin: 1rem 1rem 5rem 1rem;
-  width: 25rem;
+  width: calc(50% - 2rem);
 }
 .project--1__thumbnail {
   display: block;
   margin: auto;
+  width: 100%;
+}
+.projects__center-block {
+  margin: auto;
+  background-color: red;
   width: 100%;
 }
 .reload-button {
