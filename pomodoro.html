@@ -19,21 +19,29 @@
         $(".timer__button").click(
           function timer(){
             $(".text-main--timer").css('display', 'block');
-
             let hours = $(".timer__hours-input").val();
             let minutes = $(".timer__minutes-input").val();
             let seconds = $(".timer__seconds-input").val();
             if (hours == "") {hours = 0;};
             if (minutes == "") {minutes = 0;};
             if (seconds == "") {seconds = 0;};
-            $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
+            $(".timer__display-text").html(`<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`);  
             let timer_sec = setInterval(function(){
               $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
               console.log($(".timer__hours-input").val());
-              
-              if (minutes >= 1 && seconds <= 0) {
+              if (hours >= 1 && minutes >= 1 && seconds <= 0) {
                 minutes--;
-                seconds = 60;
+                seconds = 59;
+                $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
+              } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
+                hours--;
+                minutes = 59; 
+                seconds = 59; 
+                $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`); 
+              }
+              else if (minutes >= 1 && seconds <= 0) {
+                minutes--;
+                seconds = 59;
                 $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
               } else if (minutes >= 1 && seconds >= 0) {
                 seconds--;

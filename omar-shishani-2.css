@@ -1068,7 +1068,9 @@ html  {
     "main    main    top"
     "main    main    foot";
 }
-
+.timer__span--values {
+  font-weight: bold;
+}
 
 
 
