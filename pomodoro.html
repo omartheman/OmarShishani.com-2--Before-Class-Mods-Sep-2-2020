@@ -23,17 +23,29 @@
             let hours = $(".timer__hours-input").val();
             let minutes = $(".timer__minutes-input").val();
             let seconds = $(".timer__seconds-input").val();
-
-            $(".timer__display-text").text(seconds);
+            if (hours == "") {hours = 0;};
+            if (minutes == "") {minutes = 0;};
+            if (seconds == "") {seconds = 0;};
+            $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
             let timer_sec = setInterval(function(){
-              seconds--;
-              console.log(seconds);
-              $(".timer__display-text").text(seconds);  
-              if (seconds <= 0) {
-                console.log('Timer Complete');
+              $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
+              console.log($(".timer__hours-input").val());
+              
+              if (minutes >= 1 && seconds <= 0) {
+                minutes--;
+                seconds = 60;
+                $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
+              } else if (minutes >= 1 && seconds >= 0) {
+                seconds--;
+                $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
+              } else if (minutes <= 1 && seconds > 0) {
+                seconds--;
+                $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds`);  
+              } else if (seconds <= 0) {
                 clearInterval(timer_sec);
-                $(".timer__display-text").text('Timer Complete!');  
-              }
+                $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds: Timer Complete!`);  
+              } 
+              //Make an 'if' so that minutes decreases every time seconds goes to 0, but minutes is still 1 or greater.
             }, 1000);
           }
         )
