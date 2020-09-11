@@ -1037,6 +1037,9 @@ html  {
   clear: both;
   width: calc(100% - 2rem);
 }
+.text-main--timer {
+  display: none;
+}
 .text-main__content {
   background-color:rgba(238, 183, 255, 0.8);
   border-radius: 10px;

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- $ Viewport meta för att göra så browsern inte försökar använda automatisk anpassning till mobil storlek $ -->
+	<link rel="stylesheet" type="text/css" href="omar-shishani-2.css">
+	<link rel="stylesheet" media="(max-width: 450px)" href="max-450px.css">
+  <script src="jquery-3.4.1.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+  <title>Omar Shishani</title>
+  <script>
+    $(document).ready(
+      function(){
+        $(".timer__button").click(
+          function timer(){
+            $(".text-main--timer").css('display', 'block');
+
+            let hours = $(".timer__hours-input").val();
+            let minutes = $(".timer__minutes-input").val();
+            let seconds = $(".timer__seconds-input").val();
+
+            $(".timer__display-text").text(seconds);
+            let timer_sec = setInterval(function(){
+              seconds--;
+              console.log(seconds);
+              $(".timer__display-text").text(seconds);  
+              if (seconds <= 0) {
+                console.log('Timer Complete');
+                clearInterval(timer_sec);
+                $(".timer__display-text").text('Timer Complete!');  
+              }
+            }, 1000);
+          }
+        )
+      }
+    );
+  </script>
+</head>
+	<body class="body body--construction">
+		<header id="page-top" class="header header--contracting">
+		<!-- $ Elementet <header> används för bättre semantik $ -->
+			<h1 class="header__heading">
+				Timer
+			</h1>
+		</header>
+
+		<main class="main">
+			<div class="main__section-construction-padded">
+				<div class="text-main">
+					<h2 class="text-main__title">
+						Timer
+					</h2>
+					<div class="text-main__content">
+            <div>
+              <h3>Hours</h3>
+              <input class="timer__hours-input" type="number">
+            </div>
+            <div>
+              <h3>Minutes</h3>
+              <input class="timer__minutes-input" type="number">
+            </div>
+            <div>
+              <h3>Seconds</h3>
+              <input class="timer__seconds-input" type="number">
+            </div>
+            
+            <button class="timer__button">Start Timer</button>
+					</div>
+        </div>			
+        
+        <div class="text-main text-main--2 text-main--timer">
+					<div class="text-main__content timer__display-text">
+					</div>
+				</div>
+
+				<div class="text-main text-main--2">
+					<div class="text-main__content">
+						<img class="image--contracting" src="pictures/about-me-main.jpg" alt="Omar holding 2x4 in front of fence railing">
+					</div>
+				</div>
+			
+				</div>
+				<a href="#page-top">
+					<div class="navbar--contracting__button navbar--contracting__button--back-to-top">
+						Back to top
+					</div>
+				</a>
+			</div> <!-- <div class="main__section-construction-padded"></div> -->
+			
+			
+		</main>
+		<script src="insert-to-dom.js"></script>
+		<script id="omarJavascript" src="omar-shishani-2.js"></script>
+    <script src="construction-top-button.js"></script>
+    <script>
+    </script>
+	</body>
+</html>
