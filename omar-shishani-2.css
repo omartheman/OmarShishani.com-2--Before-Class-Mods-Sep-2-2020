@@ -1068,10 +1068,15 @@ html  {
     "main    main    top"
     "main    main    foot";
 }
+.timer__input {
+  margin-bottom: 0.5em;
+}
 .timer__span--values {
   font-weight: bold;
 }
-
+.timer__titles {
+  margin: 0;
+}
 
 
 

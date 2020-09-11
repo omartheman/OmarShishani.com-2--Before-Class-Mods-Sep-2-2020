@@ -25,33 +25,34 @@
             if (hours == "") {hours = 0;};
             if (minutes == "") {minutes = 0;};
             if (seconds == "") {seconds = 0;};
-            $(".timer__display-text").html(`<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`);  
-            let newTime = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
+            let timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
+            $(".timer__display-text").html(timeRemaining);  
             let timer_sec = setInterval(function(){
-              $(".timer__display-text").html(`<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`);  
+              timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
+              $(".timer__display-text").html(timeRemaining);  
               if (hours >= 1 && minutes >= 1 && seconds <= 0) {
                 minutes--;
                 seconds = 59;
-                $(".timer__display-text").html(`<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`);  
+                $(".timer__display-text").html(timeRemaining);  
               } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
                 hours--;
                 minutes = 59; 
                 seconds = 59; 
-                $(".timer__display-text").html(`<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`); 
+                $(".timer__display-text").html(timeRemaining); 
               }
               else if (minutes >= 1 && seconds <= 0) {
                 minutes--;
                 seconds = 59;
-                $(".timer__display-text").html(`<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`);  
+                $(".timer__display-text").html(timeRemaining);  
               } else if (minutes >= 1 && seconds >= 0) {
                 seconds--;
-                $(".timer__display-text").html(`<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`);  
+                $(".timer__display-text").html(timeRemaining);  
               } else if (minutes <= 1 && seconds > 0) {
                 seconds--;
-                $(".timer__display-text").html(`<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`);  
+                $(".timer__display-text").html(timeRemaining);  
               } else if (seconds <= 0) {
                 clearInterval(timer_sec);
-                $(".timer__display-text").text(`${hours} hours, ${minutes} minutes, ${seconds} seconds: Timer Complete!`);  
+                $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);  
               } 
               //Make an 'if' so that minutes decreases every time seconds goes to 0, but minutes is still 1 or greater.
             }, 1000);
@@ -77,16 +78,16 @@
 					</h2>
 					<div class="text-main__content">
             <div>
-              <h3>Hours</h3>
-              <input class="timer__hours-input" type="number">
+              <h3 class="timer__titles">Hours</h3>
+              <input class="timer__input timer__hours-input" type="number">
             </div>
             <div>
-              <h3>Minutes</h3>
-              <input class="timer__minutes-input" type="number">
+              <h3 class="timer__titles">Minutes</h3>
+              <input class="timer__input timer__minutes-input" type="number">
             </div>
             <div>
-              <h3>Seconds</h3>
-              <input class="timer__seconds-input" type="number">
+              <h3 class="timer__titles">Seconds</h3>
+              <input class="timer__input timer__seconds-input" type="number">
             </div>
             
             <button class="timer__button">Start Timer</button>
