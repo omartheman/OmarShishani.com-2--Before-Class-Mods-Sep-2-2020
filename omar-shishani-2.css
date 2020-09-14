@@ -1209,6 +1209,32 @@ html  {
   text-align: center;
   width: 50%;
 }
+.timer__star {
+  position: absolute;
+}
+.timer__star--rotate {
+  animation: star_rotate_1 20s forwards;
+}
+@keyframes star_rotate_1 {
+  to {
+    transform: rotate(720deg);
+  }
+}
+@keyframes star_rotate_2 {
+  to {
+    transform: rotate(-1300deg);
+  }
+}
+@keyframes star_rotate_3 {
+  to {
+    transform: rotate(1000deg);
+  }
+}
+@keyframes star_rotate_4 {
+  to {
+    transform: rotate(-500deg);
+  }
+}
 .welcome-text {
 	line-height: 2em;
 }
