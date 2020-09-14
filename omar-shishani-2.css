@@ -1209,6 +1209,10 @@ html  {
   }
 }
 @media (max-width: 1000px) {
+  .container {
+    grid-template-columns: calc(50% - var(--vid-grd-col-gap)*2/3) calc(50% - var(--vid-grd-col-gap)*2/3);
+    gap: 2rem var(--vid-grd-col-gap);
+  }
   .header__heading--subheading-my-projects {
     border-radius: 0;
   }
@@ -1222,6 +1226,14 @@ html  {
     margin: 1rem 1rem 5rem 1rem;
     width: calc(100% - 2rem);
   }
+  .text-main {
+    float: left;
+    margin: 3rem 0.5rem 1rem 1rem;
+    width: calc(100% - 2rem);
+  }
+  .text-main--2 {
+    margin: 3rem 1rem 1rem 1rem;
+  }
   .text-main__grid--style-1 {
     grid-template-areas: 
       "main    main    main"
@@ -1233,21 +1245,7 @@ html  {
       "main    main    main";
   }
 }
-@media (max-width: 1000px) {
-/* $ Denna Media query är här för att stapla textrutorna .text-main ovanför varandra när det blir för trångt $ */
-  .container {
-    grid-template-columns: calc(50% - var(--vid-grd-col-gap)*2/3) calc(50% - var(--vid-grd-col-gap)*2/3);
-    gap: 2rem var(--vid-grd-col-gap);
-  }
-  .text-main {
-    float: left;
-    margin: 3rem 0.5rem 1rem 1rem;
-    width: calc(100% - 2rem);
-  }
-  .text-main--2 {
-    margin: 3rem 1rem 1rem 1rem;
-  }
-}
+
 @media (max-width: 700px) {
 /* $ Vid 700px tar sidebar upp för mycket rum på skärmen. Dags att byta till dropdown nav meny $ */
   .button--scroll-down {
@@ -1444,6 +1442,7 @@ html  {
       "foot"
       "top";
   }
+  
 }
 @media (max-width: 450px) {
   .intro {
