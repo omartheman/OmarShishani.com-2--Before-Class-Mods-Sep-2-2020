@@ -54,9 +54,11 @@
                 clearInterval(timer_sec);
                 $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
                 newStar();
+                audio_tequila.play();
+                airhorn.play();
                 $('.timer__star').toggleClass('timer__star--rotate');
                 $('.timer__star').animate({
-                  top: "1000px"
+                  top: `${star_fall_distance}`
                 }, 7000);  
               } 
               //Make an 'if' so that minutes decreases every time seconds goes to 0, but minutes is still 1 or greater.
@@ -129,11 +131,14 @@
 		<script id="omarJavascript" src="omar-shishani-2.js"></script>
     <script src="construction-top-button.js"></script>
     <script>
+      let audio_tequila = new Audio("audio/tequila.mp3");
+      let airhorn = new Audio("audio/airhorn.mp3");
       function newStar(){
         let new_star_left;
         let star_num;
         let star_delay;
         let star_color;
+        let star_fall_distance = '2000px';
 
         for (let i = 0; i <= 200; i++){
           new_star_left = Math.random()*97;
@@ -154,8 +159,9 @@
             </svg>`
           );
           $(`.timer__star__${star_num}`).delay(star_delay).animate({
-            top: "1000px"
+            top: `${star_fall_distance}`
           }, 7000);
+          
         };
 
         

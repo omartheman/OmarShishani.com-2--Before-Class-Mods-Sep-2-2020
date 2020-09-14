@@ -1068,59 +1068,6 @@ html  {
     "main    main    top"
     "main    main    foot";
 }
-.timer__input {
-  margin-bottom: 0.5em;
-}
-.timer__span--values {
-  font-weight: bold;
-}
-.timer__titles {
-  margin: 0;
-}
-
-
-
-@media (max-width: 1000px) {
-  .header__heading--subheading-my-projects {
-    border-radius: 0;
-  }
-  .main__section-construction-padded {
-    padding: 0 0;
-  }
-  .project--1 {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    float: none;
-    margin: 1rem 1rem 5rem 1rem;
-    width: calc(100% - 2rem);
-  }
-  .text-main__grid--style-1 {
-    grid-template-areas: 
-      "main    main    main"
-      "foot    .       top";
-  }
-  .text-main__grid--style-2 {
-    grid-template-areas: 
-      "foot    .       top"
-      "main    main    main";
-  }
-}
-@media (max-width: 600px) {
-  .text-main__grid--style-1 {
-    grid-template-areas: 
-      "main"
-      "foot"
-      "top";
-  }
-  .text-main__grid--style-2 {
-    grid-template-areas: 
-      "main"
-      "foot"
-      "top";
-  }
-  
-}
-
 .text-main__grid-item-1 {
   grid-area: main;
   max-height: 100%;
@@ -1140,7 +1087,6 @@ html  {
   max-height: 100%;
   max-width: 100%;
 }
-
 .text-main__content--homepage-bullets {
   padding: 2rem 2rem 2rem 4rem;
 }
@@ -1218,6 +1164,15 @@ html  {
 .timer__star--rotate {
   animation: star_rotate_1 20s forwards;
 }
+.timer__input {
+  margin-bottom: 0.5em;
+}
+.timer__span--values {
+  font-weight: bold;
+}
+.timer__titles {
+  margin: 0;
+}
 .welcome-text {
 	line-height: 2em;
 }
@@ -1251,6 +1206,31 @@ html  {
 @media (max-width: 1200px) {
   .text-main__title {
     width: 80%;
+  }
+}
+@media (max-width: 1000px) {
+  .header__heading--subheading-my-projects {
+    border-radius: 0;
+  }
+  .main__section-construction-padded {
+    padding: 0 0;
+  }
+  .project--1 {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    float: none;
+    margin: 1rem 1rem 5rem 1rem;
+    width: calc(100% - 2rem);
+  }
+  .text-main__grid--style-1 {
+    grid-template-areas: 
+      "main    main    main"
+      "foot    .       top";
+  }
+  .text-main__grid--style-2 {
+    grid-template-areas: 
+      "foot    .       top"
+      "main    main    main";
   }
 }
 @media (max-width: 1000px) {
@@ -1449,6 +1429,20 @@ html  {
   .text-main__text--web-prog {
     width: 90%;
     padding: 0;
+  }
+}
+@media (max-width: 600px) {
+  .text-main__grid--style-1 {
+    grid-template-areas: 
+      "main"
+      "foot"
+      "top";
+  }
+  .text-main__grid--style-2 {
+    grid-template-areas: 
+      "main"
+      "foot"
+      "top";
   }
 }
 @media (max-width: 450px) {
