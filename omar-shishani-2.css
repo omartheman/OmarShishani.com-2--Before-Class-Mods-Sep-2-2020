@@ -1212,6 +1212,8 @@ html  {
 .timer__star {
   position: absolute;
   top: -35px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 .timer__star--rotate {
   animation: star_rotate_1 20s forwards;
@@ -1539,9 +1541,6 @@ html  {
   .text-main__text--ps {
     width: 100%;
   }
-
-
-
 }
 @media (min-aspect-ratio: 16/9) {
   .myVideo {
