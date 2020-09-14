@@ -52,25 +52,17 @@
                 $(".timer__display-text").html(timeRemaining);  
               } else if (seconds <= 0) {
                 clearInterval(timer_sec);
-                $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);  
+                $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
+                newStar();
+                $('.timer__star').toggleClass('timer__star--rotate');
+                $('.timer__star').animate({
+                  top: "1000px"
+                }, 7000);  
               } 
               //Make an 'if' so that minutes decreases every time seconds goes to 0, but minutes is still 1 or greater.
             }, 1000);
           }
         )
-      }
-    );
-    $(document).ready(
-      function(){
-        $(".timer__button").click(
-          function(){
-            newStar();
-            $('.timer__star').toggleClass('timer__star--rotate');
-            $('.timer__star').animate({
-              top: "1000px"
-            }, 7000);
-          }
-        );
       }
     );
   </script>
