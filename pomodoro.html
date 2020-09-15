@@ -18,7 +18,10 @@
     $(document).ready(
       function(){
         $(".timer__button").click(
-          function timer(){
+          function timer(e){
+            
+            var idClicked = e.target.id;
+            console.log(idClicked);
             $(".text-main--timer").css('display', 'block');
             let hours = $(".timer__hours-input").val();
             let minutes = $(".timer__minutes-input").val();
@@ -98,7 +101,8 @@
               <input class="timer__input timer__seconds-input" type="number">
             </div>
             
-            <button class="timer__button">Start Timer</button>
+            <button class="timer__button">Start Timer (Tequila)</button>
+            <button class="timer__button--forest">Start Timer (Forest Birds)</button>
 					</div>
         </div>			
         
@@ -153,17 +157,12 @@
             </g>
             </svg>`
           );
-          console.log(`.timer__star__${i}`);
           $(`.timer__star__${i}`).delay(star_delay).animate({
             top: `${star_fall_distance}`
           }, 7000);
 
           function doSetTimeout(i, star_delay){
             setTimeout(function(){
-              console.log(i);
-              console.log(star_delay);
-              console.log(`This is star ${i}, whose star name is .timer__star__${i}  with a star_delay of ${star_delay}ms, which should dissapear after ${star_delay + 7000}ms`)
-              console.log(`.timer__star__${i}`);
               $(`.timer__star__${i}`).css('display', 'none');
             }, 7000 + star_delay);
           };
