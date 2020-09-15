@@ -146,6 +146,9 @@
           animation_number = Math.ceil(Math.random()*4);
           star_delay = Math.random()*9000;
           star_color_random_id = Math.ceil(Math.random()*2);
+          star_vanish = star_delay + 7000;
+          console.log(star_delay);
+
           if (star_color_random_id === 1){
             star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
           } else {
@@ -158,15 +161,22 @@
             </g>
             </svg>`
           );
-          $(`.timer__star__${star_num}`).delay(star_delay).animate({
-            top: `${star_fall_distance}`
-          }, 7000);
           
-          // star_vanish = star_delay + 7000;
-          // setTimeout(function(){
-          //   $(`.timer__star__${star_num}`).css("display", "none");
-          // }, star_delay);
 
+          (function(i){
+            console.log(i);
+            setTimeout(function(){
+              $(`.timer__star__${star_num}`).animate({
+              top: `${star_fall_distance}`
+            });
+            console.log(star_delay);
+            }, star_delay);
+          })(i);
+
+          setTimeout(function(){
+            $(`.timer__star__${star_num}`).css("display", "none");
+            console.log(star_vanish);
+          }, star_vanish);
         };
 
         
