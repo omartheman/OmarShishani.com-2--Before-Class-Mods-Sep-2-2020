@@ -161,6 +161,11 @@
           $(`.timer__star__${star_num}`).delay(star_delay).animate({
             top: `${star_fall_distance}`
           }, 7000);
+          (function () {
+            setTimeout(function(){
+              $(`.timer__star__${star_num}`).css('display', 'none');
+            }, 7000);
+          })();
           
         };
 
