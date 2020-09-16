@@ -136,7 +136,7 @@ html  {
 .header {
   background-color: rgba(238, 183, 255, 0.8);
   float: right;
-  margin-left: var(--sidebar-width);
+  margin: 0 0 1em var(--sidebar-width);
   width: calc(100% - var(--sidebar-width));
 }
 .header--homepage {
@@ -188,6 +188,7 @@ html  {
 }
 .header--contracting {
   border-bottom: 1px solid black;
+  margin-bottom: 0;
 }
 .header__heading--homepage {
 /* $ BEM: homepage är modifier $ */
@@ -477,10 +478,12 @@ html  {
 }
 .sidebar {
   background-color: lightgrey;
+  bottom: 0;
+  border-right: black 2px solid;
   height: 100vh;
   position: fixed;
   top: 0;
-  bottom: 0;
+  overflow: auto;
   width: var(--sidebar-width);
 }
 .sidebar__link {
@@ -711,7 +714,7 @@ html  {
   display: none; 
 }
 .sidebar__svg {
-  width: 60%;
+  width: 55%;
 }
 .sidebar__link--vid:hover .sidebar__vid-rec {
   animation: vid_button forwards 2s;
@@ -732,7 +735,7 @@ html  {
 }
 .text-main {
   float: left;
-  margin: 5rem 0.5rem 1rem 1rem;
+  margin: 3rem 0.5rem 1rem 1rem;
   width: calc(50% - 1.5rem);
 }
 .text-main--2 {
@@ -939,7 +942,7 @@ html  {
   }
   .text-main {
     float: left;
-    margin: 3rem 0.5rem 1rem 1rem;
+    margin: 2rem 0.5rem 1rem 1rem;
     width: calc(100% - 2rem);
   }
   .text-main--2 {
