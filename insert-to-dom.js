@@ -13,88 +13,37 @@ const sidebar = String.raw`
   </div> <!-- <div class="os-v2-container"> -->
 
   <a class="sidebar__link sidebar__link--about-me" href="about-me.html">
-    <svg
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:cc="http://creativecommons.org/ns#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    width="100"
-    height="100"
-    viewBox="0 0 26.458333 26.458334"
-    version="1.1"
-    id="svg8"
-    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-    sodipodi:docname="about-me.svg">
-    <defs
-      id="defs2" />
-    <sodipodi:namedview
-      id="base"
-      pagecolor="#ffffff"
-      bordercolor="#666666"
-      borderopacity="1.0"
-      inkscape:pageopacity="0.0"
-      inkscape:pageshadow="2"
-      inkscape:zoom="5.6"
-      inkscape:cx="43.83629"
-      inkscape:cy="45.114504"
-      inkscape:document-units="mm"
-      inkscape:current-layer="layer3"
-      showgrid="false"
-      units="px"
-      inkscape:window-width="1600"
-      inkscape:window-height="821"
-      inkscape:window-x="-9"
-      inkscape:window-y="-9"
-      inkscape:window-maximized="1" />
-    <metadata
-      id="metadata5">
-      <rdf:RDF>
-        <cc:Work
-          rdf:about="">
-          <dc:format>image/svg+xml</dc:format>
-          <dc:type
-            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-          <dc:title></dc:title>
-        </cc:Work>
-      </rdf:RDF>
-    </metadata>
-    <g
-      inkscape:groupmode="layer"
-      id="layer3"
-      inkscape:label="star upper left">
-      <path
-        style="opacity:1;vector-effect:none;fill:#bc5fd3;fill-opacity:1;stroke:#000000;stroke-width:0.75590552;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-        d="M 50.267578 57.677734 A 32.589288 42.767854 0 0 0 19.449219 86.675781 L 24.464844 90.714844 L 31.25 93.75 L 41.072266 96.964844 L 49.822266 97.857422 L 60.177734 96.607422 L 70.892578 93.214844 L 79.285156 87.677734 L 80.927734 86.078125 A 32.589288 42.767854 0 0 0 50.267578 57.677734 z "
-        transform="scale(0.26458333)"
-        id="path869" />
-      <ellipse
-        style="opacity:1;vector-effect:none;fill:#bc5fd3;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-        id="path867"
-        cx="13.300036"
-        cy="10.512463"
-        rx="5.3992848"
-        ry="5.2207961" />
+    <svg class="sidebar__link--about-me-svg" width="100" height="100" version="1.1" viewBox="0 0 26.458 26.458" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#bc5fd3" stroke="#000">
+      <path transform="scale(.26458)" d="m50.268 57.678a32.589 42.768 0 0 0-30.818 28.998l5.0156 4.0391 6.7852 3.0352 9.8223 3.2148 8.75 0.89258 10.355-1.25 10.715-3.3926 8.3926-5.5371 1.6426-1.5996a32.589 42.768 0 0 0-30.66-28.4z" stroke-width=".75591"/>
+      <ellipse cx="13.3" cy="10.512" rx="5.3993" ry="5.2208" stroke-width=".2"/>
     </g>
-    <g
-      inkscape:label="Layer 1"
-      inkscape:groupmode="layer"
-      id="layer1"
-      transform="translate(0,-270.54165)">
-      <circle
-        style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.86371595;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-        id="path815"
-        cx="13.245498"
-        cy="283.81671"
-        r="12.548462" />
+    <g transform="translate(0 -270.54)">
+      <circle cx="13.245" cy="283.82" r="12.548" fill-opacity="0" stroke="#000" stroke-linecap="round" stroke-width=".86372"/>
     </g>
-    <g
-      inkscape:groupmode="layer"
-      id="layer5"
-      inkscape:label="line for cutting profile" />
-  </svg>
+    </svg>
+
+    <svg class="sidebar__link--about-me-mustache width="100" height="100" version="1.1" viewBox="0 0 26.458 26.458" xmlns="http://www.w3.org/2000/svg">
+     <g>
+      <path transform="scale(.26458)" d="m50.268 57.678a32.589 42.768 0 0 0-30.818 28.998l5.0156 4.0391 6.7852 3.0352 9.8223 3.2148 8.75 0.89258 10.355-1.25 10.715-3.3926 8.3926-5.5371 1.6426-1.5996a32.589 42.768 0 0 0-30.66-28.4z" fill="#bc5fd3" stroke="#000" stroke-width=".75591"/>
+      <ellipse cx="13.3" cy="10.512" rx="5.3993" ry="5.2208" fill="#bc5fd3" stroke="#000" stroke-width=".2"/>
+      <g stroke-linecap="round">
+       <path d="m10.156 8.2506c0.62738-0.61665 1.2058-0.59698 1.7707-0.4009" fill="none" stroke="#672320" stroke-linejoin="round" stroke-width=".465"/>
+       <path d="m14.566 7.8163c0.75781-0.18525 1.1838 0.056155 1.5034 0.43431" fill="none" stroke="#672320" stroke-width=".465"/>
+       <ellipse cx="11.314" cy="8.9113" rx=".48817" ry=".51689" fill="#28170b" stroke="#f2eeed" stroke-linejoin="round" stroke-width=".15802" style="paint-order:normal"/>
+       <path d="m12.402 12.308c0.58249 0.79457 1.2054 1.0032 1.9135-0.02363" fill="none" stroke="#890021" stroke-width=".265"/>
+       <ellipse cx="15.117" cy="8.9355" rx=".48817" ry=".51689" fill="#28170b" stroke="#f2eeed" stroke-linejoin="round" stroke-width=".15802" style="paint-order:normal"/>
+       <path d="m13.383 11.02c-1.835-0.15663-1.5241 1.3952-2.0076 2.1987" fill="none" stroke="#671c1c" stroke-width=".39688"/>
+       <path d="m13.383 11.02c1.6432-0.20957 1.4028 1.3654 1.9844 2.1616" fill="none" stroke="#671c1c" stroke-width=".39688"/>
+      </g>
+     </g>
+     <g transform="translate(0 -270.54)">
+      <circle cx="13.245" cy="283.82" r="12.548" fill-opacity="0" stroke="#000" stroke-linecap="round" stroke-width=".86372"/>
+     </g>
+    </svg>
+    
+
+
     <div class="sidebar__link sidebar__link--home sidebar__link--home-div">
       About Me
     </div>

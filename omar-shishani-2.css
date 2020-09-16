@@ -1002,6 +1002,18 @@ html  {
 .sidebar__link--home-div {
   font-size: 1.5rem;
 }
+.sidebar__link--about-me:hover 
+.sidebar__link--about-me-mustache{
+  display: block;
+  margin: auto;
+  margin-bottom: 0.23em;
+}
+.sidebar__link--about-me:hover .sidebar__link--about-me-svg {
+  display: none;
+}
+.sidebar__link--about-me-mustache{
+  display: none; 
+}
 .sidebar__link--vid:hover .sidebar__vid-rec {
   animation: vid_button forwards 2s;
 }
