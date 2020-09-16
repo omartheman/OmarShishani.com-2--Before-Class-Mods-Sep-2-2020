@@ -423,7 +423,6 @@ html  {
 }
 .os-v2-svg {
   display: inline-block;
-  height: 5.5em;
   margin: 1rem auto 0;
   width: 8em;
 }
@@ -480,8 +479,6 @@ html  {
   background-color: lightgrey;
   height: 100vh;
   position: fixed;
-  
-  overflow-y: scroll;
   top: 0;
   bottom: 0;
   width: var(--sidebar-width);
@@ -489,19 +486,16 @@ html  {
 .sidebar__link {
 /* $ text-decoration tas bort för att göra länkarna finare $ */
   display: block;
-  color: #8300cc;
+  color: #000000;
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1em;
+  margin-bottom: 0.4em;
   text-align: center;
   text-decoration: none;
 }
-.sidebar__link svg {
-  width: 75%;
-}
 .sidebar__link:visited {
-  color: #8300cc;
+  color: #000000;
   text-decoration: none;
 }
 .sidebar__animations-object {
@@ -698,11 +692,9 @@ html  {
 }
 .sidebar__link--home {
   display: block;
-  color: #8300cc;
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 1em;
   text-align: center;
   text-decoration: none;
 }
@@ -717,6 +709,9 @@ html  {
 }
 .sidebar__link--about-me-mustache{
   display: none; 
+}
+.sidebar__svg {
+  width: 60%;
 }
 .sidebar__link--vid:hover .sidebar__vid-rec {
   animation: vid_button forwards 2s;
