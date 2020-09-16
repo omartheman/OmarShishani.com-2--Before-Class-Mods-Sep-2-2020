@@ -14,7 +14,7 @@
   --OS-logo-color: #4b4545;
   --profile-pic-padding: 1em;
   --profile-pic-width: 14em;
-  --sidebar-width: 12rem;
+  --sidebar-width: 7rem;
   --star-flash-duration: 0.7s;
   --vid-grd-col-gap: 1rem;
 }
@@ -497,6 +497,9 @@ html  {
   text-align: center;
   text-decoration: none;
 }
+.sidebar__link svg {
+  width: 75%;
+}
 .sidebar__link:visited {
   color: #8300cc;
   text-decoration: none;
@@ -693,298 +696,6 @@ html  {
   animation-delay: 2s;
   stroke-width: 0.1;
 }
-@keyframes shardfly25 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 5, 8');
-  }
-}
-@keyframes shardfly24 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 5, 3');
-  }
-}
-@keyframes shardfly23 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 5, 15');
-  }
-}
-@keyframes shardfly22 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 15, 15');
-  }
-}
-@keyframes shardfly21 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 15, 5');
-  }
-}
-@keyframes shardfly20 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 5, 5');
-  }
-}
-@keyframes shardfly19 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -10, -5');
-  }
-}
-@keyframes shardfly18 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 40, 30');
-  }
-}
-@keyframes shardfly17 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 40, -10');
-  }
-}
-@keyframes shardfly16 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -30, -10');
-  }
-}
-@keyframes shardfly15 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -20, -10');
-  }
-}
-@keyframes shardfly14 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 8, -10');
-  }
-}
-@keyframes shardfly13 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 5, -10');
-  }
-}
-@keyframes shardfly12 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 10, -5');
-  }
-}
-@keyframes shardfly11 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -50, 25');
-  }
-}
-@keyframes shardfly10 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -25, 5');
-  }
-}
-@keyframes shardfly9 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -45, 10');
-  }
-}
-@keyframes shardfly8 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -25, 23');
-  }
-}
-@keyframes drill_bit {
-  0% {
-    offset-path: path('M 0,0');
-  }
-  10% {
-    offset-path: path('M 0.75,-0.025');
-  }
-  15% {
-    offset-path: path('M 0.47,-0.16');
-  }
-  20% {
-    offset-path: path('M 1.44,-0.48');
-  }
-  30% {
-    offset-path: path('M 0.945,-0.315');
-  }
-  46% {
-    offset-path: path('M 1.5,-0.5');
-  }
-  48% {
-    offset-path: path('M 1.05,-0.35');
-  }
-  50% {
-    offset-path: path('M 1.5,-0.5');
-  }
-  55% {
-    offset-path: path('M 1.05,-0.35');
-  }
-  65% {
-    offset-path: path('M 3.05,-1');
-  }
-  80% {
-    offset-path: path('M 4,-1.4');
-  }
-  100% {
-    offset-path: path('M 0,0');
-  }
-}
-@keyframes drill_button {
-  0% {
-    offset-path: path('M 0,0');
-  }
-  10% {
-    offset-path: path('M -1, 0.35');
-  }
-  51% {
-    offset-path: path('M -100000, -100000');
-  }
-  89% {
-    offset-path: path('M -100000, -100000');
-  }
-  90% {
-    offset-path: path('M -1, 0.35');
-  }
-  100% {
-    offset-path: path('M 0,0');
-  }
-}
-@keyframes display_broken_circle {
-  from {
-    stroke-width: 0;
-  }
-  to {
-    stroke-width: 0.864;
-  }
-}
-@keyframes drill_hole {
-  from {
-  }
-  to {
-    stroke-width: 0;
-  }
-}
-@keyframes shardfly7 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -10, 34');
-  }
-}
-@keyframes shardfly6 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -28, 32');
-  }
-}
-@keyframes shardfly5 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -14, -8');
-  }
-}
-@keyframes shardfly4 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -3, -9');
-  }
-}
-@keyframes shardfly3 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M -3, -12');
-  }
-}
-@keyframes shardfly2 {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 3, 30');
-  }
-}
-@keyframes shardfly {
-  from {
-    offset-path: path('M 0,0');
-  }
-  to {
-    offset-path: path('M 6, 30');
-  }
-}
-@keyframes drill {
-  to {
-   transform: rotate(25deg); 
-  }
-}
-@keyframes drill_translate {
-  0% {
-    offset-path: path('M 0,0');
-  }
-  50% {
-    offset-path: path('M 1.5,-0.5');
-  }
-  80% {
-    offset-path: path('M 4,-1.4');
-  }
-  100% {
-    offset-path: path('M 0,0');
-  }
-}
 .sidebar__link--home {
   display: block;
   color: #8300cc;
@@ -994,9 +705,6 @@ html  {
   margin-bottom: 1em;
   text-align: center;
   text-decoration: none;
-}
-.sidebar__link--home-div {
-  font-size: 1.5rem;
 }
 .sidebar__link--about-me:hover 
 .sidebar__link--about-me-mustache{
@@ -1644,5 +1352,300 @@ html  {
   }
   to {
     transform: rotate(-360deg);
+  }
+}
+
+
+
+@keyframes shardfly25 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 5, 8');
+  }
+}
+@keyframes shardfly24 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 5, 3');
+  }
+}
+@keyframes shardfly23 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 5, 15');
+  }
+}
+@keyframes shardfly22 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 15, 15');
+  }
+}
+@keyframes shardfly21 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 15, 5');
+  }
+}
+@keyframes shardfly20 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 5, 5');
+  }
+}
+@keyframes shardfly19 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -10, -5');
+  }
+}
+@keyframes shardfly18 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 40, 30');
+  }
+}
+@keyframes shardfly17 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 40, -10');
+  }
+}
+@keyframes shardfly16 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -30, -10');
+  }
+}
+@keyframes shardfly15 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -20, -10');
+  }
+}
+@keyframes shardfly14 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 8, -10');
+  }
+}
+@keyframes shardfly13 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 5, -10');
+  }
+}
+@keyframes shardfly12 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 10, -5');
+  }
+}
+@keyframes shardfly11 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -50, 25');
+  }
+}
+@keyframes shardfly10 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -25, 5');
+  }
+}
+@keyframes shardfly9 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -45, 10');
+  }
+}
+@keyframes shardfly8 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -25, 23');
+  }
+}
+@keyframes drill_bit {
+  0% {
+    offset-path: path('M 0,0');
+  }
+  10% {
+    offset-path: path('M 0.75,-0.025');
+  }
+  15% {
+    offset-path: path('M 0.47,-0.16');
+  }
+  20% {
+    offset-path: path('M 1.44,-0.48');
+  }
+  30% {
+    offset-path: path('M 0.945,-0.315');
+  }
+  46% {
+    offset-path: path('M 1.5,-0.5');
+  }
+  48% {
+    offset-path: path('M 1.05,-0.35');
+  }
+  50% {
+    offset-path: path('M 1.5,-0.5');
+  }
+  55% {
+    offset-path: path('M 1.05,-0.35');
+  }
+  65% {
+    offset-path: path('M 3.05,-1');
+  }
+  80% {
+    offset-path: path('M 4,-1.4');
+  }
+  100% {
+    offset-path: path('M 0,0');
+  }
+}
+@keyframes drill_button {
+  0% {
+    offset-path: path('M 0,0');
+  }
+  10% {
+    offset-path: path('M -1, 0.35');
+  }
+  51% {
+    offset-path: path('M -100000, -100000');
+  }
+  89% {
+    offset-path: path('M -100000, -100000');
+  }
+  90% {
+    offset-path: path('M -1, 0.35');
+  }
+  100% {
+    offset-path: path('M 0,0');
+  }
+}
+@keyframes display_broken_circle {
+  from {
+    stroke-width: 0;
+  }
+  to {
+    stroke-width: 0.864;
+  }
+}
+@keyframes drill_hole {
+  from {
+  }
+  to {
+    stroke-width: 0;
+  }
+}
+@keyframes shardfly7 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -10, 34');
+  }
+}
+@keyframes shardfly6 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -28, 32');
+  }
+}
+@keyframes shardfly5 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -14, -8');
+  }
+}
+@keyframes shardfly4 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -3, -9');
+  }
+}
+@keyframes shardfly3 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M -3, -12');
+  }
+}
+@keyframes shardfly2 {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 3, 30');
+  }
+}
+@keyframes shardfly {
+  from {
+    offset-path: path('M 0,0');
+  }
+  to {
+    offset-path: path('M 6, 30');
+  }
+}
+@keyframes drill {
+  to {
+   transform: rotate(25deg); 
+  }
+}
+@keyframes drill_translate {
+  0% {
+    offset-path: path('M 0,0');
+  }
+  50% {
+    offset-path: path('M 1.5,-0.5');
+  }
+  80% {
+    offset-path: path('M 4,-1.4');
+  }
+  100% {
+    offset-path: path('M 0,0');
   }
 }
