@@ -486,10 +486,6 @@ html  {
   bottom: 0;
   width: var(--sidebar-width);
 }
-.sidebar__button {
-  display: block;
-  margin: auto auto 0.2rem;
-}
 .sidebar__link {
 /* $ text-decoration tas bort för att göra länkarna finare $ */
   display: block;
