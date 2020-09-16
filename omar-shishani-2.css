@@ -1647,3 +1647,19 @@ html  {
     offset-path: path('M 0,0');
   }
 }
+
+.blue-theme--sidebar {
+  background-color:rgb(116, 78, 255) !important;
+}
+.blue-theme--windows {
+  background-color:rgb(138, 183, 255) !important;
+}
+.blue-theme--background {
+  background-color:rgb(52, 31, 128) !important;
+}
+.timer__button--blue-theme{
+  width: 20em; 
+  height: 15em;
+  display: block;
+  margin-top: 2em; 
+}

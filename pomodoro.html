@@ -18,6 +18,23 @@
     let idClicked;
     $(document).ready(
       function(){
+        $('.timer__button--blue-theme')
+          .mouseenter(function(){
+            $('aside').addClass('blue-theme--sidebar');
+            $('.header, .text-main__content, .footer, .footer__updated').addClass('blue-theme--windows');
+            $('.body--construction').addClass('blue-theme--background');
+          })
+          .mouseleave(function(){
+            $('aside').removeClass('blue-theme--sidebar');
+            $('.header, .text-main__content, .footer, .footer__updated').removeClass('blue-theme--windows');
+            $('.body--construction').removeClass('blue-theme--background');
+        });
+        $(".timer__button--page-style").click(function pageStyle(){
+          $('.header, .text-main__content, .footer, .footer__updated').css('background-color', `rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, 1`);
+          $('.sidebar').css('background-color', `rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, 1`);
+          $('.body--construction').css('background-color', `rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, 1`);
+        });
+
         $(".timer__button").click(
           function timer(e){
             idClicked = e.target.id;
@@ -107,6 +124,8 @@
             
             <button id="timer-button-tequila" class="timer__button">Start Timer (Tequila)</button>
             <button id="timer-button-forest" class="timer__button">Start Timer (Forest Birds)</button>
+            <button class="timer__button--page-style">Change Page Style</button>
+            <button class="timer__button--blue-theme">Blue Theme</button>
 					</div>
         </div>			
         
