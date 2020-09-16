@@ -111,7 +111,7 @@ html  {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-  font-family: source_sans_probold;
+  font-family: source_sans_probold, sans-serif;
   height: var(--footer-height);
   padding: 1em;
   margin-left: var(--sidebar-width);
