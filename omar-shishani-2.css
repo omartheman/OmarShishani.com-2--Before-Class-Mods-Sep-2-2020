@@ -823,9 +823,8 @@ html  {
 }
 .text-main__icon--ps {
   float: right;
-  height: 3.1rem;
+  height: 3rem;
   margin: 0.4rem 0.1rem 0.3rem;
-  width: 3rem;
 }
 .text-main__list-nested {
   padding: 0 0 0 0.8rem;
