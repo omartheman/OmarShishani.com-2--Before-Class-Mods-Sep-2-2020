@@ -890,8 +890,8 @@ html  {
 	line-height: 2em;
 }
 @font-face {
-/* $ Comfortaa inkluderas som en font-face, ifall Google Fonts länk fungerar inte $ */
     font-family: 'Comfortaa';
+    font-display: swap;
     src: url('fonts/comfortaa-variablefont_wght-webfont.woff2') format('woff2'),
          url('fonts/comfortaa-variablefont_wght-webfont.woff') format('woff');
     font-weight: normal;
@@ -899,11 +899,13 @@ html  {
 }
 @font-face {
       font-family: 'Century Gothic 600';
+    font-display: swap;
       src: local('Century Gothic');
       font-weight: 500;
 }
 @font-face {
     font-family: 'source_sans_probold';
+    font-display: swap;
     src: url('fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
          url('fonts/sourcesanspro-bold-webfont.woff') format('woff');
     font-weight: normal;
@@ -911,6 +913,7 @@ html  {
 }
 @font-face {
     font-family: 'source_sans_proregular';
+    font-display: swap;
     src: url('fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
          url('fonts/sourcesanspro-regular-webfont.woff') format('woff');
     font-weight: normal;
