@@ -69,6 +69,14 @@ html  {
     left: calc(50% + var(--sidebar-width)/2 - 75px/2);
   width: 75px;
 }
+.button--scroll-down-text {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
 .button-style-1 {
   animation: rainbow-light infinite 5s;
   animation-timing-function: linear;
