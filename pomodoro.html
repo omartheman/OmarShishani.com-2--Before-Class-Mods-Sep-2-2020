@@ -197,7 +197,7 @@
         setTimeout(() => {
           new_star_left = Math.random()*97;
           animation_number = Math.ceil(Math.random()*4);
-          star_delay = Math.random()*20000;
+          star_delay = 7000;
           star_color_random_id = Math.ceil(Math.random()*2);
           star_color = `rgb(255, ${Math.floor(Math.random()*255)}, 0)`;
           star_fall_distance = '150vh'
@@ -208,27 +208,20 @@
             star_color = `rgb(255, 0, ${Math.round(Math.random()*255)})`;
           }
 
-          // console.log(new_star_left)
-          // console.log(animation_number)
-          // console.log(star_delay)
-          // console.log(star_color_random_id)
-          // console.log(i)
-          // console.log(star_color)
           $('.main').prepend(
             `<svg class="timer__star timer__star__${i} timer__star--rotate" style="animation: star_rotate_${animation_number} 20s forwards; left:${new_star_left}%"${starSVG}fill="${star_color}" stroke="#000" stroke-width=".16008"/>
             </g>
             </svg>`
           )
-          // console.log(`.timer__star__${i}`)
-          // console.log(star_fall_distance)
           $(`.timer__star__${i}`).animate({
             top: `${star_fall_distance}`
           }, 7000);
+          starVanish(i, star_delay);  
           i++
-          if (i < 200){
+          if (i < 1000){
             createStar()
           }
-        }, 1000)
+        }, 100)
       }
 
       function newSVG(){
@@ -262,14 +255,13 @@
           }
             
 
-          // function doSetTimeout(i, star_delay){
-          //   setTimeout(function(){
-          //     $(`.timer__star__${i}`).css('display', 'none');
-          //   }, 7000 + star_delay);
-          // };
-          // doSetTimeout(star_delay);
 
         
+      };
+      function starVanish(i, star_delay){
+        setTimeout(function(){
+          $(`.timer__star__${i}`).css('display', 'none');
+        }, star_delay);
       };
     </script>
 	</body>
