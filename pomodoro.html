@@ -51,7 +51,7 @@
         $(".timer__button--reset").click(function(){
           if (timerOnOffChecker === 1) {
           timerReset = 1;
-          timerOnOffChecker = 0;
+          timerOnOffChecker *= -1;
           console.log("reset clicked");
           };
         });
