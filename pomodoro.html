@@ -193,7 +193,7 @@
       let airhorn = new Audio("audio/airhorn.mp3");
       let i = 1;
       
-      function createStar(new_star_left, animation_number, star_color, star_fall_distance) {
+      function createStar() {
         setTimeout(() => {
           new_star_left = Math.random()*97;
           animation_number = Math.ceil(Math.random()*4);
@@ -229,34 +229,29 @@
         let star_num;
         let star_delay;
         let star_color;
-
-          new_star_left = Math.random()*97;
-          animation_number = Math.ceil(Math.random()*4);
-          star_delay = Math.random()*20000;
-          star_color_random_id = Math.ceil(Math.random()*2);
-          
-          if (idClicked === "timer-button-forest") {
-            if (star_color_random_id === 1){
-              star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
-            } else {
-              star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
-            }
-          }
-
-          if (idClicked === "timer-button-tequila") {
-
-            createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-
-
-          } else if (idClicked === "timer-button-forest") {
-            $('.main').prepend(
-              `<svg class="timer__star timer__star__${i} timer__star--rotate" style="animation: star_rotate_${animation_number} 20s forwards; left:${new_star_left}%" width="30" height="30" version="1.1" viewBox="0 0 7.9375 7.9375" xmlns="http://www.w3.org/2000/svg">${leafSVG1}fill="${star_color}"${leafSVG2}`
-            );
-          }
-            
-
-
+        new_star_left = Math.random()*97;
+        animation_number = Math.ceil(Math.random()*4);
+        star_delay = Math.random()*20000;
+        star_color_random_id = Math.ceil(Math.random()*2);
         
+        if (idClicked === "timer-button-forest") {
+          if (star_color_random_id === 1){
+            star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
+          } else {
+            star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
+          }
+        }
+
+        if (idClicked === "timer-button-tequila") {
+
+          createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
+
+
+        } else if (idClicked === "timer-button-forest") {
+          $('.main').prepend(
+            `<svg class="timer__star timer__star__${i} timer__star--rotate" style="animation: star_rotate_${animation_number} 20s forwards; left:${new_star_left}%" width="30" height="30" version="1.1" viewBox="0 0 7.9375 7.9375" xmlns="http://www.w3.org/2000/svg">${leafSVG1}fill="${star_color}"${leafSVG2}`
+          );
+        }
       };
       function starVanish(i, star_delay){
         setTimeout(function(){
