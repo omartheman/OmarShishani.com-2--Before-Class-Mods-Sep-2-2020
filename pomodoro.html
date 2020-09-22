@@ -107,8 +107,8 @@
       let audio_tequila = new Audio("audio/tequila.mp3");
       let audio_forest = new Audio("audio/forest.mp3");
       let airhorn = new Audio("audio/airhorn.mp3");
-      
-      let timer = new Promise((resolve, reject) => {
+
+      let timer = new Promise(() => {
         timerOnOffChecker *= -1;
         audio_tequila.pause();
         audio_tequila.currentTime = 0;
@@ -169,9 +169,7 @@
               newSVG();
             }
             $('.timer__star').toggleClass('timer__star--rotate');
-            $('.timer__star').animate({
-              top: `${star_fall_distance}`
-            }, 7000);  
+            $('.timer__star').animate({top: `${star_fall_distance}`}, 7000);  
           } 
         }, 1000);
       })
