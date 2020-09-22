@@ -103,17 +103,19 @@
       let idClicked;
       let timerReset = 0;
       let timerOnOffChecker = -1;
-
-      function timer(){
+    
+      let audio_tequila = new Audio("audio/tequila.mp3");
+      let audio_forest = new Audio("audio/forest.mp3");
+      let airhorn = new Audio("audio/airhorn.mp3");
+      
+      let timer = new Promise((resolve, reject) => {
         timerOnOffChecker *= -1;
-
         audio_tequila.pause();
         audio_tequila.currentTime = 0;
         airhorn.pause();
         airhorn.currentTime = 0;
         audio_forest.pause();
         audio_forest.currentTime = 0;
-
         $(".text-main--timer").css('display', 'block');
         let hours = $(".timer__hours-input").val();
         let minutes = $(".timer__minutes-input").val();
@@ -122,7 +124,10 @@
         if (minutes == "") {minutes = 0;};
         if (seconds == "") {seconds = 0;};
         let timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-        $(".timer__display-text").html(timeRemaining);  
+        $(".timer__display-text").html(timeRemaining);
+      })
+
+      timer.then(() => {
         let timer_sec = setInterval(function(){
           if (timerReset === 1) {
             timerReset = 0;
@@ -169,8 +174,8 @@
             }, 7000);  
           } 
         }, 1000);
-      }
-    
+      })
+
       $(document).ready(
         function(){
           $(".timer__button--reset").click(function(){
@@ -283,9 +288,6 @@
 		<script id="omarJavascript" src="omar-shishani-2.js"></script>
     <script src="construction-top-button.js"></script>
     <script>
-      let audio_tequila = new Audio("audio/tequila.mp3");
-      let audio_forest = new Audio("audio/forest.mp3");
-      let airhorn = new Audio("audio/airhorn.mp3");
       let i = 1;
       
       let createStar = () => {
