@@ -103,6 +103,74 @@
       let idClicked;
       let timerReset = 0;
       let timerOnOffChecker = -1;
+
+      function timer(){
+        timerOnOffChecker *= -1;
+
+        audio_tequila.pause();
+        audio_tequila.currentTime = 0;
+        airhorn.pause();
+        airhorn.currentTime = 0;
+        audio_forest.pause();
+        audio_forest.currentTime = 0;
+
+        $(".text-main--timer").css('display', 'block');
+        let hours = $(".timer__hours-input").val();
+        let minutes = $(".timer__minutes-input").val();
+        let seconds = $(".timer__seconds-input").val();
+        if (hours == "") {hours = 0;};
+        if (minutes == "") {minutes = 0;};
+        if (seconds == "") {seconds = 0;};
+        let timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
+        $(".timer__display-text").html(timeRemaining);  
+        let timer_sec = setInterval(function(){
+          if (timerReset === 1) {
+            timerReset = 0;
+            console.log('timer reset is set to '+timerReset);
+            clearInterval(timer_sec);
+            return;
+          }
+          timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
+          $(".timer__display-text").html(timeRemaining);  
+          if (hours >= 1 && minutes >= 1 && seconds <= 0) {
+            minutes--;
+            seconds = 59;
+            $(".timer__display-text").html(timeRemaining);  
+          } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
+            hours--;
+            minutes = 59; 
+            seconds = 59; 
+            $(".timer__display-text").html(timeRemaining); 
+          }
+          else if (minutes >= 1 && seconds <= 0) {
+            minutes--;
+            seconds = 59;
+            $(".timer__display-text").html(timeRemaining);  
+          } else if (minutes >= 1 && seconds >= 0) {
+            seconds--;
+            $(".timer__display-text").html(timeRemaining);  
+          } else if (minutes <= 1 && seconds > 0) {
+            seconds--;
+            $(".timer__display-text").html(timeRemaining);  
+          } else if (seconds <= 0) {
+            clearInterval(timer_sec);
+            $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
+            if (idClicked === "timer-button-tequila") {
+              audio_tequila.play();
+              airhorn.play();
+              newSVG();
+            } else if (idClicked === "timer-button-forest") {
+              audio_forest.play();
+              newSVG();
+            }
+            $('.timer__star').toggleClass('timer__star--rotate');
+            $('.timer__star').animate({
+              top: `${star_fall_distance}`
+            }, 7000);  
+          } 
+        }, 1000);
+      }
+    
       $(document).ready(
         function(){
           $(".timer__button--reset").click(function(){
@@ -137,14 +205,10 @@
           });
           $(".timer__button--resume").click(function(){
             console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
-  
-            if (timerOnOffChecker === -1) {
-            timerOnOffChecker *= -1;
-            console.log("Resume clicked");
-            };
+            timer();
           });
-          $(".timer__button").click(
-            function (e){
+          $(".timer__button, .timer__button--resume").click(
+            function(e){
               timerOnOffChecker *= -1;
               idClicked = e.target.id;
   
@@ -164,7 +228,7 @@
               if (seconds == "") {seconds = 0;};
               let timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
               $(".timer__display-text").html(timeRemaining);  
-              let timer_sec = setInterval(function(){
+              let timer_sec = setInterval(function (){
                 if (timerReset === 1) {
                   timerReset = 0;
                   console.log('timer reset is set to '+timerReset);
