@@ -193,7 +193,7 @@
       let airhorn = new Audio("audio/airhorn.mp3");
       let i = 1;
       
-      function createStar() {
+      let createStar = () => {
         setTimeout(() => {
           new_star_left = Math.random()*97;
           animation_number = Math.ceil(Math.random()*4);
