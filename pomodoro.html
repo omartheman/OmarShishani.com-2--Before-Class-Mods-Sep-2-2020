@@ -45,6 +45,8 @@
             <button id="timer-button-tequila" class="timer__button">Start Timer (Tequila)</button>
             <button id="timer-button-forest" class="timer__button">Start Timer (Forest Birds)</button>
             <button class="timer__button--reset">Reset Timer</button>
+            <button class="timer__button--pause">Pause Timer</button>
+            <button class="timer__button--resume">Resume Timer</button>
 					</div>
         </div>			
         
@@ -66,7 +68,6 @@
 					</div>
 				</a>
 			</div> <!-- <div class="main__section-construction-padded"></div> -->
-			
 			
 		</main>
     <script>
@@ -119,8 +120,31 @@
             console.log("reset clicked");
             };
           });
+          $(".timer__button--pause").click(function(){
+            console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
+            audio_tequila.pause();
+            audio_tequila.currentTime = 0;
+            airhorn.pause();
+            airhorn.currentTime = 0;
+            audio_forest.pause();
+            audio_forest.currentTime = 0;
+  
+            if (timerOnOffChecker === 1) {
+            timerReset = 1;
+            timerOnOffChecker *= -1;
+            console.log("pause clicked");
+            };
+          });
+          $(".timer__button--resume").click(function(){
+            console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
+  
+            if (timerOnOffChecker === -1) {
+            timerOnOffChecker *= -1;
+            console.log("Resume clicked");
+            };
+          });
           $(".timer__button").click(
-            function timer(e){
+            function (e){
               timerOnOffChecker *= -1;
               idClicked = e.target.id;
   
@@ -130,7 +154,6 @@
               airhorn.currentTime = 0;
               audio_forest.pause();
               audio_forest.currentTime = 0;
-  
   
               $(".text-main--timer").css('display', 'block');
               let hours = $(".timer__hours-input").val();
