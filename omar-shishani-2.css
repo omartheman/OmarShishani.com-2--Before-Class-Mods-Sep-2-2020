@@ -870,6 +870,7 @@ html  {
   width: 50%;
 }
 .timer__star {
+  pointer-events: none;
   position: absolute;
   top: -35px;
   overflow-y: hidden;
