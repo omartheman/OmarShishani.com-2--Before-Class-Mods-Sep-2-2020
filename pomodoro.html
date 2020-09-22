@@ -31,6 +31,15 @@
           function timer(e){
             timerOnOffChecker = 1;
             idClicked = e.target.id;
+
+            audio_tequila.pause();
+            audio_tequila.currentTime = 0;
+            airhorn.pause();
+            airhorn.currentTime = 0;
+            audio_forest.pause();
+            audio_forest.currentTime = 0;
+
+
             $(".text-main--timer").css('display', 'block');
             let hours = $(".timer__hours-input").val();
             let minutes = $(".timer__minutes-input").val();
