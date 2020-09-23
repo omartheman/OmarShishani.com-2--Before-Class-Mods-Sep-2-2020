@@ -33,76 +33,6 @@ let timerOnOffCheckerSwitcher = () => {
   }
   return
 };
-let timerCountdown = () => {
-  let timerInterval = setInterval(function (){
-    console.log('interval is running')
-    if (timerOnOffChecker === -1) {
-      clearInterval(timerInterval);
-      console.log('timer countdown cleared')
-      return
-    }
-    if (hours < 10 || minutes < 10 || seconds < 10) {
-      if (hours < 10){
-        placeHours = 0
-      } else {
-        placeHours = ""
-      }
-      if (minutes < 10){
-        placeMins = 0
-      } else {
-        placeMins = ""
-      }
-      if (seconds < 10) {
-        placeSecs = 0
-      } else {
-        placeSecs = ""
-      }
-    } 
-    timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
-    $(".text-main__grid-module--top").html(timeRemaining);  
-    if (hours >= 1 && minutes >= 1 && seconds <= 0) {
-      minutes--;
-      seconds = 59;
-      $(".timer__display-text").html(timeRemaining);  
-    } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
-      hours--;
-      minutes = 59; 
-      seconds = 59; 
-      $(".timer__display-text").html(timeRemaining); 
-    }
-    else if (minutes >= 1 && seconds <= 0) {
-      minutes--;
-      seconds = 59;
-      $(".timer__display-text").html(timeRemaining);  
-    } else if (minutes >= 1 && seconds >= 0) {
-      seconds--;
-      $(".timer__display-text").html(timeRemaining);  
-    } else if (minutes <= 1 && seconds > 0) {
-      seconds--;
-      $(".timer__display-text").html(timeRemaining);  
-    } else if (seconds <= 0) {
-      clearInterval(timerInterval);
-      timerOnOffChecker = -1;
-      $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
-      
-      for (var i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-          if (radios[i].value == "tequila") {
-            audio_tequila.play();
-            airhorn.play();
-            newSVG();
-          } else if (radios[i].value == "forest") {
-            audio_forest.play();
-            newSVG();
-          }
-          break;
-        }
-      }
-      $('.timer__star').toggleClass('timer__star--rotate');
-      $('.timer__star').animate({top: `${star_fall_distance}`}, 7000);  
-    } 
-  }, 1000);
-}
 
 
 let timerStartedChecker = -1;
@@ -180,6 +110,76 @@ $(document).ready(
     });
   }
 );
+let timerCountdown = () => {
+  let timerInterval = setInterval(function (){
+    console.log('interval is running')
+    if (timerOnOffChecker === -1) {
+      clearInterval(timerInterval);
+      console.log('timer countdown cleared')
+      return
+    }
+    if (hours < 10 || minutes < 10 || seconds < 10) {
+      if (hours < 10){
+        placeHours = 0
+      } else {
+        placeHours = ""
+      }
+      if (minutes < 10){
+        placeMins = 0
+      } else {
+        placeMins = ""
+      }
+      if (seconds < 10) {
+        placeSecs = 0
+      } else {
+        placeSecs = ""
+      }
+    } 
+    timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
+    $(".text-main__grid-module--top").html(timeRemaining);  
+    if (hours >= 1 && minutes >= 1 && seconds <= 0) {
+      minutes--;
+      seconds = 59;
+      $(".timer__display-text").html(timeRemaining);  
+    } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
+      hours--;
+      minutes = 59; 
+      seconds = 59; 
+      $(".timer__display-text").html(timeRemaining); 
+    }
+    else if (minutes >= 1 && seconds <= 0) {
+      minutes--;
+      seconds = 59;
+      $(".timer__display-text").html(timeRemaining);  
+    } else if (minutes >= 1 && seconds >= 0) {
+      seconds--;
+      $(".timer__display-text").html(timeRemaining);  
+    } else if (minutes <= 1 && seconds > 0) {
+      seconds--;
+      $(".timer__display-text").html(timeRemaining);  
+    } else if (seconds <= 0) {
+      clearInterval(timerInterval);
+      timerOnOffChecker = -1;
+      $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
+      
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+          if (radios[i].value == "tequila") {
+            audio_tequila.play();
+            airhorn.play();
+            newSVG();
+          } else if (radios[i].value == "forest") {
+            audio_forest.play();
+            newSVG();
+          }
+          break;
+        }
+      }
+      $('.timer__star').toggleClass('timer__star--rotate');
+      $('.timer__star').animate({top: `${star_fall_distance}`}, 7000);  
+    } 
+  }, 1000);
+}
 
 function newSVG(){
   new_star_left = Math.random()*97;
@@ -203,6 +203,9 @@ function newSVG(){
           star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
         } else {
           star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
+        }
+        if (timerOnOffChecker === -1) {
+          timerOnOffChecker *= -1;
         }
         console.log('radio is forest')
         createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
@@ -229,11 +232,6 @@ function newSVG(){
     console.log('idClicked is forest')
     createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
   }
-};
-function starVanish(i, star_delay){
-  setTimeout(function(){
-    $(`.timer__star__${i}`).css('display', 'none');
-  }, star_delay);
 };
 
 
@@ -264,6 +262,7 @@ let createStar = () => {
     starVanish(i, star_delay);  
     i++
     if (timerOnOffChecker === -1){ //Exits setTimeout if a pause button is clicked
+      console.log('returning from createstar becasue of onoff checker')
       return
     }
     if (i < 1000){
@@ -298,3 +297,9 @@ let createLeaf = () => {
     }
   }, 100)
 }
+
+function starVanish(i, star_delay){
+  setTimeout(function(){
+    $(`.timer__star__${i}`).css('display', 'none');
+  }, star_delay);
+};
