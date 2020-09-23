@@ -33,35 +33,16 @@ let timerOnOffCheckerSwitcher = () => {
   return
 };
 
-let timerStartedChecker = -1;
 $(document).ready(
   function mainTimerCountdownStarter(){
     $(".timer__button--play").click(function(e){
+      timerOnOffChecker *= -1;
+      console.log(`play clicked. Timeronoffchecker is now ${timerOnOffChecker}`)
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
 
-      if (timerStartedChecker === 1) {
-        if (hours === 0 && seconds === 0 && minutes === 0) {
-          hours = $(".timer__hours-input").val();
-          minutes = $(".timer__minutes-input").val();
-          seconds = $(".timer__seconds-input").val();
-          timerOnOffChecker *= -1;
-          console.log(`Play clicked, timerStartedChecker is ${timerStartedChecker}, hours, secs, and min....`)
-          timerCountdown();
-          return
-        } else {
-          // Resume
-          timerOnOffChecker *= -1;
-          console.log(`RESUMING timerOnOffChecker is now value: ${timerOnOffChecker}`)
-          timerCountdown();
-          audioPause();
-          return;
-        }
-      }
 
-      timerStartedChecker = 1;
-      timerOnOffChecker *= -1;
-      audioPause();
+
       hours = $(".timer__hours-input").val();
       minutes = $(".timer__minutes-input").val();
       seconds = $(".timer__seconds-input").val();
