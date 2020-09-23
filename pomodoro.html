@@ -106,6 +106,10 @@
       let minutes;
       let seconds;
       let timeRemaining;
+      let new_star_left;
+      let star_num;
+      let star_delay;
+      let star_color;
     
       let audio_tequila = new Audio("audio/tequila.mp3");
       let audio_forest = new Audio("audio/forest.mp3");
@@ -195,6 +199,15 @@
             audioPause();
             timerOnOffCheckerSwitcher();
             console.log("reset clicked");
+            $(".text-main--timer").css('display', 'block');
+            if (hours == "") {hours = 0};
+            if (minutes == "") {minutes = 0};
+            if (seconds == "") {seconds = 0};
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+            timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
+            $(".timer__display-text").html(timeRemaining);
           });
           $(".timer__button--pause").click(function(){
             console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
@@ -252,10 +265,6 @@
       }
 
       function newSVG(){
-        let new_star_left;
-        let star_num;
-        let star_delay;
-        let star_color;
         new_star_left = Math.random()*97;
         animation_number = Math.ceil(Math.random()*4);
         star_delay = Math.random()*20000;
