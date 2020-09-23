@@ -34,7 +34,6 @@ let timerOnOffCheckerSwitcher = () => {
   return
 };
 
-
 let timerStartedChecker = -1;
 $(document).ready(
   function mainTimerCountdownStarter(){
@@ -53,20 +52,16 @@ $(document).ready(
           return
         } else {
           // Resume
-          console.log(`RESUMING timerOnOffChecker is value: ${timerOnOffChecker}`)
           timerOnOffChecker *= -1;
+          console.log(`RESUMING timerOnOffChecker is now value: ${timerOnOffChecker}`)
           timerCountdown();
           audioPause();
           return;
-
         }
       }
 
       timerStartedChecker = 1;
-
       timerOnOffChecker *= -1;
-      idClicked = e.target.id;
-      console.log(e.target.id)
       audioPause();
       $(".text-main--timer").css('display', 'block');
       hours = $(".timer__hours-input").val();
@@ -110,9 +105,9 @@ $(document).ready(
     });
   }
 );
+
 let timerCountdown = () => {
   let timerInterval = setInterval(function (){
-    console.log('interval is running')
     if (timerOnOffChecker === -1) {
       clearInterval(timerInterval);
       console.log('timer countdown cleared')
@@ -186,7 +181,6 @@ function newSVG(){
   animation_number = Math.ceil(Math.random()*4);
   star_delay = Math.random()*20000;
   star_color_random_id = Math.ceil(Math.random()*2);
-  
 
   for (var i = 0, length = radios.length; i < length; i++) {
     if (radios[i].checked) {
