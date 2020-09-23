@@ -778,10 +778,9 @@ html  {
   grid-template-rows: calc(33%-(2em/3)) calc(33%-(2em/3)) calc(33%-(2em/3));
   grid-template-columns: calc(33%-(2em/3)) calc(33%-(2em/3)) calc(33%-(2em/3));
   grid-template-areas:
-    "top        top       top"
-    "hours-in   mins-in   secs-in"
-    "choice     choice    choice"
-    "foot       foot      foot";
+    "top    top   top"
+    "hours-in   mins-in    secs-in"
+    "foot   foot  foot";
   max-width: 100%;
 }
 .text-main__grid-module--input {
@@ -800,40 +799,22 @@ html  {
   width: auto;
 }
 .text-main__grid-module--hours-in {
+  background-color: lightblue;
   grid-area: hours-in;
   max-height: 100%;
   max-width: 100%;
   width: auto;
 }
-.text-main__grid-module--inputs{
-  background-color: lightgray;
-  border: 2px solid black;
-  padding: 5px;
-  border-radius: 10px;
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; 
-}
-.text-main__grid-module--inputs-form {
-  display: flex;
-  justify-content: space-evenly;
-}
 .text-main__grid-module--mins-in {
+  background-color: lightblue;
   grid-area: mins-in;
   max-height: 100%;
   max-width: 100%;
   width: auto;
 }
 .text-main__grid-module--secs-in {
-  grid-area: secs-in;
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
-}
-.text-main__grid-module--choice {
   background-color: lightblue;
-  grid-area: choice;
+  grid-area: secs-in;
   max-height: 100%;
   max-width: 100%;
   width: auto;

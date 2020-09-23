@@ -12,7 +12,6 @@ let star_color;
 let placeHours = ""
 let placeMins = ""
 let placeSecs = ""
-let radios = document.getElementsByName('timer-radio');
 
 let audio_tequila = new Audio("audio/tequila.mp3");
 let audio_forest = new Audio("audio/forest.mp3");
@@ -82,23 +81,7 @@ let timerCountdown = () => {
       $(".timer__display-text").html(timeRemaining);  
     } else if (seconds <= 0) {
       clearInterval(timerInterval);
-      timerOnOffChecker = -1;
       $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
-      
-      for (var i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-          if (radios[i].value == "tequila") {
-            audio_tequila.play();
-            airhorn.play();
-            newSVG();
-          } else if (radios[i].value == "forest") {
-            audio_forest.play();
-            newSVG();
-          }
-          break;
-        }
-      }
-
       if (idClicked === "timer-button-tequila") {
         audio_tequila.play();
         airhorn.play();
@@ -120,29 +103,15 @@ $(document).ready(
     $(".timer__button--play").click(function(e){
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
-
-      if (timerStartedChecker === 1) {
-        if (hours === 0 && seconds === 0 && minutes === 0) {
-          hours = $(".timer__hours-input").val();
-          minutes = $(".timer__minutes-input").val();
-          seconds = $(".timer__seconds-input").val();
-          timerOnOffChecker *= -1;
-          console.log('timer checker is ' + timerOnOffChecker)
-          timerCountdown();
-          return
-        } else {
-          // Resume
-          console.log(`RESUMING timerOnOffChecker is value: ${timerOnOffChecker}`)
-          timerOnOffChecker *= -1;
-          timerCountdown();
-          audioPause();
-          return;
-
-        }
+      if (timerOnOffChecker === 1) {
+        // Resume
+        console.log(`RESUMING timerOnOffChecker is value: ${timerOnOffChecker}`)
+        timerOnOffChecker *= -1;
+        timerStartedChecker *= -1;
+        timerCountdown();
+        audioPause();
       }
-
-      timerStartedChecker = 1;
-
+      timerStartedChecker *= -1;
       timerOnOffChecker *= -1;
       idClicked = e.target.id;
       console.log(e.target.id)
@@ -258,30 +227,6 @@ function newSVG(){
   star_delay = Math.random()*20000;
   star_color_random_id = Math.ceil(Math.random()*2);
   
-
-  for (var i = 0, length = radios.length; i < length; i++) {
-    if (radios[i].checked) {
-      // do whatever you want with the checked radio
-      if (radios[i].value == "tequila") {
-        console.log('value is tequlia')
-        if (timerOnOffChecker === -1) {
-          timerOnOffChecker *= -1;
-        }
-        console.log('newSVG entered, idClicked is tequila, run animation createStar')
-        createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-      } else if (radios[i].value == "forest") {
-        if (star_color_random_id === 1){
-          star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
-        } else {
-          star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
-        }
-        console.log('idClicked is forest')
-        createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-      }
-      break;
-    }
-  }
-
   if (idClicked === "timer-button-forest") {
     if (star_color_random_id === 1){
       star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
