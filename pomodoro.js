@@ -36,6 +36,9 @@ let timerOnOffCheckerSwitcher = () => {
 $(document).ready(
   function mainTimerCountdownStarter(){
     $(".timer__button--play").click(function(e){
+
+      
+      console.log('displayed')
       timerOnOffChecker *= -1;
       console.log(`play clicked. Timeronoffchecker is now ${timerOnOffChecker}`)
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
@@ -115,25 +118,25 @@ let timerCountdown = () => {
     timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
     $(".text-main__grid-module--top").html(timeRemaining);  
     if (hours >= 1 && minutes >= 1 && seconds <= 0) {
+      $(".timer__display-text").html(timeRemaining);  
       minutes--;
       seconds = 59;
-      $(".timer__display-text").html(timeRemaining);  
     } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
+      $(".timer__display-text").html(timeRemaining);
       hours--;
       minutes = 59; 
-      seconds = 59; 
-      $(".timer__display-text").html(timeRemaining); 
+      seconds = 59;  
     }
     else if (minutes >= 1 && seconds <= 0) {
+      $(".timer__display-text").html(timeRemaining);  
       minutes--;
       seconds = 59;
-      $(".timer__display-text").html(timeRemaining);  
     } else if (minutes >= 1 && seconds >= 0) {
-      seconds--;
-      $(".timer__display-text").html(timeRemaining);  
+      $(".timer__display-text").html(timeRemaining); 
+      seconds--; 
     } else if (minutes <= 1 && seconds > 0) {
-      seconds--;
-      $(".timer__display-text").html(timeRemaining);  
+      $(".timer__display-text").html(timeRemaining); 
+      seconds--; 
     } else if (seconds <= 0) {
       if (timerOnOffChecker === -1) {
         hours = $(".timer__hours-input").val();
