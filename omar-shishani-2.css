@@ -820,6 +820,7 @@ html  {
   width: auto;
 }
 .text-main__grid-module--foot {
+  align-items: center; 
   justify-content: center;
   background-color: lightcyan;
   display: flex;
@@ -936,15 +937,18 @@ html  {
   text-align: center;
   width: 50%;
 }
-.timer__button--play {
-
+.timer__button--svg {
+  border-radius: 50%;
+  display: block;
+}
+.timer__button:hover {
+  box-shadow: 0px 0px 5px 0.2px black;
+  border-radius: 50%;
 }
 .timer__button--clicked {
   display: none;
 }
 .timer__button--coverer {
-  background-color: red;
-  opacity: 0.5;
   height: 75px;
   position: absolute;
   width: 75px;

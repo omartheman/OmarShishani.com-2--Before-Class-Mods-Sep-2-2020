@@ -96,11 +96,22 @@ let timerCountdown = () => {
   }, 1000);
 }
 
+
+let timerStartedChecker = -1;
 $(document).ready(
   function mainTimerCountdownStarter(){
     $(".timer__button--play").click(function(e){
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
+      if (timerOnOffChecker === 1) {
+        // Resume
+        console.log(`RESUMING timerOnOffChecker is value: ${timerOnOffChecker}`)
+        timerOnOffChecker *= -1;
+        timerStartedChecker *= -1;
+        timerCountdown();
+        audioPause();
+      }
+      timerStartedChecker *= -1;
       timerOnOffChecker *= -1;
       idClicked = e.target.id;
       console.log(e.target.id)
