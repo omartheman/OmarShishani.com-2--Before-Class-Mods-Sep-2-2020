@@ -784,8 +784,12 @@ html  {
   max-width: 100%;
 }
 .text-main__grid-module--input {
-  width: 90%;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
   max-width: 100%;
+  margin: auto;
+  width: 90%;
 }
 .text-main__grid-module--top {
   background-color: pink;
@@ -823,6 +827,10 @@ html  {
   max-height: 100%;
   max-width: 100%;
   width: auto;
+}
+.text-main__grid-module--timer-display{
+  display: flex;
+  justify-content: center;
 }
 .text-main__grid--style-2 {
   display: grid; 
@@ -928,7 +936,13 @@ html  {
   text-align: center;
   width: 50%;
 }
-.timer__button--tequila-svg-coverer {
+.timer__button--play {
+
+}
+.timer__button--clicked {
+  display: none;
+}
+.timer__button--coverer {
   background-color: red;
   opacity: 0.5;
   height: 75px;
@@ -949,9 +963,12 @@ html  {
   margin-bottom: 0.5em;
 }
 .timer__span--values {
+  font-size: 4rem;
   font-weight: bold;
 }
 .timer__titles {
+  display: flex;
+  justify-content: center;
   margin: 0;
 }
 .welcome-text {

@@ -9,6 +9,9 @@ let new_star_left;
 let star_num;
 let star_delay;
 let star_color;
+let placeHours = ""
+let placeMins = ""
+let placeSecs = ""
 
 let audio_tequila = new Audio("audio/tequila.mp3");
 let audio_forest = new Audio("audio/forest.mp3");
@@ -37,8 +40,25 @@ let timerCountdown = () => {
       console.log('timer countdown cleared')
       return
     }
-    timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-    $(".timer__display-text").html(timeRemaining);  
+    if (hours < 10 || minutes < 10 || seconds < 10) {
+      if (hours < 10){
+        placeHours = 0
+      } else {
+        placeHours = ""
+      }
+      if (minutes < 10){
+        placeMins = 0
+      } else {
+        placeMins = ""
+      }
+      if (seconds < 10) {
+        placeSecs = 0
+      } else {
+        placeSecs = ""
+      }
+    } 
+    timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
+    $(".text-main__grid-module--top").html(timeRemaining);  
     if (hours >= 1 && minutes >= 1 && seconds <= 0) {
       minutes--;
       seconds = 59;
@@ -78,7 +98,9 @@ let timerCountdown = () => {
 
 $(document).ready(
   function mainTimerCountdownStarter(){
-    $(".timer__button").click(function(e){
+    $(".timer__button--play").click(function(e){
+      document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
+      document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
       timerOnOffChecker *= -1;
       idClicked = e.target.id;
       console.log(e.target.id)
@@ -110,6 +132,8 @@ $(document).ready(
       $(".timer__display-text").html(timeRemaining);
     });
     $(".timer__button--pause").click(function(){
+      document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
+      document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
       audioPause();
       timerOnOffCheckerSwitcher();
