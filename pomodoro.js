@@ -17,6 +17,11 @@ let radios = document.getElementsByName('timer-radio');
 let audio_tequila = new Audio("audio/tequila.mp3");
 let audio_forest = new Audio("audio/forest.mp3");
 let airhorn = new Audio("audio/airhorn.mp3");
+ 
+let showTimeRemaining = () => {
+  timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
+  $(".text-main__grid-module--top").html(timeRemaining);  
+}
 
 let audioPause = () => {
   audio_tequila.pause();
@@ -27,10 +32,31 @@ let audioPause = () => {
   audio_forest.currentTime = 0;
 }
 
+let timerPlaceholderZeros = () => {
+  if (hours < 10 || minutes < 10 || seconds < 10) {
+    if (hours < 10){
+      placeHours = 0
+    } else {
+      placeHours = ""
+    }
+    if (minutes < 10){
+      placeMins = 0
+    } else {
+      placeMins = ""
+    }
+    if (seconds < 10) {
+      placeSecs = 0
+    } else {
+      placeSecs = ""
+    }
+  }
+}
 $(document).ready(
   function mainTimerCountdownStarter(){
     $(".timer__button--play").click(function(e){
       timerOnOffChecker *= -1;
+      timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
+      $(".text-main__grid-module--top").html(timeRemaining);  
       console.log(`play clicked. Timeronoffchecker is now ${timerOnOffChecker}`)
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
@@ -85,41 +111,29 @@ let timerCountdown = () => {
       console.log('timer countdown cleared')
       return
     }
-    if (hours < 10 || minutes < 10 || seconds < 10) {
-      if (hours < 10){
-        placeHours = 0
-      } else {
-        placeHours = ""
-      }
-      if (minutes < 10){
-        placeMins = 0
-      } else {
-        placeMins = ""
-      }
-      if (seconds < 10) {
-        placeSecs = 0
-      } else {
-        placeSecs = ""
-      }
-    } 
-    timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
-    $(".text-main__grid-module--top").html(timeRemaining);  
+
+    timerPlaceholderZeros();
     if (hours >= 1 && minutes >= 1 && seconds <= 0) {
       minutes--;
       seconds = 59;
+      showTimeRemaining();
     } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
       hours--;
       minutes = 59; 
       seconds = 59;  
-    }
-    else if (minutes >= 1 && seconds <= 0) {
+      showTimeRemaining();
+    } else if (minutes >= 1 && seconds <= 0) {
       minutes--;
       seconds = 59;
+      showTimeRemaining();
     } else if (minutes >= 1 && seconds >= 0) {
       seconds--; 
+      showTimeRemaining();
     } else if (minutes <= 1 && seconds > 0) {
       seconds--; 
+      showTimeRemaining();
     } else if (seconds <= 0) {
+      showTimeRemaining();
       if (timerOnOffChecker === -1) {
         hours = $(".timer__hours-input").val();
         minutes = $(".timer__minutes-input").val();
