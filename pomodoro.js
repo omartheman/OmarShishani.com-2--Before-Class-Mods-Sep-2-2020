@@ -118,11 +118,13 @@ let timerStartedChecker = -1;
 $(document).ready(
   function mainTimerCountdownStarter(){
     $(".timer__button--play").click(function(e){
+      console.log('play clicked')
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
 
       if (timerStartedChecker === 1) {
         if (hours === 0 && seconds === 0 && minutes === 0) {
+          timerStartedChecker = 0;
           hours = $(".timer__hours-input").val();
           minutes = $(".timer__minutes-input").val();
           seconds = $(".timer__seconds-input").val();
@@ -174,6 +176,7 @@ $(document).ready(
       $(".timer__display-text").html(timeRemaining);
     });
     $(".timer__button--pause").click(function(){
+      console.log('pause clicked')
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
@@ -234,10 +237,12 @@ let createLeaf = () => {
     star_color = `rgb(255, ${Math.floor(Math.random()*255)}, 0)`;
     star_fall_distance = '150vh'
     
-
+    
     $('.main').prepend(
       `<svg class="timer__star timer__star__${i} timer__star--rotate" style="animation: star_rotate_${animation_number} 20s forwards; left:${new_star_left}%" width="30" height="30" version="1.1" viewBox="0 0 7.9375 7.9375" xmlns="http://www.w3.org/2000/svg">${leafSVG1}fill="${star_color}"${leafSVG2}`
     );
+
+    console.log('created leaf')
     $(`.timer__star__${i}`).animate({
       top: `${star_fall_distance}`
     }, 7000);
@@ -263,7 +268,7 @@ function newSVG(){
     if (radios[i].checked) {
       // do whatever you want with the checked radio
       if (radios[i].value == "tequila") {
-        console.log('value is tequlia')
+        console.log('radio is tequlia')
         if (timerOnOffChecker === -1) {
           timerOnOffChecker *= -1;
         }
@@ -275,7 +280,7 @@ function newSVG(){
         } else {
           star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
         }
-        console.log('idClicked is forest')
+        console.log('radio is forest')
         createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
       }
       break;
