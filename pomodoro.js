@@ -181,6 +181,61 @@ $(document).ready(
   }
 );
 
+function newSVG(){
+  new_star_left = Math.random()*97;
+  animation_number = Math.ceil(Math.random()*4);
+  star_delay = Math.random()*20000;
+  star_color_random_id = Math.ceil(Math.random()*2);
+  
+
+  for (var i = 0, length = radios.length; i < length; i++) {
+    if (radios[i].checked) {
+      // do whatever you want with the checked radio
+      if (radios[i].value == "tequila") {
+        console.log('radio is tequlia')
+        if (timerOnOffChecker === -1) {
+          timerOnOffChecker *= -1;
+        }
+        console.log('newSVG entered, idClicked is tequila, run animation createStar')
+        createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
+      } else if (radios[i].value == "forest") {
+        if (star_color_random_id === 1){
+          star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
+        } else {
+          star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
+        }
+        console.log('radio is forest')
+        createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
+      }
+      break;
+    }
+  }
+
+  if (idClicked === "timer-button-forest") {
+    if (star_color_random_id === 1){
+      star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
+    } else {
+      star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
+    }
+  }
+
+  if (idClicked === "timer-button-tequila") {
+    if (timerOnOffChecker === -1) {
+      timerOnOffChecker *= -1;
+    }
+    console.log('newSVG entered, idClicked is tequila, run animation createStar')
+    createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
+  } else if (idClicked === "timer-button-forest") {
+    console.log('idClicked is forest')
+    createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
+  }
+};
+function starVanish(i, star_delay){
+  setTimeout(function(){
+    $(`.timer__star__${i}`).css('display', 'none');
+  }, star_delay);
+};
+
 
 let i = 1;
 let createStar = () => {
@@ -243,58 +298,3 @@ let createLeaf = () => {
     }
   }, 100)
 }
-
-function newSVG(){
-  new_star_left = Math.random()*97;
-  animation_number = Math.ceil(Math.random()*4);
-  star_delay = Math.random()*20000;
-  star_color_random_id = Math.ceil(Math.random()*2);
-  
-
-  for (var i = 0, length = radios.length; i < length; i++) {
-    if (radios[i].checked) {
-      // do whatever you want with the checked radio
-      if (radios[i].value == "tequila") {
-        console.log('radio is tequlia')
-        if (timerOnOffChecker === -1) {
-          timerOnOffChecker *= -1;
-        }
-        console.log('newSVG entered, idClicked is tequila, run animation createStar')
-        createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-      } else if (radios[i].value == "forest") {
-        if (star_color_random_id === 1){
-          star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
-        } else {
-          star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
-        }
-        console.log('radio is forest')
-        createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-      }
-      break;
-    }
-  }
-
-  if (idClicked === "timer-button-forest") {
-    if (star_color_random_id === 1){
-      star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
-    } else {
-      star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
-    }
-  }
-
-  if (idClicked === "timer-button-tequila") {
-    if (timerOnOffChecker === -1) {
-      timerOnOffChecker *= -1;
-    }
-    console.log('newSVG entered, idClicked is tequila, run animation createStar')
-    createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-  } else if (idClicked === "timer-button-forest") {
-    console.log('idClicked is forest')
-    createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-  }
-};
-function starVanish(i, star_delay){
-  setTimeout(function(){
-    $(`.timer__star__${i}`).css('display', 'none');
-  }, star_delay);
-};
