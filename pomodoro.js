@@ -23,6 +23,11 @@ let showTimeRemaining = () => {
   $(".text-main__grid-module--top").html(timeRemaining);  
 }
 
+let changeBlankToZero = () => {
+  if (hours == "") {hours = 0};
+  if (minutes == "") {minutes = 0};
+  if (seconds == "") {seconds = 0};
+}
 let audioPause = () => {
   audio_tequila.pause();
   audio_tequila.currentTime = 0;
@@ -33,6 +38,9 @@ let audioPause = () => {
 }
 
 let timerPlaceholderZeros = () => {
+  placeHours = 0;
+  placeMins = 0;
+  placeSecs = 0;
   if (hours < 10 || minutes < 10 || seconds < 10) {
     if (hours < 10){
       placeHours = 0
@@ -60,6 +68,7 @@ $(document).ready(
         hours = $(".timer__hours-input").val();
         minutes = $(".timer__minutes-input").val();
         seconds = $(".timer__seconds-input").val();
+        changeBlankToZero();
         timerPlaceholderZeros();
         timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
         $(".text-main__grid-module--top").html(timeRemaining);
@@ -75,9 +84,7 @@ $(document).ready(
         hours = $(".timer__hours-input").val();
         minutes = $(".timer__minutes-input").val();
         seconds = $(".timer__seconds-input").val();
-        if (hours == "") {hours = 0};
-        if (minutes == "") {minutes = 0};
-        if (seconds == "") {seconds = 0};
+        changeBlankToZero();
         console.log('about to activate timerCountdown')
         timerCountdown();
       } else {
