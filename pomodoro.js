@@ -38,9 +38,6 @@ let audioPause = () => {
 }
 
 let timerPlaceholderZeros = () => {
-  placeHours = 0;
-  placeMins = 0;
-  placeSecs = 0;
   if (hours < 10 || minutes < 10 || seconds < 10) {
     if (hours < 10){
       placeHours = 0
