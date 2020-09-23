@@ -43,8 +43,7 @@ $(document).ready(
         if (hours == "") {hours = 0};
         if (minutes == "") {minutes = 0};
         if (seconds == "") {seconds = 0};
-        timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-        $(".timer__display-text").html(timeRemaining);  
+        console.log('about to activate timerCountdown')
         timerCountdown();
       } else {
         timerCountdown();
@@ -52,11 +51,7 @@ $(document).ready(
     });
     $(".timer__button--reset").click(function(){
       console.log('reset entered')
-      console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
       audioPause();
-      timerOnOffCheckerSwitcher();
-      console.log("reset clicked");
-      $(".text-main--timer").css('display', 'block');
       if (hours == "") {hours = 0};
       if (minutes == "") {minutes = 0};
       if (seconds == "") {seconds = 0};
@@ -86,6 +81,7 @@ $(document).ready(
 
 let timerCountdown = () => {
   let timerInterval = setInterval(function (){
+    console.log('timerCountdown interval entered')
     if (timerOnOffChecker === -1) {
       clearInterval(timerInterval);
       console.log('timer countdown cleared')

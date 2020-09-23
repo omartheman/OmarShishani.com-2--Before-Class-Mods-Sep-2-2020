@@ -781,8 +781,15 @@ html  {
     "top        top       top"
     "hours-in   mins-in   secs-in"
     "choice     choice    choice"
-    "foot       foot      foot";
+    "bot       foot      last";
   max-width: 100%;
+}
+.text-main__grid-module--reset {
+  background-color: pink;
+  grid-area: last;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
 }
 .text-main__grid-module--input {
   display: flex;
