@@ -103,36 +103,42 @@
       let idClicked;
       let timerReset = 0;
       let timerOnOffChecker = -1;
+      let hours;
+      let minutes;
+      let seconds;
+      let timeRemaining;
     
       let audio_tequila = new Audio("audio/tequila.mp3");
       let audio_forest = new Audio("audio/forest.mp3");
       let airhorn = new Audio("audio/airhorn.mp3");
-
-      let timer = new Promise(() => {
-        timerOnOffChecker *= -1;
+      
+      let audioPause = () => {
         audio_tequila.pause();
         audio_tequila.currentTime = 0;
         airhorn.pause();
         airhorn.currentTime = 0;
         audio_forest.pause();
         audio_forest.currentTime = 0;
-        $(".text-main--timer").css('display', 'block');
-        let hours = $(".timer__hours-input").val();
-        let minutes = $(".timer__minutes-input").val();
-        let seconds = $(".timer__seconds-input").val();
-        if (hours == "") {hours = 0;};
-        if (minutes == "") {minutes = 0;};
-        if (seconds == "") {seconds = 0;};
-        let timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-        $(".timer__display-text").html(timeRemaining);
-      })
-
-      timer.then(() => {
-        let timer_sec = setInterval(function(){
+      }
+      let timerOnOffCheckerSwitcher = () => {
+        console.log('Running timerOnOffCheckerSwitcher');
+        if (timerOnOffChecker === 1) {
+          timerReset = 1;
+          timerOnOffChecker *= -1;
+        }
+        return
+      };
+      let timerCountdown = () => {
+        let timerInterval = setInterval(function (){
+          console.log('interval is running')
+          if (timerOnOffChecker === -1) {
+            clearInterval(timerInterval);
+            return
+          }
           if (timerReset === 1) {
             timerReset = 0;
-            console.log('timer reset is set to '+timerReset);
-            clearInterval(timer_sec);
+            console.log('timer reset is set to ' + timerReset);
+            clearInterval(timerInterval);
             return;
           }
           timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
@@ -158,7 +164,7 @@
             seconds--;
             $(".timer__display-text").html(timeRemaining);  
           } else if (seconds <= 0) {
-            clearInterval(timer_sec);
+            clearInterval(timerCountdown);
             $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
             if (idClicked === "timer-button-tequila") {
               audio_tequila.play();
@@ -172,113 +178,43 @@
             $('.timer__star').animate({top: `${star_fall_distance}`}, 7000);  
           } 
         }, 1000);
-      })
+      }
 
       $(document).ready(
-        function(){
+        function mainTimerCountdownStarter(){
+          $(".timer__button").click(function(e){
+            timerOnOffChecker *= -1;
+            idClicked = e.target.id;
+            audioPause();
+            $(".text-main--timer").css('display', 'block');
+            hours = $(".timer__hours-input").val();
+            minutes = $(".timer__minutes-input").val();
+            seconds = $(".timer__seconds-input").val();
+            if (hours == "") {hours = 0};
+            if (minutes == "") {minutes = 0};
+            if (seconds == "") {seconds = 0};
+            timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
+            $(".timer__display-text").html(timeRemaining);  
+            timerCountdown();
+          });
           $(".timer__button--reset").click(function(){
             console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
-            audio_tequila.pause();
-            audio_tequila.currentTime = 0;
-            airhorn.pause();
-            airhorn.currentTime = 0;
-            audio_forest.pause();
-            audio_forest.currentTime = 0;
-  
-            if (timerOnOffChecker === 1) {
-            timerReset = 1;
-            timerOnOffChecker *= -1;
+            audioPause();
+            timerOnOffCheckerSwitcher();
             console.log("reset clicked");
-            };
           });
           $(".timer__button--pause").click(function(){
             console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
-            audio_tequila.pause();
-            audio_tequila.currentTime = 0;
-            airhorn.pause();
-            airhorn.currentTime = 0;
-            audio_forest.pause();
-            audio_forest.currentTime = 0;
-  
-            if (timerOnOffChecker === 1) {
-            timerReset = 1;
-            timerOnOffChecker *= -1;
+            audioPause();
+            timerOnOffCheckerSwitcher();
             console.log("pause clicked");
-            };
           });
           $(".timer__button--resume").click(function(){
             console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
-            timer();
+            timerOnOffChecker *= -1;
+            timerCountdown();
+            audioPause();
           });
-          $(".timer__button, .timer__button--resume").click(
-            function(e){
-              timerOnOffChecker *= -1;
-              idClicked = e.target.id;
-  
-              audio_tequila.pause();
-              audio_tequila.currentTime = 0;
-              airhorn.pause();
-              airhorn.currentTime = 0;
-              audio_forest.pause();
-              audio_forest.currentTime = 0;
-  
-              $(".text-main--timer").css('display', 'block');
-              let hours = $(".timer__hours-input").val();
-              let minutes = $(".timer__minutes-input").val();
-              let seconds = $(".timer__seconds-input").val();
-              if (hours == "") {hours = 0;};
-              if (minutes == "") {minutes = 0;};
-              if (seconds == "") {seconds = 0;};
-              let timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-              $(".timer__display-text").html(timeRemaining);  
-              let timer_sec = setInterval(function (){
-                if (timerReset === 1) {
-                  timerReset = 0;
-                  console.log('timer reset is set to '+timerReset);
-                  clearInterval(timer_sec);
-                  return;
-                }
-                timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-                $(".timer__display-text").html(timeRemaining);  
-                if (hours >= 1 && minutes >= 1 && seconds <= 0) {
-                  minutes--;
-                  seconds = 59;
-                  $(".timer__display-text").html(timeRemaining);  
-                } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
-                  hours--;
-                  minutes = 59; 
-                  seconds = 59; 
-                  $(".timer__display-text").html(timeRemaining); 
-                }
-                else if (minutes >= 1 && seconds <= 0) {
-                  minutes--;
-                  seconds = 59;
-                  $(".timer__display-text").html(timeRemaining);  
-                } else if (minutes >= 1 && seconds >= 0) {
-                  seconds--;
-                  $(".timer__display-text").html(timeRemaining);  
-                } else if (minutes <= 1 && seconds > 0) {
-                  seconds--;
-                  $(".timer__display-text").html(timeRemaining);  
-                } else if (seconds <= 0) {
-                  clearInterval(timer_sec);
-                  $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
-                  if (idClicked === "timer-button-tequila") {
-                    audio_tequila.play();
-                    airhorn.play();
-                    newSVG();
-                  } else if (idClicked === "timer-button-forest") {
-                    audio_forest.play();
-                    newSVG();
-                  }
-                  $('.timer__star').toggleClass('timer__star--rotate');
-                  $('.timer__star').animate({
-                    top: `${star_fall_distance}`
-                  }, 7000);  
-                } 
-              }, 1000);
-            }
-          )
         }
       );
     </script>
@@ -287,7 +223,6 @@
     <script src="construction-top-button.js"></script>
     <script>
       let i = 1;
-      
       let createStar = () => {
         setTimeout (() => {
           new_star_left = Math.random()*97;
