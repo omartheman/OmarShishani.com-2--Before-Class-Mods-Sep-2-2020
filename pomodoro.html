@@ -101,7 +101,6 @@
       
       let star_fall_distance;
       let idClicked;
-      let timerReset = 0;
       let timerOnOffChecker = -1;
       let hours;
       let minutes;
@@ -123,7 +122,6 @@
       let timerOnOffCheckerSwitcher = () => {
         console.log('Running timerOnOffCheckerSwitcher');
         if (timerOnOffChecker === 1) {
-          timerReset = 1;
           timerOnOffChecker *= -1;
         }
         return
@@ -133,13 +131,8 @@
           console.log('interval is running')
           if (timerOnOffChecker === -1) {
             clearInterval(timerInterval);
+            console.log('timer countdown cleared')
             return
-          }
-          if (timerReset === 1) {
-            timerReset = 0;
-            console.log('timer reset is set to ' + timerReset);
-            clearInterval(timerInterval);
-            return;
           }
           timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
           $(".timer__display-text").html(timeRemaining);  
