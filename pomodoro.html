@@ -43,7 +43,23 @@
               <input class="timer__input timer__seconds-input" type="number">
             </div>
             
+            
+            <svg id="timer-button-tequila" class="timer__button" width="75" height="75" version="1.1" viewBox="0 0 19.844 19.844" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(0 -277.16)" stroke="#0c0c0c" stroke-linecap="round" stroke-linejoin="round">
+               <circle cx="9.9504" cy="287.12" r="9.1002" fill="#fffafc" stroke-width=".863" style="paint-order:normal"/>
+               <path d="m15.633 287.24c1.95e-4 -0.0751-4.4614 2.5604-4.3962 2.523 0.06512-0.0374-4.4612 2.4853-4.3962 2.523 0.064927 0.0377 0.013361-5.1438 0.013166-5.0688-1.95e-4 0.0751 0.078287-5.1061 0.013166-5.0688-0.065122 0.0374 4.448 2.5835 4.3831 2.5458-0.06493-0.0377 4.3829 2.6208 4.3831 2.5458z" fill="#ff00d7" stroke-width=".6" style="paint-order:normal"/>
+              </g>
+            </svg>
+            <svg width="75" height="75" version="1.1" viewBox="0 0 19.844 19.844" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(0 -277.16)" stroke="#0c0c0c" stroke-linecap="round" stroke-linejoin="round">
+               <circle cx="9.9504" cy="287.12" r="9.1002" fill="#fffafc" stroke-width=".863" style="paint-order:normal"/>
+               <rect x="7.1187" y="283.22" width="1.7699" height="7.912" ry="1.1538" fill="#ff00d7" stroke-width=".6" style="paint-order:normal"/>
+               <rect x="10.946" y="283.22" width="1.7699" height="7.912" ry="1.1538" fill="#ff00d7" stroke-width=".6" style="paint-order:normal"/>
+              </g>
+            </svg>
+
             <button id="timer-button-tequila" class="timer__button">Start Timer (Tequila)</button>
+            
             <button id="timer-button-forest" class="timer__button">Start Timer (Forest Birds)</button>
             <button class="timer__button--reset">Reset Timer</button>
             <button class="timer__button--pause">Pause Timer</button>
@@ -71,228 +87,14 @@
 			</div> <!-- <div class="main__section-construction-padded"></div> -->
 			
     </main>
-    <script src="pomodoro.js"></script>
-    <script> 
-      let star_fall_distance;
-      let idClicked;
-      let timerOnOffChecker = -1;
-      let hours;
-      let minutes;
-      let seconds;
-      let timeRemaining;
-      let new_star_left;
-      let star_num;
-      let star_delay;
-      let star_color;
-    
-      let audio_tequila = new Audio("audio/tequila.mp3");
-      let audio_forest = new Audio("audio/forest.mp3");
-      let airhorn = new Audio("audio/airhorn.mp3");
-      
-      let audioPause = () => {
-        audio_tequila.pause();
-        audio_tequila.currentTime = 0;
-        airhorn.pause();
-        airhorn.currentTime = 0;
-        audio_forest.pause();
-        audio_forest.currentTime = 0;
-      }
-      let timerOnOffCheckerSwitcher = () => {
-        console.log('Running timerOnOffCheckerSwitcher');
-        if (timerOnOffChecker === 1) {
-          timerOnOffChecker *= -1;
-        }
-        return
-      };
-      let timerCountdown = () => {
-        let timerInterval = setInterval(function (){
-          console.log('interval is running')
-          if (timerOnOffChecker === -1) {
-            clearInterval(timerInterval);
-            console.log('timer countdown cleared')
-            return
-          }
-          timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-          $(".timer__display-text").html(timeRemaining);  
-          if (hours >= 1 && minutes >= 1 && seconds <= 0) {
-            minutes--;
-            seconds = 59;
-            $(".timer__display-text").html(timeRemaining);  
-          } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
-            hours--;
-            minutes = 59; 
-            seconds = 59; 
-            $(".timer__display-text").html(timeRemaining); 
-          }
-          else if (minutes >= 1 && seconds <= 0) {
-            minutes--;
-            seconds = 59;
-            $(".timer__display-text").html(timeRemaining);  
-          } else if (minutes >= 1 && seconds >= 0) {
-            seconds--;
-            $(".timer__display-text").html(timeRemaining);  
-          } else if (minutes <= 1 && seconds > 0) {
-            seconds--;
-            $(".timer__display-text").html(timeRemaining);  
-          } else if (seconds <= 0) {
-            clearInterval(timerInterval);
-            $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
-            if (idClicked === "timer-button-tequila") {
-              audio_tequila.play();
-              airhorn.play();
-              newSVG();
-            } else if (idClicked === "timer-button-forest") {
-              audio_forest.play();
-              newSVG();
-            }
-            $('.timer__star').toggleClass('timer__star--rotate');
-            $('.timer__star').animate({top: `${star_fall_distance}`}, 7000);  
-          } 
-        }, 1000);
-      }
-
-      $(document).ready(
-        function mainTimerCountdownStarter(){
-          $(".timer__button").click(function(e){
-            timerOnOffChecker *= -1;
-            idClicked = e.target.id;
-            audioPause();
-            $(".text-main--timer").css('display', 'block');
-            hours = $(".timer__hours-input").val();
-            minutes = $(".timer__minutes-input").val();
-            seconds = $(".timer__seconds-input").val();
-            if (hours == "") {hours = 0};
-            if (minutes == "") {minutes = 0};
-            if (seconds == "") {seconds = 0};
-            timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-            $(".timer__display-text").html(timeRemaining);  
-            timerCountdown();
-          });
-          $(".timer__button--reset").click(function(){
-            console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
-            audioPause();
-            timerOnOffCheckerSwitcher();
-            console.log("reset clicked");
-            $(".text-main--timer").css('display', 'block');
-            if (hours == "") {hours = 0};
-            if (minutes == "") {minutes = 0};
-            if (seconds == "") {seconds = 0};
-            hours = 0;
-            minutes = 0;
-            seconds = 0;
-            timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-            $(".timer__display-text").html(timeRemaining);
-          });
-          $(".timer__button--pause").click(function(){
-            console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
-            audioPause();
-            timerOnOffCheckerSwitcher();
-            console.log("pause clicked");
-          });
-          $(".timer__button--resume").click(function(){
-            console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
-            timerOnOffChecker *= -1;
-            timerCountdown();
-            audioPause();
-          });
-        }
-      );
-    </script>
+    <script src="pomodoro_svg.js"></script>
 		<script src="insert-to-dom.js"></script>
 		<script id="omarJavascript" src="omar-shishani-2.js"></script>
     <script src="construction-top-button.js"></script>
+    <script> 
+    </script>
+    <script src="pomodoro.js"></script>
     <script>
-      let i = 1;
-      let createStar = () => {
-        setTimeout (() => {
-          new_star_left = Math.random()*97;
-          animation_number = Math.ceil(Math.random()*4);
-          star_delay = 7000;
-          star_color_random_id = Math.ceil(Math.random()*2);
-          star_color = `rgb(255, ${Math.floor(Math.random()*255)}, 0)`;
-          star_fall_distance = '150vh'
-          
-          if (star_color_random_id === 1){
-            star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
-          } else {
-            star_color = `rgb(255, 0, ${Math.round(Math.random()*255)})`;
-          }
-
-          $('.main').prepend(
-            `<svg class="timer__star timer__star__${i} timer__star--rotate" style="animation: star_rotate_${animation_number} 20s forwards; left:${new_star_left}%"${starSVG}fill="${star_color}" stroke="#000" stroke-width=".16008"/>
-            </g>
-            </svg>`
-          )
-          $(`.timer__star__${i}`).animate({
-            top: `${star_fall_distance}`
-          }, 7000);
-          starVanish(i, star_delay);  
-          i++
-          if (timerOnOffChecker === -1){ //Exits setTimeout if a pause button is clicked
-            return
-          }
-          if (i < 1000){
-            createStar();
-          }
-        }, 100)
-      }
-      let createLeaf = () => {
-        setTimeout (() => {
-          new_star_left = Math.random()*97;
-          animation_number = Math.ceil(Math.random()*4);
-          star_delay = 7000;
-          star_color_random_id = Math.ceil(Math.random()*2);
-          star_color = `rgb(255, ${Math.floor(Math.random()*255)}, 0)`;
-          star_fall_distance = '150vh'
-          
-
-          $('.main').prepend(
-            `<svg class="timer__star timer__star__${i} timer__star--rotate" style="animation: star_rotate_${animation_number} 20s forwards; left:${new_star_left}%" width="30" height="30" version="1.1" viewBox="0 0 7.9375 7.9375" xmlns="http://www.w3.org/2000/svg">${leafSVG1}fill="${star_color}"${leafSVG2}`
-          );
-          $(`.timer__star__${i}`).animate({
-            top: `${star_fall_distance}`
-          }, 7000);
-          starVanish(i, star_delay);  
-          i++
-          if (timerOnOffChecker === -1){
-            return
-          }
-          if (i < 1000){
-            createLeaf()
-          }
-        }, 100)
-      }
-
-      function newSVG(){
-        new_star_left = Math.random()*97;
-        animation_number = Math.ceil(Math.random()*4);
-        star_delay = Math.random()*20000;
-        star_color_random_id = Math.ceil(Math.random()*2);
-        
-        if (idClicked === "timer-button-forest") {
-          if (star_color_random_id === 1){
-            star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
-          } else {
-            star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
-          }
-        }
-
-        if (idClicked === "timer-button-tequila") {
-          if (timerOnOffChecker === -1) {
-            timerOnOffChecker *= -1;
-          }
-          console.log('idClicked is tequila')
-          createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-        } else if (idClicked === "timer-button-forest") {
-          console.log('idClicked is forest')
-          createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
-        }
-      };
-      function starVanish(i, star_delay){
-        setTimeout(function(){
-          $(`.timer__star__${i}`).css('display', 'none');
-        }, star_delay);
-      };
     </script>
 	</body>
 </html>
