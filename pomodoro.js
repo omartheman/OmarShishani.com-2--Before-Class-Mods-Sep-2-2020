@@ -98,15 +98,6 @@ let timerCountdown = () => {
           break;
         }
       }
-
-      if (idClicked === "timer-button-tequila") {
-        audio_tequila.play();
-        airhorn.play();
-        newSVG();
-      } else if (idClicked === "timer-button-forest") {
-        audio_forest.play();
-        newSVG();
-      }
       $('.timer__star').toggleClass('timer__star--rotate');
       $('.timer__star').animate({top: `${star_fall_distance}`}, 7000);  
     } 
@@ -244,6 +235,7 @@ let createLeaf = () => {
     starVanish(i, star_delay);  
     i++
     if (timerOnOffChecker === -1){
+      console.log('returning because of onoffchecker')
       return
     }
     if (i < 1000){
@@ -263,7 +255,7 @@ function newSVG(){
     if (radios[i].checked) {
       // do whatever you want with the checked radio
       if (radios[i].value == "tequila") {
-        console.log('value is tequlia')
+        console.log('radio is tequlia')
         if (timerOnOffChecker === -1) {
           timerOnOffChecker *= -1;
         }
@@ -275,7 +267,7 @@ function newSVG(){
         } else {
           star_color = `rgb(255, 0, ${Math.round(Math.random()*75)})`;
         }
-        console.log('idClicked is forest')
+        console.log('radio is forest')
         createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
       }
       break;
