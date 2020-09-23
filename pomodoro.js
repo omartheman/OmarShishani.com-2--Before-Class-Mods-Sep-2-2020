@@ -1,9 +1,9 @@
 let star_fall_distance;
 let idClicked;
 let timerOnOffChecker = -1;
-let hours;
-let minutes;
-let seconds;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
 let timeRemaining;
 let new_star_left;
 let star_num;
@@ -41,17 +41,21 @@ $(document).ready(
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
 
+      if (hours === 0 && minutes === 0 && seconds === 0) {
+        console.log(`Started mainTimerCountdownStarter. Entered 'if' because all time values equal 0`)
+        hours = $(".timer__hours-input").val();
+        minutes = $(".timer__minutes-input").val();
+        seconds = $(".timer__seconds-input").val();
+        if (hours == "") {hours = 0};
+        if (minutes == "") {minutes = 0};
+        if (seconds == "") {seconds = 0};
+        timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
+        $(".timer__display-text").html(timeRemaining);  
+        timerCountdown();
+      } else {
+        timerCountdown();
+      }
 
-
-      hours = $(".timer__hours-input").val();
-      minutes = $(".timer__minutes-input").val();
-      seconds = $(".timer__seconds-input").val();
-      if (hours == "") {hours = 0};
-      if (minutes == "") {minutes = 0};
-      if (seconds == "") {seconds = 0};
-      timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-      $(".timer__display-text").html(timeRemaining);  
-      timerCountdown();
     });
     $(".timer__button--reset").click(function(){
       console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
