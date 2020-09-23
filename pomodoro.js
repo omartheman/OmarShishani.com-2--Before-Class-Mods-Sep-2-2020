@@ -58,8 +58,6 @@ $(document).ready(
       hours = 0;
       minutes = 0;
       seconds = 0;
-      timeRemaining = `<span class="timer__span--values">${hours}</span> hours, <span class="timer__span--values">${minutes}</span> minutes, <span class="timer__span--values">${seconds}</span> seconds`;
-      $(".timer__display-text").html(timeRemaining);
     });
     $(".timer__button--pause").click(function(){
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
@@ -107,24 +105,19 @@ let timerCountdown = () => {
     timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
     $(".text-main__grid-module--top").html(timeRemaining);  
     if (hours >= 1 && minutes >= 1 && seconds <= 0) {
-      $(".timer__display-text").html(timeRemaining);  
       minutes--;
       seconds = 59;
     } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
-      $(".timer__display-text").html(timeRemaining);
       hours--;
       minutes = 59; 
       seconds = 59;  
     }
     else if (minutes >= 1 && seconds <= 0) {
-      $(".timer__display-text").html(timeRemaining);  
       minutes--;
       seconds = 59;
     } else if (minutes >= 1 && seconds >= 0) {
-      $(".timer__display-text").html(timeRemaining); 
       seconds--; 
     } else if (minutes <= 1 && seconds > 0) {
-      $(".timer__display-text").html(timeRemaining); 
       seconds--; 
     } else if (seconds <= 0) {
       if (timerOnOffChecker === -1) {
