@@ -27,7 +27,6 @@ let audioPause = () => {
   audio_forest.currentTime = 0;
 }
 let timerOnOffCheckerSwitcher = () => {
-  console.log('Running timerOnOffCheckerSwitcher');
   if (timerOnOffChecker === 1) {
     timerOnOffChecker *= -1;
   }
@@ -47,7 +46,7 @@ $(document).ready(
           minutes = $(".timer__minutes-input").val();
           seconds = $(".timer__seconds-input").val();
           timerOnOffChecker *= -1;
-          console.log('timer checker is ' + timerOnOffChecker)
+          console.log(`Play clicked, timerStartedChecker is ${timerStartedChecker}, hours, secs, and min....`)
           timerCountdown();
           return
         } else {
@@ -63,7 +62,6 @@ $(document).ready(
       timerStartedChecker = 1;
       timerOnOffChecker *= -1;
       audioPause();
-      $(".text-main--timer").css('display', 'block');
       hours = $(".timer__hours-input").val();
       minutes = $(".timer__minutes-input").val();
       seconds = $(".timer__seconds-input").val();
@@ -92,10 +90,9 @@ $(document).ready(
     $(".timer__button--pause").click(function(){
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
-      console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
       audioPause();
-      timerOnOffCheckerSwitcher();
-      console.log("pause clicked");
+      timerOnOffChecker *= -1;
+      console.log(`Pause clicked. timerOnOffChecker is now ${timerOnOffChecker}`);
     });
     $(".timer__button--resume").click(function(){
       console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
@@ -153,10 +150,16 @@ let timerCountdown = () => {
       seconds--;
       $(".timer__display-text").html(timeRemaining);  
     } else if (seconds <= 0) {
+      if (timerOnOffChecker === -1) {
+        hours = $(".timer__hours-input").val();
+        minutes = $(".timer__minutes-input").val();
+        seconds = $(".timer__seconds-input").val();
+        timerCountdown;
+      } 
       clearInterval(timerInterval);
       timerOnOffChecker = -1;
-      $(".timer__display-text").html(`${timeRemaining}: <span class="timer__span--values">Timer Complete!</span>`);
       
+
       for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
           if (radios[i].value == "tequila") {
