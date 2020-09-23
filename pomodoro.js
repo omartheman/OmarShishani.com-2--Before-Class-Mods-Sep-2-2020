@@ -55,8 +55,17 @@ $(document).ready(
   function mainTimerCountdownStarter(){
     $(".timer__button--play").click(function(e){
       timerOnOffChecker *= -1;
-      timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
-      $(".text-main__grid-module--top").html(timeRemaining);  
+
+      if (hours === 0 && minutes === 0 && seconds === 0) {
+        hours = $(".timer__hours-input").val();
+        minutes = $(".timer__minutes-input").val();
+        seconds = $(".timer__seconds-input").val();
+        timerPlaceholderZeros();
+        timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
+        $(".text-main__grid-module--top").html(timeRemaining);
+      }  
+
+
       console.log(`play clicked. Timeronoffchecker is now ${timerOnOffChecker}`)
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
