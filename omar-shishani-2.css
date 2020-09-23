@@ -816,7 +816,7 @@ html  {
   width: auto;
 }
 .text-main__grid-module--foot {
-  align-items: center;
+  justify-content: center;
   background-color: lightcyan;
   display: flex;
   grid-area: foot;
@@ -927,6 +927,13 @@ html  {
   margin: auto;
   text-align: center;
   width: 50%;
+}
+.timer__button--tequila-svg-coverer {
+  background-color: red;
+  opacity: 0.5;
+  height: 75px;
+  position: absolute;
+  width: 75px;
 }
 .timer__star {
   pointer-events: none;

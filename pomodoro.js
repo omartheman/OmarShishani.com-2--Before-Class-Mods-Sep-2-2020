@@ -81,6 +81,7 @@ $(document).ready(
     $(".timer__button").click(function(e){
       timerOnOffChecker *= -1;
       idClicked = e.target.id;
+      console.log(e.target.id)
       audioPause();
       $(".text-main--timer").css('display', 'block');
       hours = $(".timer__hours-input").val();
@@ -203,7 +204,7 @@ function newSVG(){
     if (timerOnOffChecker === -1) {
       timerOnOffChecker *= -1;
     }
-    console.log('idClicked is tequila')
+    console.log('newSVG entered, idClicked is tequila, run animation createStar')
     createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
   } else if (idClicked === "timer-button-forest") {
     console.log('idClicked is forest')
