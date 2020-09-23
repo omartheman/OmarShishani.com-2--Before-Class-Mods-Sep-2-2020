@@ -26,19 +26,10 @@ let audioPause = () => {
   audio_forest.pause();
   audio_forest.currentTime = 0;
 }
-let timerOnOffCheckerSwitcher = () => {
-  if (timerOnOffChecker === 1) {
-    timerOnOffChecker *= -1;
-  }
-  return
-};
 
 $(document).ready(
   function mainTimerCountdownStarter(){
     $(".timer__button--play").click(function(e){
-
-      
-      console.log('displayed')
       timerOnOffChecker *= -1;
       console.log(`play clicked. Timeronoffchecker is now ${timerOnOffChecker}`)
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
@@ -58,9 +49,9 @@ $(document).ready(
       } else {
         timerCountdown();
       }
-
     });
     $(".timer__button--reset").click(function(){
+      console.log('reset entered')
       console.log(`timerOnOffChecker is value: ${timerOnOffChecker}`)
       audioPause();
       timerOnOffCheckerSwitcher();
@@ -79,7 +70,9 @@ $(document).ready(
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       audioPause();
+      console.log(timerOnOffChecker)
       timerOnOffChecker *= -1;
+      console.log(timerOnOffChecker)
       console.log(`Pause clicked. timerOnOffChecker is now ${timerOnOffChecker}`);
     });
     $(".timer__button--resume").click(function(){
@@ -145,8 +138,6 @@ let timerCountdown = () => {
         timerCountdown;
       } 
       clearInterval(timerInterval);
-      timerOnOffChecker = -1;
-      
 
       for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
