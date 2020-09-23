@@ -772,6 +772,58 @@ html  {
 .text-main__description {
   margin-bottom: 1rem;
 }
+.text-main__grid-module {
+  display: grid;
+  gap: 1em 1em;
+  grid-template-rows: calc(33%-(2em/3)) calc(33%-(2em/3)) calc(33%-(2em/3));
+  grid-template-columns: calc(33%-(2em/3)) calc(33%-(2em/3)) calc(33%-(2em/3));
+  grid-template-areas:
+    "top    top   top"
+    "hours-in   mins-in    secs-in"
+    "foot   foot  foot";
+  max-width: 100%;
+}
+.text-main__grid-module--input {
+  width: 90%;
+  max-width: 100%;
+}
+.text-main__grid-module--top {
+  background-color: pink;
+  grid-area: top;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+.text-main__grid-module--hours-in {
+  background-color: lightblue;
+  grid-area: hours-in;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+.text-main__grid-module--mins-in {
+  background-color: lightblue;
+  grid-area: mins-in;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+.text-main__grid-module--secs-in {
+  background-color: lightblue;
+  grid-area: secs-in;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+.text-main__grid-module--foot {
+  align-items: center;
+  background-color: lightcyan;
+  display: flex;
+  grid-area: foot;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
 .text-main__grid--style-2 {
   display: grid; 
   gap: 1rem 1rem;
