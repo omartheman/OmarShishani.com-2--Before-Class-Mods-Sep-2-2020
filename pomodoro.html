@@ -230,6 +230,7 @@
     <script>
       let i = 1;
       let createStar = () => {
+        console.log('create star entered')
         setTimeout (() => {
           new_star_left = Math.random()*97;
           animation_number = Math.ceil(Math.random()*4);
@@ -255,13 +256,46 @@
           starVanish(i, star_delay);  
           i++
           console.log(timerOnOffChecker)
+          if (timerOnOffChecker === -1){ //Exits setTimeout if a pause button is clicked
+            return
+          }
+          if (i < 1000){
+            createStar();
+          }
+        }, 100)
+      }
+      let createLeaf = () => {
+        console.log('create leaf entered')
+        setTimeout (() => {
+          new_star_left = Math.random()*97;
+          animation_number = Math.ceil(Math.random()*4);
+          star_delay = 7000;
+          star_color_random_id = Math.ceil(Math.random()*2);
+          star_color = `rgb(255, ${Math.floor(Math.random()*255)}, 0)`;
+          star_fall_distance = '150vh'
+          
+          if (star_color_random_id === 1){
+            star_color = `rgb(255, ${Math.round(Math.random()*255)}, 0)`;  
+          } else {
+            star_color = `rgb(255, 0, ${Math.round(Math.random()*255)})`;
+          }
+
+          $('.main').prepend(
+            `<svg class="timer__star timer__star__${i} timer__star--rotate" style="animation: star_rotate_${animation_number} 20s forwards; left:${new_star_left}%" width="30" height="30" version="1.1" viewBox="0 0 7.9375 7.9375" xmlns="http://www.w3.org/2000/svg">${leafSVG1}fill="${star_color}"${leafSVG2}`
+          );
+          $(`.timer__star__${i}`).animate({
+            top: `${star_fall_distance}`
+          }, 7000);
+          starVanish(i, star_delay);  
+          i++
+          console.log(timerOnOffChecker)
           if (timerOnOffChecker === -1){
             return
           }
           if (i < 1000){
-            createStar()
+            createLeaf()
           }
-        }, 100)
+        }, 1000)
       }
 
       function newSVG(){
@@ -282,11 +316,11 @@
           if (timerOnOffChecker === -1) {
             timerOnOffChecker *= -1;
           }
+          console.log('idClicked is tequila')
           createStar(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
         } else if (idClicked === "timer-button-forest") {
-          $('.main').prepend(
-            `<svg class="timer__star timer__star__${i} timer__star--rotate" style="animation: star_rotate_${animation_number} 20s forwards; left:${new_star_left}%" width="30" height="30" version="1.1" viewBox="0 0 7.9375 7.9375" xmlns="http://www.w3.org/2000/svg">${leafSVG1}fill="${star_color}"${leafSVG2}`
-          );
+          console.log('idClicked is forest')
+          createLeaf(new_star_left, animation_number, starSVG, star_color, star_fall_distance)
         }
       };
       function starVanish(i, star_delay){
