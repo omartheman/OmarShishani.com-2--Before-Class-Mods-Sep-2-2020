@@ -67,13 +67,14 @@ $(document).ready(
       timerOnOffChecker *= -1;
 
 
-      if (hours === 0 && minutes === 0 && seconds === 0) {
-        setTimeFromInputs();
-        changeBlankToZero();
-        timerPlaceholderZeros();
-        timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
-        $(".text-main__grid-module--top").html(timeRemaining);
-      }  
+      // if (hours === 0 && minutes === 0 && seconds === 0) {
+      //   console.log('enter both ifs in main')
+      //   setTimeFromInputs();
+      //   changeBlankToZero();
+      //   timerPlaceholderZeros();
+      //   timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
+      //   $(".text-main__grid-module--top").html(timeRemaining);
+      // }  
 
 
       console.log(`play clicked. Timeronoffchecker is now ${timerOnOffChecker}`)
@@ -81,9 +82,12 @@ $(document).ready(
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
 
       if (hours === 0 && minutes === 0 && seconds === 0) {
-        console.log(`Started mainTimerCountdownStarter. Entered 'if' because all time values equal 0`)
         setTimeFromInputs();
         changeBlankToZero();
+        timerPlaceholderZeros();
+        timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
+        $(".text-main__grid-module--top").html(timeRemaining);
+        console.log(`Started mainTimerCountdownStarter. Entered 'if' because all time values equal 0`)
         console.log('about to activate timerCountdown')
         timerCountdown();
       } else {
