@@ -17,7 +17,12 @@ let radios = document.getElementsByName('timer-radio');
 let audio_tequila = new Audio("audio/tequila.mp3");
 let audio_forest = new Audio("audio/forest.mp3");
 let airhorn = new Audio("audio/airhorn.mp3");
- 
+
+let setTimeFromInputs = () => {
+  hours = $(".timer__hours-input").val();
+  minutes = $(".timer__minutes-input").val();
+  seconds = $(".timer__seconds-input").val();
+}
 let showTimeRemaining = () => {
   timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
   $(".text-main__grid-module--top").html(timeRemaining);  
@@ -62,9 +67,7 @@ $(document).ready(
       timerOnOffChecker *= -1;
 
       if (hours === 0 && minutes === 0 && seconds === 0) {
-        hours = $(".timer__hours-input").val();
-        minutes = $(".timer__minutes-input").val();
-        seconds = $(".timer__seconds-input").val();
+        setTimeFromInputs();
         changeBlankToZero();
         timerPlaceholderZeros();
         timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
@@ -78,9 +81,7 @@ $(document).ready(
 
       if (hours === 0 && minutes === 0 && seconds === 0) {
         console.log(`Started mainTimerCountdownStarter. Entered 'if' because all time values equal 0`)
-        hours = $(".timer__hours-input").val();
-        minutes = $(".timer__minutes-input").val();
-        seconds = $(".timer__seconds-input").val();
+        setTimeFromInputs();
         changeBlankToZero();
         console.log('about to activate timerCountdown')
         timerCountdown();
@@ -90,13 +91,11 @@ $(document).ready(
     });
     $(".timer__button--reset").click(function(){
       console.log('reset entered')
+      timerOnOffChecker = -1;
       audioPause();
-      if (hours == "") {hours = 0};
-      if (minutes == "") {minutes = 0};
-      if (seconds == "") {seconds = 0};
-      hours = 0;
-      minutes = 0;
-      seconds = 0;
+      setTimeFromInputs();
+      timerPlaceholderZeros();
+      showTimeRemaining();
     });
     $(".timer__button--pause").click(function(){
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
@@ -126,18 +125,23 @@ let timerCountdown = () => {
     }
 
     timerPlaceholderZeros();
+    // error in inital zero caused here
     if (hours >= 1 && minutes >= 1 && seconds <= 0) {
       minutes--;
       seconds = 59;
+      placeSecs = ""
       showTimeRemaining();
     } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
       hours--;
       minutes = 59; 
       seconds = 59;  
+      placeMins = ""
+      placeSecs = ""
       showTimeRemaining();
     } else if (minutes >= 1 && seconds <= 0) {
       minutes--;
       seconds = 59;
+      placeSecs = ""
       showTimeRemaining();
     } else if (minutes >= 1 && seconds >= 0) {
       seconds--; 
@@ -148,9 +152,7 @@ let timerCountdown = () => {
     } else if (seconds <= 0) {
       showTimeRemaining();
       if (timerOnOffChecker === -1) {
-        hours = $(".timer__hours-input").val();
-        minutes = $(".timer__minutes-input").val();
-        seconds = $(".timer__seconds-input").val();
+        setTimeFromInputs();
         timerCountdown;
       } 
       clearInterval(timerInterval);
