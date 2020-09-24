@@ -66,6 +66,7 @@ $(document).ready(
     $(".timer__button--play").click(function(e){
       timerOnOffChecker *= -1;
 
+
       if (hours === 0 && minutes === 0 && seconds === 0) {
         setTimeFromInputs();
         changeBlankToZero();
@@ -90,6 +91,10 @@ $(document).ready(
       }
     });
     $(".timer__button--reset").click(function(){
+      if (timerOnOffChecker === 1) {
+        document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
+        document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
+      }
       console.log('reset entered')
       timerOnOffChecker = -1;
       audioPause();
