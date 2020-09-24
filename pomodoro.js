@@ -65,18 +65,6 @@ $(document).ready(
   function mainTimerCountdownStarter(){
     $(".timer__button--play").click(function(e){
       timerOnOffChecker *= -1;
-
-
-      // if (hours === 0 && minutes === 0 && seconds === 0) {
-      //   console.log('enter both ifs in main')
-      //   setTimeFromInputs();
-      //   changeBlankToZero();
-      //   timerPlaceholderZeros();
-      //   timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
-      //   $(".text-main__grid-module--top").html(timeRemaining);
-      // }  
-
-
       console.log(`play clicked. Timeronoffchecker is now ${timerOnOffChecker}`)
       document.querySelector('.timer__button--play').classList.toggle('timer__button--clicked');
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
