@@ -960,6 +960,8 @@ html  {
   text-align: center;
   width: 50%;
 }
+.timer__button--reset-svg {
+}
 .timer__button--svg {
   border-radius: 50%;
   display: block;
