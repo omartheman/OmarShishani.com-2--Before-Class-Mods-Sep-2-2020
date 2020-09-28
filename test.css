@@ -1,0 +1,10 @@
+#header {
+  font-family: 'Courier New', Courier, monospace;
+}
+.subheading {
+  font-family: 'Times New Roman', Times, serif;
+  color: red;
+}
+body {
+  background-color: lightgray;
+}

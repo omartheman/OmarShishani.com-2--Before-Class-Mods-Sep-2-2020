@@ -48,7 +48,7 @@ html  {
   margin: auto;
   width: 20em;
 }
-.body {
+body {
   background-color: var(--body-background-color);
   font-family: source_sans_proregular, sans-serif;
   margin: 0;
