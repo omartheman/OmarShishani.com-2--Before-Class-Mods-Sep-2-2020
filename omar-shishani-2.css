@@ -144,8 +144,14 @@ html  {
   margin: 0 0 1em var(--sidebar-width);
   width: calc(100% - var(--sidebar-width));
 }
-.header--homepage {
+.header-large {
   margin-bottom: 8rem;
+}
+.heading {
+  margin-left: 1em;
+  float: left;
+  font-family: Comfortaa, 'Century Gothic 600', sans-serif;
+  width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
 }
 .header__construction-press--bottom {
   border-radius: 10px;
@@ -171,19 +177,12 @@ html  {
       0px 5px 0px 0px rgb(94, 71, 107),
       0px 7px 10px -2px;
   }
-.header__subheading {
+.header-subheading {
 /* $ Användning av BEM. Header är block, subheading är element $ */
   float: left;
   font: 1.5rem source_sans_proregular, sans-serif;
   margin-left: var(--header__subheading-margin-left);
   width: calc(100% - var(--profile-pic-width) + 4.6em - var(--profile-pic-padding)*2 - var(--header__subheading-margin-left));
-}
-.header__heading {
-    margin-left: 1em;
-    float: left;
-    font-family: Comfortaa, 'Century Gothic 600', sans-serif;
-    /* $ Väljer Century Gothic som backup, för att den är lik Comfortaa $ */
-    width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
 }
 .header__heading--subheading-my-projects {
   background-color: rgb(236, 236, 236);
@@ -194,15 +193,6 @@ html  {
 .header--contracting {
   border-bottom: 1px solid black;
   margin-bottom: 0;
-}
-.header__heading--homepage {
-/* $ BEM: homepage är modifier $ */
-  margin-left: 1em;
-  float: left;
-  font-family: Comfortaa, 'Century Gothic 600', sans-serif;
-  /* $ Väljer Century Gothic som backup, för att den är lik Comfortaa $ */
-  width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
-  /* $ Att kalkylera width gör det lättare att ändra storlek av andra element, utan att behöva ända värden i flera selektorer $ */
 }
 .heading {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
@@ -446,7 +436,7 @@ html  {
   animation: rainbow_svg_fill infinite 16s linear;
   stroke: var(--os-border-color);
 }
-.profile-pic {
+.img-circular {
   border-radius: 100%;
   display: block;
   float: right;
@@ -1098,7 +1088,7 @@ html  {
     margin-top: 0;
     width: 100%;
   }
-  .header__heading--homepage {
+  .heading-floating {
     margin-top: 0 !important;
   }
   .main {
@@ -1216,13 +1206,13 @@ html  {
       left: 0;
   }
   
-  .header__heading--homepage {
+  .heading-floating {
     float: none;
     margin: 0.5em auto 0 1em;
     text-align: left;
     width: calc(100% - 2.8em);
   }
-  .header__subheading {
+  .header-subheading {
     float: none;
     margin: auto 1em 1em;
     width: calc(100% - 2em);
@@ -1230,7 +1220,7 @@ html  {
   .intro {
     margin-bottom: 8rem;
   }
-  .profile-pic {
+  .img-circular{
     margin: auto;    
     float: none;
   }
