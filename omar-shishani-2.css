@@ -126,6 +126,14 @@ footer, header {
   margin-left: var(--sidebar-width);
   bottom: 0;
 }
+.footer-links-container {
+  width: 100%;
+  display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  margin-bottom: 0.7rem;
+}
 .header {
   float: right;
   margin: 0 0 1em var(--sidebar-width);

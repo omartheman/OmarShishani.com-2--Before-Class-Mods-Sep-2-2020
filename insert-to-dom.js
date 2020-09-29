@@ -107,12 +107,14 @@ const sidebar = String.raw`
 `;
 const footer = String.raw`
 <footer class="no-print footer">
-  <span><a class="footer__link-1" href="https://www.linkedin.com/in/omar-shishani-school/" target="_blank" rel="noopener">LinkedIn</a></span>
-  <span><a class="footer__link-1" href="https://www.instructables.com/member/omarshishanischool/" target="_blank" rel="noopener">Instructables</a></span>
-  <span><a class="footer__link-1" href="https://github.com/crazy-hobo" target="_blank" rel="noopener">Github</a></span>
-  <span><a class="footer__link-1" href="https://medium.com/@omarshishanischool" target="_blank" rel="noopener">Medium</a></span>
+  <div class="footer-links-container">
+    <span><a class="footer__link-1" href="https://www.linkedin.com/in/omar-shishani-school/" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span><a class="footer__link-1" href="https://www.instructables.com/member/omarshishanischool/" target="_blank" rel="noopener">Instructables</a></span>
+    <span><a class="footer__link-1" href="https://github.com/crazy-hobo" target="_blank" rel="noopener">Github</a></span>
+    <span><a class="footer__link-1" href="https://medium.com/@omarshishanischool" target="_blank" rel="noopener">Medium</a></span>
+  </div>
+  <div class="footer__updated">Last Updated September 2020</div>
 </footer>
-<div class="footer__updated">Last Updated September 2020</div>
 `;
 
 const mobileNav = String.raw`
