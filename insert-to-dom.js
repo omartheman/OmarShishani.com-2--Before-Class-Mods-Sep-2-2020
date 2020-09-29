@@ -170,11 +170,12 @@ const mobileNav = String.raw`
 </div>
 `;
 
-document.querySelector('header').insertAdjacentHTML('afterend', sidebar);
+const main = document.querySelector('main');
+
+main.insertAdjacentHTML('beforeend', mobileNav);
+document.querySelector('header').insertAdjacentHTML('afterend', sidebar); //sidebar inserted after header because here is most semantically correct for screen readers. 
 document.querySelector('main').insertAdjacentHTML('beforeend', footer);
 
-const main = document.querySelector('main');
-main.insertAdjacentHTML('beforeend', mobileNav);
 
 
 const button_scroll_down = document.querySelector(".button--scroll-down");
