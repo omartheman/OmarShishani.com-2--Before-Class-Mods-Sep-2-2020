@@ -110,6 +110,11 @@ body {
 .festivals__img {
   width: 500px; 
 }
+
+footer, header {
+  
+}
+
 .footer {
   background-color:rgba(238, 183, 255, 0.8);
   display: flex;
@@ -122,6 +127,12 @@ body {
   margin-left: var(--sidebar-width);
   bottom: 0;
   width: calc(100% - var(--sidebar-width) - 2em);
+}
+.header {
+  background-color: rgba(238, 183, 255, 0.8);
+  float: right;
+  margin: 0 0 1em var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
 }
 .footer__link-1 {
   border: 2px solid black;
@@ -140,12 +151,6 @@ body {
 }
 h1 {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
-}
-.header {
-  background-color: rgba(238, 183, 255, 0.8);
-  float: right;
-  margin: 0 0 1em var(--sidebar-width);
-  width: calc(100% - var(--sidebar-width));
 }
 .header-large {
   margin-bottom: 8rem;
