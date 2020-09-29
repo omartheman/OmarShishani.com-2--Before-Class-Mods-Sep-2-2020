@@ -112,11 +112,11 @@ body {
 }
 
 footer, header {
+  background-color:rgba(238, 183, 255, 0.8);
   
 }
 
 .footer {
-  background-color:rgba(238, 183, 255, 0.8);
   display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -129,7 +129,6 @@ footer, header {
   width: calc(100% - var(--sidebar-width) - 2em);
 }
 .header {
-  background-color: rgba(238, 183, 255, 0.8);
   float: right;
   margin: 0 0 1em var(--sidebar-width);
   width: calc(100% - var(--sidebar-width));
