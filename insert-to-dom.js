@@ -171,7 +171,7 @@ const mobileNav = String.raw`
 `;
 
 document.querySelector('header').insertAdjacentHTML('afterend', sidebar);
-document.querySelector('main').insertAdjacentHTML('afterend', footer);
+document.querySelector('main').insertAdjacentHTML('beforeend', footer);
 
 const main = document.querySelector('main');
 main.insertAdjacentHTML('beforeend', mobileNav);

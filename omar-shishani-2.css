@@ -113,13 +113,9 @@ body {
 .festivals__img {
   width: 500px; 
 }
-
 footer, header {
   background-color: rgba(238, 183, 255, 0.8);
 }
-
-
-
 .footer {
   display: flex;
     align-items: center;
@@ -128,8 +124,8 @@ footer, header {
   font-family: source_sans_probold, sans-serif;
   height: var(--footer-height);
   padding: 1em;
-  margin-left: var(--sidebar-width);
   bottom: 0;
+  width: calc(100% - 2em);
 }
 .footer-links-container {
   width: 100%;
