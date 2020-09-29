@@ -2,6 +2,9 @@
 /* $ Regex for finding comments: \/\*\$.+\$\*\/ --- $ */
 /* $ Use regex to replace comments with space, then use \n to find and remove newlines $ */
 
+/* $  $ */
+
+
 :root {
 /* $ Variabler underlättar element samspel, särskilt för float $ */
   --body-background-color: white;
@@ -115,6 +118,8 @@ footer, header {
   background-color: rgba(238, 183, 255, 0.8);
 }
 
+
+
 .footer {
   display: flex;
     align-items: center;
@@ -148,7 +153,6 @@ footer, header {
   text-decoration: none;
 }
 .footer__updated {
-  background-color:rgba(238, 183, 255, 0.8);
   text-align: right;
   margin-left: var(--sidebar-width);
   padding-right: 1em;
