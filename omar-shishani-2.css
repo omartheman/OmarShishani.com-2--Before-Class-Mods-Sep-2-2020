@@ -138,6 +138,9 @@ body {
   padding-right: 1em;
   width: calc(100% - var(--sidebar-width) - 1em);
 }
+h1 {
+  font-family: Comfortaa, 'Century Gothic 600', sans-serif;
+}
 .header {
   background-color: rgba(238, 183, 255, 0.8);
   float: right;
@@ -150,7 +153,6 @@ body {
 .heading {
   margin-left: 1em;
   float: left;
-  font-family: Comfortaa, 'Century Gothic 600', sans-serif;
   width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
 }
 .header__construction-press--bottom {
@@ -193,10 +195,6 @@ body {
 .header--contracting {
   border-bottom: 1px solid black;
   margin-bottom: 0;
-}
-.heading {
-  font-family: Comfortaa, 'Century Gothic 600', sans-serif;
-  margin-left: 1em;
 }
 .home-button {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
