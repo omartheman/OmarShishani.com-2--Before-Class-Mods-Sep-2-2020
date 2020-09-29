@@ -137,8 +137,8 @@ footer, header {
 }
 .header {
   float: right;
-  margin: 0 0 1em var(--sidebar-width);
-  width: calc(100% - var(--sidebar-width));
+  margin: 0 0 1em 0;
+  width: calc(100%);
 }
 .footer__link-1 {
   border: 2px solid black;

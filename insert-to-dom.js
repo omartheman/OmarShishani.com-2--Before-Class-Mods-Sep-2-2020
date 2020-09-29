@@ -173,7 +173,7 @@ const mobileNav = String.raw`
 const main = document.querySelector('main');
 
 main.insertAdjacentHTML('beforeend', mobileNav);
-document.querySelector('header').insertAdjacentHTML('afterend', sidebar); //sidebar inserted after header because here is most semantically correct for screen readers. 
+document.querySelector('body').insertAdjacentHTML('beforebegin', sidebar); 
 document.querySelector('main').insertAdjacentHTML('beforeend', footer);
 
 
