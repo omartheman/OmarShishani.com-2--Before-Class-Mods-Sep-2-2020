@@ -1050,7 +1050,6 @@ h1 {
   .project--1 {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-    float: none;
     margin: 1rem 1rem 5rem 1rem;
     width: calc(100% - 2rem);
   }
