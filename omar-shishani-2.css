@@ -485,6 +485,14 @@ h1 {
   margin: 1rem 1rem 5rem 1rem;
   width: calc(50% - 2rem);
 }
+@media (max-width: 1000px) {
+  .project--1 {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin: 1rem 1rem 5rem 1rem;
+    width: calc(100% - 2rem);
+  }
+}
 .project--1__thumbnail {
   display: block;
   margin: auto;
@@ -1121,6 +1129,7 @@ h1 {
     font-weight: normal;
     font-style: normal;
 }
+
 @media (max-width: 1000px) {
   .container {
     grid-template-columns: calc(50% - var(--vid-grd-col-gap)*2/3) calc(50% - var(--vid-grd-col-gap)*2/3);
