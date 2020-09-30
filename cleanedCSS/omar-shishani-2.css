@@ -231,7 +231,7 @@ html  {
     text-decoration: none;
     border-bottom: 3px solid black;
   }
-  #mobile-nav a:first-of-type {
+  #mobile-nav  .mobile-nav-anchor:first-of-type {
     border-top: 3px solid black;
   }
 }
@@ -243,7 +243,7 @@ html  {
     position: static;
       left: 0;
   }
-  #mobile-nav a {
+  #mobile-nav .mobile-nav-anchor {
     color: white;
     display: flex;
       justify-content: center;
@@ -252,13 +252,13 @@ html  {
     text-decoration: none;
     border-bottom: 3px solid black;
   }
-  #mobile-nav a:first-of-type {
+  #mobile-nav .mobile-nav-anchor:first-of-type {
     border-top: 3px solid black;
   }
 }
 
 /*MODULE: NAVBAR HAMBURGER (SMACSS)*/
-#navbar-hamburger {
+#mobile-nav-hamburger {
   border: 0.1em solid black;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 0.08px black;
@@ -270,7 +270,7 @@ html  {
   transform: scale(0.9);
 }
 @media (max-width: 700px) {
-  #navbar-hamburger {
+  #mobile-nav-hamburger {
     background-color: #c7c7c7;
     display: flex; 
       align-items: center;
@@ -286,7 +286,7 @@ html  {
   }
 }
 @media (max-width: 450px) {
-  #navbar-hamburger {
+  #mobile-nav-hamburger {
     display: flex; 
       align-items: center;
       flex-direction: column;
@@ -300,7 +300,7 @@ html  {
     z-index: 100;
   }
 }
-.navbar-hamburger-bun {
+.mobile-nav-hamburger-bun {
   animation: bun-spin 1s 1;
   animation-play-state: paused;
   background-color: black;

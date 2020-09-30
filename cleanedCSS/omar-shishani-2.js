@@ -30,6 +30,6 @@ function runslide_S_load() {
   });
 };
 
-$('#navbar-hamburger').on('click', function(){
+$('#mobile-nav-hamburger').on('click', function(){
 	$('#mobile-nav-main-content').slideToggle();
 });
