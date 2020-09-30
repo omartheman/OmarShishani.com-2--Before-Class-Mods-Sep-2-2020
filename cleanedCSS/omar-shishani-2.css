@@ -38,10 +38,10 @@ html  {
   overflow: auto;
   width: var(--sidebar-width);
 }
-#footer, header {
+#footer, #header {
   background-color: rgba(238, 183, 255, 0.8);
 }
-header {
+#header {
   float: right;
   margin: 0 0 1em 0;
   width: calc(100%);
