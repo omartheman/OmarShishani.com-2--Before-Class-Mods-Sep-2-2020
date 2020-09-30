@@ -144,6 +144,7 @@ html  {
   width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
 }
 
+/*MODULE: SUBCLASS - HEADER HOMEPAGE (SMACSS)*/
 .img-circular {
   border-radius: 100%;
   display: block;
@@ -151,6 +152,9 @@ html  {
   height: var(--profile-pic-width);
   padding: 1em;
   width: var(--profile-pic-width);
+}
+.welcome-text {
+	line-height: 2em;
 }
 
 /*MODULE: INTRO (SMACSS)*/
@@ -190,6 +194,27 @@ html  {
 #navbar-mobile a {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
 }
+@media (max-width: 700px) {
+  #navbar-mobile {
+    background-color: #c11494;
+    height: max-content;
+      width: 100%;
+    position: static;
+      left: 0;
+  }
+  #navbar-mobile a {
+    color: white;
+    display: flex;
+      justify-content: center;
+    font-size: 1.4rem;
+    padding: 1.6rem;
+    text-decoration: none;
+    border-bottom: 3px solid black;
+  }
+  #navbar-mobile a:first-of-type {
+    border-top: 3px solid black;
+  }
+}
 
 .myVideo {
   position: fixed;
@@ -211,6 +236,22 @@ html  {
     left: -10000px;
     top: auto;
   transform: scale(0.9);
+}
+@media (max-width: 700px) {
+  #navbar-hamburger {
+    background-color: #c7c7c7;
+    display: flex; 
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+    height: 50px;
+      width: 50px;
+    position: fixed;
+      left: auto;
+      right: 0;
+      top: 0;
+    z-index: 100;
+  }
 }
 .navbar-hamburger-bun {
   animation: bun-spin 1s 1;
@@ -341,6 +382,7 @@ html  {
 }
 
 
+/*MODULE: TEXT MAIN (SMACSS)*/
 .text-main {
   float: left;
   margin: 3rem 0.5rem 1rem 1rem;
@@ -360,6 +402,8 @@ html  {
     width: 100%;
   }
 }
+
+/*MODULE SUBCLASS: TEXT MAIN - 2 (SMACSS)*/
 .text-main--2 {
   margin: 5rem 1rem 1rem 0.5rem;
 }
@@ -368,6 +412,7 @@ html  {
     margin: 3rem 1rem 1rem 1rem;
   }
 }
+
 .text-main__content {
   background-color:rgba(238, 183, 255, 0.8);
   border-radius: 10px;
@@ -476,47 +521,9 @@ html  {
     width: 80%;
   }
 }
-.welcome-text {
-	line-height: 2em;
-}
-@font-face {
-    font-family: 'Comfortaa';
-    font-display: swap;
-    src: url('fonts/comfortaa-variablefont_wght-webfont.woff2') format('woff2'),
-         url('fonts/comfortaa-variablefont_wght-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-      font-family: 'Century Gothic 600';
-    font-display: swap;
-      src: local('Century Gothic');
-      font-weight: 500;
-}
-@font-face {
-    font-family: 'source_sans_probold';
-    font-display: swap;
-    src: url('fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
-         url('fonts/sourcesanspro-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'source_sans_proregular';
-    font-display: swap;
-    src: url('fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
-         url('fonts/sourcesanspro-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@media (max-width: 1000px) {
-  .project--1 {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    margin: 1rem 1rem 5rem 1rem;
-    width: calc(100% - 2rem);
-  }
-}
+
+
+
 @media (max-width: 700px) {
   .button--scroll-down {
     display: none;
@@ -646,12 +653,40 @@ html  {
     height: 100%;
   }
 }
-@media print
-{    
-    .no-print, .no-print *
-    {
-        display: none !important;
-    }
+@media print {    
+  .no-print, .no-print * {
+      display: none !important;
+  }
+}
+@font-face {
+    font-family: 'Comfortaa';
+    font-display: swap;
+    src: url('fonts/comfortaa-variablefont_wght-webfont.woff2') format('woff2'),
+         url('fonts/comfortaa-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+      font-family: 'Century Gothic 600';
+    font-display: swap;
+      src: local('Century Gothic');
+      font-weight: 500;
+}
+@font-face {
+    font-family: 'source_sans_probold';
+    font-display: swap;
+    src: url('fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
+         url('fonts/sourcesanspro-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'source_sans_proregular';
+    font-display: swap;
+    src: url('fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
+         url('fonts/sourcesanspro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 @keyframes fade_flash {
 	0% {
