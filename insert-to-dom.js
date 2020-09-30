@@ -173,7 +173,7 @@ const mobileNav = String.raw`
 const main = document.querySelector('main');
 
 main.insertAdjacentHTML('beforeend', mobileNav);
-document.querySelector('body').insertAdjacentHTML('beforebegin', sidebar); 
+document.querySelector('body').insertAdjacentHTML('afterbegin', sidebar); 
 document.querySelector('main').insertAdjacentHTML('beforeend', footer);
 
 
