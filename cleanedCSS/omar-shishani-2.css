@@ -28,23 +28,19 @@ html  {
 }
 
 /*LAYOUT (SMACSS)*/ 
-#sidebar {
-  background-color: lightgrey;
-  bottom: 0;
-  border-right: black 2px solid;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  overflow: auto;
-  width: var(--sidebar-width);
-}
-@media (max-width: 700px) {
-  #sidebar {
-    display: none;
-  }
-}
 #footer, #header {
   background-color: rgba(238, 183, 255, 0.8);
+}
+#footer {
+  display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  font-family: source_sans_probold, sans-serif;
+  height: var(--footer-height);
+  padding: 1em;
+  bottom: 0;
+  width: calc(100% - 2em);
 }
 #header {
   float: right;
@@ -62,17 +58,6 @@ html  {
   float: left;
   width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
 }
-#footer {
-  display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  font-family: source_sans_probold, sans-serif;
-  height: var(--footer-height);
-  padding: 1em;
-  bottom: 0;
-  width: calc(100% - 2em);
-}
 #main {
   clear: both;
   margin-left: var(--sidebar-width);
@@ -80,6 +65,21 @@ html  {
 @media (max-width: 700px) {
   #main {
     margin-left: 0;
+  }
+}
+#sidebar {
+  background-color: lightgrey;
+  bottom: 0;
+  border-right: black 2px solid;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  width: var(--sidebar-width);
+}
+@media (max-width: 700px) {
+  #sidebar {
+    display: none;
   }
 }
 
@@ -109,7 +109,7 @@ html  {
 }
 
 
-/*MODULE: FOOTER (SMACSS)*/
+/*MODULE: FOOTER-LINK (SMACSS)*/
 .footer-link-1 {
   border: 2px solid black;
   border-radius: 5px;
@@ -118,7 +118,7 @@ html  {
   padding: 3px;
   text-decoration: none;
 }
-.footer-links-container {
+.footer-link-container {
   width: 100%;
   display: flex;
     align-items: center;
@@ -126,6 +126,8 @@ html  {
     justify-content: space-around;
   margin-bottom: 0.7rem;
 }
+
+/*MODULE: FOOTER-UPDATED (SMACSS)*/
 .footer-updated {
   text-align: right;
   margin-left: var(--sidebar-width);
@@ -139,7 +141,7 @@ html  {
   }
 }
 
-/*MODULE: HEADER (SMACSS)*/
+/*MODULE: HEADER-SUBHEADING (SMACSS)*/
 .header-subheading {
   float: left;
   font: 1.5rem source_sans_proregular, sans-serif;
@@ -154,7 +156,7 @@ html  {
   }
 }
 
-/*MODULE: SUBCLASS - HEADER HOMEPAGE (SMACSS)*/
+/*MODULE: SUBCLASS - HEADER-HOMEPAGE (SMACSS)*/
 .header-homepage--img-circular {
   border-radius: 100%;
   display: block;
