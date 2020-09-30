@@ -57,6 +57,11 @@ html  {
     width: 100%;
   }
 }
+#header--heading {
+  margin-left: 1em;
+  float: left;
+  width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
+}
 #footer {
   display: flex;
     align-items: center;
@@ -147,11 +152,6 @@ html  {
     margin: auto 1em 1em;
     width: calc(100% - 2em);
   }
-}
-.header--heading {
-  margin-left: 1em;
-  float: left;
-  width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
 }
 
 /*MODULE: SUBCLASS - HEADER HOMEPAGE (SMACSS)*/
@@ -341,12 +341,12 @@ html  {
 .os-v2-container {
   text-align: center; 
 }
-.o-plain {
+.os-o-plain {
   display: none;
   animation: rainbow_svg_fill infinite 16s linear;
   stroke: var(--os-border-color);
 }
-.s-plain {
+.os-s-plain {
   display: none;
   stroke: var(--os-border-color);
 }
@@ -373,11 +373,11 @@ html  {
   max-width: 100%;
   width: 100%;
 }
-.BN-button-container {
+.project--1-BN-button-container {
   margin: auto;
   width: 20em;
 }
-.reload-button {
+.project--1-reload-button {
   display: block;
   font-family: Comfortaa, 'Century Gothic 600', sans-serif; 
   margin: auto;
@@ -386,7 +386,7 @@ html  {
   text-decoration: none;
   width: 10rem;
 }
-.button-style-1 {
+.project--1-button-style-1 {
   animation: rainbow-light infinite 5s;
   animation-timing-function: linear;
   background-color: red;
@@ -394,12 +394,12 @@ html  {
   border-radius: 10px;
   padding: 0.3em;
 }
-.subheading-1--BN {
+.project--1-subheading-1--BN {
   clear: both;
   padding: 0 1em;
   text-align: center;
 }
-.jewel-svg {
+.project--1-jewel-svg {
   height: 100%;
   max-width: 100%;
   transform: scale(0.8);
@@ -648,7 +648,6 @@ html  {
     width: 80%;
   }
 }
-
 
 @media print {    
   .no-print, .no-print * {
