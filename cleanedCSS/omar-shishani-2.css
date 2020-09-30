@@ -105,7 +105,7 @@ html  {
 
 
 /*MODULE: FOOTER (SMACSS)*/
-.footer__link-1 {
+.footer-link-1 {
   border: 2px solid black;
   border-radius: 5px;
   box-shadow: 0 0 8px .07px black;
@@ -639,8 +639,6 @@ html  {
     width: 80%;
   }
 }
-
-
 
 
 @media print {    
