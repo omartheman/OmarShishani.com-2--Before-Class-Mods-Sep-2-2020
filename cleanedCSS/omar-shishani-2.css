@@ -169,7 +169,7 @@ html  {
     float: none;
   }
 }
-.welcome-text {
+.header-homepage--welcome-text {
 	line-height: 2em;
 }
 
@@ -197,7 +197,7 @@ html  {
 }
 
 /*MODULE: MOBILE-NAV (SMACSS)*/
-#mobile-navigation-main-content {
+#mobile-nav-main-content {
 	display: none;
 	position: fixed;
 		top: 0;
@@ -208,21 +208,19 @@ html  {
   width: 100%;
   z-index: 2;
 }
-.mobile-nav-anchor {
+#mobile-nav .mobile-nav-anchor {
   display: none;
-}
-#navbar-mobile a {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
 }
 @media (max-width: 700px) {
-  #navbar-mobile {
+  #mobile-nav {
     background-color: #c11494;
     height: max-content;
       width: 100%;
     position: static;
       left: 0;
   }
-  #navbar-mobile a {
+  #mobile-nav a {
     color: white;
     display: flex;
       justify-content: center;
@@ -231,19 +229,19 @@ html  {
     text-decoration: none;
     border-bottom: 3px solid black;
   }
-  #navbar-mobile a:first-of-type {
+  #mobile-nav a:first-of-type {
     border-top: 3px solid black;
   }
 }
 @media (max-width: 450px) {
-  #navbar-mobile {
+  #mobile-nav {
     background-color: #c11494;
     height: max-content;
       width: 100%;
     position: static;
       left: 0;
   }
-  #navbar-mobile a {
+  #mobile-nav a {
     color: white;
     display: flex;
       justify-content: center;
@@ -252,7 +250,7 @@ html  {
     text-decoration: none;
     border-bottom: 3px solid black;
   }
-  #navbar-mobile a:first-of-type {
+  #mobile-nav a:first-of-type {
     border-top: 3px solid black;
   }
 }
