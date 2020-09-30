@@ -266,6 +266,18 @@ html  {
   min-height: 100%;
   z-index: -1;
 }
+@media (min-aspect-ratio: 16/9) {
+  .myVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .myVideo {
+    width: auto;
+    height: 100%;
+  }
+}
 
 /*MODULE: OS LOGO (SMACSS)*/
 .os-v2-svg {
@@ -433,11 +445,21 @@ html  {
   margin: 0;
   padding: 2rem 2rem 2rem 2rem;
 }
+@media (max-width: 650px) {
+  .text-main__content {
+    padding: 1rem 1rem 1rem 2rem;
+  }
+}
 .text-main__content--homepage-bullets {
   padding: 2rem 2rem 2rem 4rem;
 }
 .text-main__content--section-1 {
   padding: 2rem 2rem 2rem 2rem;
+}
+@media (max-width: 650px) {
+  .text-main__content--section-1 {
+    padding: 1rem 1rem 1rem 1rem;
+  }
 }
 .text-main__icon {
   float: right;
@@ -445,6 +467,18 @@ html  {
 }
 .text-main__icon--html-css {
   float: left;
+}
+@media (max-width: 650px) {
+  .text-main__icon--html-css {
+    clear: both;
+    float: left;
+    margin: 0.3rem 0;
+  }
+}
+@media (max-width: 650px) {
+  .text-main__icon-html-css-js-wrap {
+    float: left;
+  }
 }
 .text-main__icon--illus {
   clear: right;
@@ -458,6 +492,12 @@ html  {
 }
 .text-main__icon--js {
   float: right;
+}
+@media (max-width: 650px) {
+  .text-main__icon--js {
+    float: left;
+    margin: 0.44rem 0 0 0.3rem;
+  }
 }
 .text-main__icon--ps {
   float: right;
@@ -519,6 +559,12 @@ html  {
   padding: 0 0.4rem 0.7rem 0;
   width: calc(100% - 9rem);
 }
+@media (max-width: 650px) {
+  .text-main__text--web-prog {
+    width: 90%;
+    padding: 0;
+  }
+}
 .text-main__text--simplicity {
   clear: both;
 }
@@ -556,30 +602,6 @@ html  {
   .img-circular{
     margin: auto;    
     float: none;
-  }
-  .text-main__content {
-   
-    padding: 1rem 1rem 1rem 2rem;
-  }
-  .text-main__content--section-1 {
-    padding: 1rem 1rem 1rem 1rem;
-  }
-  .text-main__icon--html-css {
-    clear: both;
-    float: left;
-    margin: 0.3rem 0;
-  }
-  
-  .text-main__icon-html-css-js-wrap {
-    float: left;
-  }
-  .text-main__icon--js {
-    float: left;
-    margin: 0.44rem 0 0 0.3rem;
-  }
-  .text-main__text--web-prog {
-    width: 90%;
-    padding: 0;
   }
 }
 @media (max-width: 450px) {
@@ -619,18 +641,11 @@ html  {
     border-top: 3px solid black;
   }
 }
-@media (min-aspect-ratio: 16/9) {
-  .myVideo {
-    width: 100%;
-    height: auto;
-  }
-}
-@media (max-aspect-ratio: 16/9) {
-  .myVideo {
-    width: auto;
-    height: 100%;
-  }
-}
+
+
+
+
+
 @media print {    
   .no-print, .no-print * {
       display: none !important;
