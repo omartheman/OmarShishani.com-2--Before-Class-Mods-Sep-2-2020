@@ -774,6 +774,13 @@ h1 {
     width: calc(100% - 2rem);
   }
 }
+@media (max-width: 450px) {
+  .text-main {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
 .text-main--2 {
   margin: 5rem 1rem 1rem 0.5rem;
 }
@@ -958,6 +965,12 @@ h1 {
   clear: right;
   margin-right: 0.1rem;
 }
+@media (max-width: 450px) {
+  .text-main__icon--illus {
+    clear: none;
+    margin: 0.4rem 0 0.3rem;
+  }
+}
 .text-main__icon--js {
   float: right;
 }
@@ -965,6 +978,19 @@ h1 {
   float: right;
   height: 3rem;
   margin: 0.4rem 0.1rem 0.3rem;
+}
+@media (max-width: 450px) {
+  .text-main__icon--ps {
+    margin-right: 0.3rem;
+    clear: left;
+    float: left;
+  }
+}
+@media (max-width: 450px) {
+  .text-main__icon-ps-il-wrap {
+    float: right;
+    /* This wrapper is used to reverse the float order of ps and il icons */
+  }
 }
 .text-main__list-nested {
   padding: 0 0 0 0.8rem;
@@ -983,12 +1009,22 @@ h1 {
   float: left;
   width: calc(100% - 3.2rem);
 }
+@media (max-width: 450px) {
+  .text-main__list-itm--photo-man {
+    padding-bottom: 0;
+  }
+}
 .text-main__text {
   float: left;
   width: calc(100% - 4rem);
 }
 .text-main__text--ps {
   width: calc(100% - 1rem);
+}
+@media (max-width: 450px) {
+  .text-main__text--ps {
+    width: 100%;
+  }
 }
 .text-main__text--resp-web {
   clear: both;
