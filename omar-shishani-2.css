@@ -113,9 +113,11 @@ body {
 .festivals__img {
   width: 500px; 
 }
+
 footer, header {
   background-color: rgba(238, 183, 255, 0.8);
 }
+
 .footer {
   display: flex;
     align-items: center;
@@ -127,34 +129,6 @@ footer, header {
   bottom: 0;
   width: calc(100% - 2em);
 }
-.footer-links-container {
-  width: 100%;
-  display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  margin-bottom: 0.7rem;
-}
-.header {
-  float: right;
-  margin: 0 0 1em 0;
-  width: calc(100%);
-}
-
-@media (max-width: 700px) {
-  .footer__updated {
-    margin-left: 0;
-    width: calc(100% - 1em);
-  }
-  .header {
-    margin-top: 0;
-    width: 100%;
-  }
-  .heading-floating {
-    margin-top: 0 !important;
-  }
-}
-
 .footer__link-1 {
   border: 2px solid black;
   border-radius: 5px;
@@ -163,7 +137,14 @@ footer, header {
   padding: 3px;
   text-decoration: none;
 }
-
+.footer-links-container {
+  width: 100%;
+  display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  margin-bottom: 0.7rem;
+}
 .footer__updated {
   text-align: right;
   margin-left: var(--sidebar-width);
@@ -178,17 +159,28 @@ footer, header {
 }
 
 
+
 h1 {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
+}
+.header {
+  float: right;
+  margin: 0 0 1em 0;
+  width: calc(100%);
 }
 .header-large {
   margin-bottom: 8rem;
 }
-.heading {
-  margin-left: 1em;
-  float: left;
-  width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
+@media (max-width: 700px) {
+  .header {
+    margin-top: 0;
+    width: 100%;
+  }
+  .heading-floating {
+    margin-top: 0 !important;
+  }
 }
+
 .header__construction-press--bottom {
   border-radius: 10px;
   background-color: rgb(222, 207, 255);
@@ -206,13 +198,13 @@ h1 {
   padding: 0.5em;
   text-decoration: none;
 }
-  .header__construction-press--bottom:hover {
-    height: 1.2em;
-    box-shadow: 
-      0px 2px 0px 0px rgb(162, 0, 255), 
-      0px 5px 0px 0px rgb(94, 71, 107),
-      0px 7px 10px -2px;
-  }
+.header__construction-press--bottom:hover {
+  height: 1.2em;
+  box-shadow: 
+    0px 2px 0px 0px rgb(162, 0, 255), 
+    0px 5px 0px 0px rgb(94, 71, 107),
+    0px 7px 10px -2px;
+}
 .header-subheading {
 /* $ Användning av BEM. Header är block, subheading är element $ */
   float: left;
@@ -230,6 +222,12 @@ h1 {
   border-bottom: 1px solid black;
   margin-bottom: 0;
 }
+.heading {
+  margin-left: 1em;
+  float: left;
+  width: calc(100% - var(--profile-pic-width)/2 - var(--profile-pic-padding)*2);
+}
+
 .home-button {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
 }
