@@ -270,6 +270,8 @@ h1 {
 .main--construction-padded {
   padding: 0 5rem;
 }
+
+
 #mobile-navigation-main-content {
 	display: none;
 	position: fixed;
@@ -299,6 +301,7 @@ h1 {
   left: 0;
   margin-right: auto;
 }
+
 .myVideo {
   position: fixed;
   left: 0;
@@ -375,6 +378,7 @@ h1 {
       0px 5px 0px 0px rgb(94, 71, 107),
       0px 7px 10px -2px;
   }
+
 .navbar--main {
   align-items: center;
   padding: var(--navbar_main_padding);
@@ -446,6 +450,7 @@ h1 {
   height: 0px;
   transform: scale(0.8);
 }
+
 .os-v2-svg {
   display: inline-block;
   margin: 1rem auto 0;
@@ -762,8 +767,20 @@ h1 {
   margin: 3rem 0.5rem 1rem 1rem;
   width: calc(50% - 1.5rem);
 }
+@media (max-width: 1000px) {
+  .text-main {
+    float: left;
+    margin: 2rem 0.5rem 1rem 1rem;
+    width: calc(100% - 2rem);
+  }
+}
 .text-main--2 {
   margin: 5rem 1rem 1rem 0.5rem;
+}
+@media (max-width: 1000px) {
+  .text-main--2 {
+    margin: 3rem 1rem 1rem 1rem;
+  }
 }
 .text-main--clear {
   clear: left;
@@ -884,6 +901,13 @@ h1 {
     "top     main    main"
     "foot    main    main";
 }
+@media (max-width: 1000px) {
+  .text-main__grid--style-2 {
+    grid-template-areas: 
+      "foot    .       top"
+      "main    main    main";
+  }
+}
 .text-main__grid--style-1 {
   display: grid; 
   gap: 1rem 1rem;
@@ -893,20 +917,25 @@ h1 {
     "main    main    top"
     "main    main    foot";
 }
+@media (max-width: 1000px) {
+  .text-main__grid--style-1 {
+    grid-template-areas: 
+      "main    main    main"
+      "foot    .       top";
+  }
+}
 .text-main__grid-item-1 {
   grid-area: main;
   max-height: 100%;
   max-width: 100%;
   width: auto;
 }
-
 .text-main__grid-item-2 {
   grid-area: top;
   max-height: 100%;
   max-width: 100%;
   width: 100%;
 }
-
 .text-main__grid-item-3 {
   grid-area: foot;
   max-height: 100%;
@@ -979,8 +1008,12 @@ h1 {
   text-align: center;
   width: 50%;
 }
-.timer__button--reset-svg {
+@media (max-width: 1200px) {
+  .text-main__title {
+    width: 80%;
+  }
 }
+
 .timer__button--svg {
   border-radius: 50%;
   display: block;
@@ -1052,11 +1085,6 @@ h1 {
     font-weight: normal;
     font-style: normal;
 }
-@media (max-width: 1200px) {
-  .text-main__title {
-    width: 80%;
-  }
-}
 @media (max-width: 1000px) {
   .container {
     grid-template-columns: calc(50% - var(--vid-grd-col-gap)*2/3) calc(50% - var(--vid-grd-col-gap)*2/3);
@@ -1073,24 +1101,6 @@ h1 {
     border-radius: 10px;
     margin: 1rem 1rem 5rem 1rem;
     width: calc(100% - 2rem);
-  }
-  .text-main {
-    float: left;
-    margin: 2rem 0.5rem 1rem 1rem;
-    width: calc(100% - 2rem);
-  }
-  .text-main--2 {
-    margin: 3rem 1rem 1rem 1rem;
-  }
-  .text-main__grid--style-1 {
-    grid-template-areas: 
-      "main    main    main"
-      "foot    .       top";
-  }
-  .text-main__grid--style-2 {
-    grid-template-areas: 
-      "foot    .       top"
-      "main    main    main";
   }
 }
 
@@ -1340,30 +1350,6 @@ h1 {
     text-align: center;
     padding: 1rem;
     font-size: 1.7rem;
-  }
-  .text-main {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-  .text-main__icon--illus {
-    clear: none;
-    margin: 0.4rem 0 0.3rem;
-  }
-  .text-main__icon--ps {
-    margin-right: 0.3rem;
-    clear: left;
-    float: left;
-  }
-  .text-main__icon-ps-il-wrap {
-    float: right;
-    /* This wrapper is used to reverse the float order of ps and il icons */
-  }
-  .text-main__list-itm--photo-man {
-    padding-bottom: 0;
-  }
-  .text-main__text--ps {
-    width: 100%;
   }
 }
 @media (min-aspect-ratio: 16/9) {
