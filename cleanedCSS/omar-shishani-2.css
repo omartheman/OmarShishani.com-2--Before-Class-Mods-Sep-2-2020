@@ -494,6 +494,16 @@ html  {
   .text-main--2 {
     margin: 3rem 1rem 1rem 1rem;
   }
+  .text-main--2 {
+    margin: 5rem 1rem 1rem 0.5rem;
+  }
+}
+@media (max-width: 450px) {
+  .text-main--2 {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
 }
 
 .text-main-content {
