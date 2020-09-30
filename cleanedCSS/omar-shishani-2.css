@@ -15,31 +15,46 @@
 }
 
 /*BASE (SMACSS)*/ 
+body {
+  background-color: var(--body-background-color);
+  font-family: source_sans_proregular, sans-serif;
+  margin: 0;
+}
 h1 {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
 }
 html  {
   scroll-behavior: smooth;
 }
-main {
-  clear: both;
-  margin-left: var(--sidebar-width);
-}
 
 /*LAYOUT (SMACSS)*/ 
-body {
-  background-color: var(--body-background-color);
-  font-family: source_sans_proregular, sans-serif;
-  margin: 0;
+#sidebar {
+  background-color: lightgrey;
+  bottom: 0;
+  border-right: black 2px solid;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  width: var(--sidebar-width);
 }
 footer, header {
   background-color: rgba(238, 183, 255, 0.8);
 }
-
-
-.BN-button-container {
-  margin: auto;
-  width: 20em;
+header {
+  float: right;
+  margin: 0 0 1em 0;
+  width: calc(100%);
+}
+main {
+  clear: both;
+  margin-left: var(--sidebar-width);
+}
+@media (max-width: 700px) {
+  header {
+    margin-top: 0;
+    width: 100%;
+  }
 }
 
 .button--scroll-down {
@@ -112,17 +127,6 @@ footer, header {
 }
 
 /*MODULE: HEADER (SMACSS)*/
-.header {
-  float: right;
-  margin: 0 0 1em 0;
-  width: calc(100%);
-}
-@media (max-width: 700px) {
-  .header {
-    margin-top: 0;
-    width: 100%;
-  }
-}
 .header-large {
   margin-bottom: 8rem;
 }
@@ -166,7 +170,7 @@ footer, header {
   transform: scale(0.8);
 }
 
-
+/*MODULE: MOBILE-NAV (SMACSS)*/
 #mobile-navigation-main-content {
 	display: none;
 	position: fixed;
@@ -192,6 +196,10 @@ footer, header {
   left: 0;
   margin-right: auto;
 }
+#navbar-mobile a {
+  font-family: Comfortaa, 'Century Gothic 600', sans-serif;
+}
+
 .myVideo {
   position: fixed;
   left: 0;
@@ -201,6 +209,7 @@ footer, header {
   min-height: 100%;
   z-index: -1;
 }
+
 #navbar-hamburger {
   border: 0.1em solid black;
   border-radius: 10px;
@@ -220,11 +229,8 @@ footer, header {
   height: 5px;
     width: 35px;
 }
-  #navbar-mobile a {
-    font-family: Comfortaa, 'Century Gothic 600', sans-serif;
-  }
 
-/*MODULE: OS LOGO*/
+/*MODULE: OS LOGO (SMACSS)*/
 .os-v2-svg {
   display: inline-block;
   margin: 1rem auto 0;
@@ -243,6 +249,7 @@ footer, header {
   stroke: var(--os-border-color);
 }
 
+/*MODULE: PROJECT CONTAINER (SMACSS)*/
 .project--1 {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
@@ -264,6 +271,10 @@ footer, header {
   max-width: 100%;
   width: 100%;
 }
+.BN-button-container {
+  margin: auto;
+  width: 20em;
+}
 .reload-button {
   display: block;
   font-family: Comfortaa, 'Century Gothic 600', sans-serif; 
@@ -273,16 +284,8 @@ footer, header {
   text-decoration: none;
   width: 10rem;
 }
-.sidebar {
-  background-color: lightgrey;
-  bottom: 0;
-  border-right: black 2px solid;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  overflow: auto;
-  width: var(--sidebar-width);
-}
+
+
 .sidebar__link {
   display: block;
   color: #000000;
