@@ -38,13 +38,24 @@ html  {
   overflow: auto;
   width: var(--sidebar-width);
 }
-footer, header {
+#footer, header {
   background-color: rgba(238, 183, 255, 0.8);
 }
 header {
   float: right;
   margin: 0 0 1em 0;
   width: calc(100%);
+}
+#footer {
+  display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  font-family: source_sans_probold, sans-serif;
+  height: var(--footer-height);
+  padding: 1em;
+  bottom: 0;
+  width: calc(100% - 2em);
 }
 main {
   clear: both;
@@ -86,17 +97,6 @@ main {
 }
 
 /*MODULE: FOOTER (SMACSS)*/
-.footer {
-  display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  font-family: source_sans_probold, sans-serif;
-  height: var(--footer-height);
-  padding: 1em;
-  bottom: 0;
-  width: calc(100% - 2em);
-}
 .footer__link-1 {
   border: 2px solid black;
   border-radius: 5px;
