@@ -67,6 +67,9 @@ html  {
   clear: both;
   margin-left: var(--sidebar-width);
 }
+.sidebar__svg {
+  width: 55%;
+}
 
 .button--scroll-down {
   clear: both;
@@ -326,11 +329,9 @@ html  {
   text-align: center;
   text-decoration: none;
 }
-.sidebar__svg {
-  width: 55%;
-}
+
+
 .subheading-1--BN {
-/* Enligt BEM, modifiern BN får sin egen selektor, för att den är annorlounda än andra h2-subheadings skulle vara */
   clear: both;
   padding: 0 1em;
   text-align: center;
