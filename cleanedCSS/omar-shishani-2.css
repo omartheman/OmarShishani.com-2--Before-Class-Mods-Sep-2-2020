@@ -67,8 +67,10 @@ html  {
   clear: both;
   margin-left: var(--sidebar-width);
 }
-.sidebar__svg {
-  width: 55%;
+@media (max-width: 700px) {
+  #main {
+    margin-left: 0;
+  }
 }
 
 .button--scroll-down {
@@ -273,6 +275,11 @@ html  {
   text-decoration: none;
   width: 10rem;
 }
+.subheading-1--BN {
+  clear: both;
+  padding: 0 1em;
+  text-align: center;
+}
 
 
 /*MODULE: SIDEBAR-LINK (SMACSS)*/
@@ -289,6 +296,9 @@ html  {
 .sidebar__link:visited {
   color: #000000;
   text-decoration: none;
+}
+.sidebar__svg {
+  width: 55%;
 }
 
 
@@ -331,11 +341,6 @@ html  {
 }
 
 
-.subheading-1--BN {
-  clear: both;
-  padding: 0 1em;
-  text-align: center;
-}
 .text-main {
   float: left;
   margin: 3rem 0.5rem 1rem 1rem;
