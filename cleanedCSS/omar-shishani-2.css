@@ -208,8 +208,10 @@ html  {
   width: 100%;
   z-index: 2;
 }
-#mobile-nav .mobile-nav-anchor {
+.mobile-nav-anchor {
   display: none;
+}
+#mobile-nav .mobile-nav-anchor {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
 }
 @media (max-width: 700px) {
