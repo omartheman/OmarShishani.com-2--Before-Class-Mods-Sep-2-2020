@@ -286,6 +286,7 @@ html  {
 }
 
 
+/*MODULE: SIDEBAR-LINK (SMACSS)*/
 .sidebar__link {
   display: block;
   color: #000000;
@@ -300,6 +301,9 @@ html  {
   color: #000000;
   text-decoration: none;
 }
+
+
+/*MODULE SUBCLASS: SIDEBAR LINK - PROJECTS (SMACSS)*/
 .sidebar__link--animations:hover .star-big-upper-left {
   animation: fade_flash var(--star-flash-duration) infinite;
 }
@@ -327,6 +331,8 @@ html  {
   animation: fade_flash var(--star-flash-duration) infinite;
   animation-delay: 0s;
 }
+
+/*MODULE SUBCLASS: SIDEBAR LINK - PROJECTS (SMACSS)*/
 .sidebar__link--drill-circle {
   transform: none !important;
 }
