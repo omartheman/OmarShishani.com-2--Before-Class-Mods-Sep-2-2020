@@ -141,6 +141,13 @@ html  {
   margin-left: var(--header__subheading-margin-left);
   width: calc(100% - var(--profile-pic-width) + 4.6em - var(--profile-pic-padding)*2 - var(--header__subheading-margin-left));
 }
+@media (max-width: 650px) {
+  .header-subheading {
+    float: none;
+    margin: auto 1em 1em;
+    width: calc(100% - 2em);
+  }
+}
 .heading {
   margin-left: 1em;
   float: left;
@@ -156,6 +163,12 @@ html  {
   padding: 1em;
   width: var(--profile-pic-width);
 }
+@media (max-width: 650px) {
+  .img-circular{
+    margin: auto;    
+    float: none;
+  }
+}
 .welcome-text {
 	line-height: 2em;
 }
@@ -168,6 +181,11 @@ html  {
   padding: 1em 2em 1em 2em;
   margin-bottom: 14rem;
   width: 50%;
+}
+@media (max-width: 650px) {
+  .intro {
+    margin-bottom: 8rem;
+  }
 }
 .intro__text {
   font-family: Comfortaa, 'Century Gothic 600', sans-serif;
@@ -590,20 +608,6 @@ html  {
 
 
 
-@media (max-width: 650px) {
-  .header-subheading {
-    float: none;
-    margin: auto 1em 1em;
-    width: calc(100% - 2em);
-  }
-  .intro {
-    margin-bottom: 8rem;
-  }
-  .img-circular{
-    margin: auto;    
-    float: none;
-  }
-}
 @media (max-width: 450px) {
   .intro {
     width: auto;
