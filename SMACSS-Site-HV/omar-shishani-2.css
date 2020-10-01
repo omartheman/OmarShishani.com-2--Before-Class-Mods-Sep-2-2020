@@ -1,5 +1,5 @@
 :root {
-  --body-background-color: white;
+  --body-background-color: rgb(146, 178, 247);
   --footer-height: 4em;
   --header__subheading-margin-left: 1.5em;
   --margin-home_reload-700plus: 25vw;
@@ -320,6 +320,11 @@ html  {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
+}
+@media (max-width: 600px) {
+  .myVideo {
+    display: none;
+  }
 }
 @media (min-aspect-ratio: 16/9) {
   .myVideo {
