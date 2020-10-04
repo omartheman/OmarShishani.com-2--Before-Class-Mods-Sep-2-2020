@@ -9,18 +9,12 @@
   <h1>Blug</h1>
   <h2>Hey its teh blug</h2>
   <h3>Title of blugPust:</h3>
-  <div>
-    <%= sqlResult[0].title %>
-  </div>
-  <h3>Pust wurdz 2 reed</h3>
-  <div>
-    <%= sqlResult[0].body %>
-  </div>
-  <h3>Aothor aov Pust</h3>
-  <div>
-    <%= sqlResult[0].author %>
-  </div>
-  <form action="GET"></form>
-  <form action="POST"></form>
+  <form action="/new-blog" method="POST">
+    <input type="text" name="title">
+    <input type="text" name="author">
+    <input type="text" name="date">
+    <input type="text" name="body">
+    <button type="submit" value="submit">Submit</button>
+  </form>
 </body>
 </html>

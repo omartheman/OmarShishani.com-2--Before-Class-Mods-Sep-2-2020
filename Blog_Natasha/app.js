@@ -4,6 +4,7 @@ let mysql = require('mysql');
 const bodyParser = require('body-parser');
 let sqlResult;
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended:true}));
 
 // // Connection on server
 // let connection = mysql.createConnection({
@@ -20,6 +21,11 @@ let connection = mysql.createConnection({
   password: '3yeDroplets!',
   database: 'natasha_blog'
 });
+
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log('Connected.....');
+})
 
 connection.query("SELECT * FROM blog_posts", function (err, result, fields) {
   if (err) throw err;
@@ -40,22 +46,24 @@ app.get('/', async (req, res) => {
   // });
 });
 
-app.get('/new-blog', (req, res) => {
+app.post('/new-blog', function(req, res) {
+  // var sql = "INSERT INTO blog_posts values(null, '"+ req.body.name +"', '"+req.body.email + "', " + req.body.mobile + ")";
+  var sql = `INSERT INTO blog_posts values('${req.body.title}', '${req.body.author}', '${req.body.date}', '${req.body.body}')`;
   
-  res.render('new-blog.ejs', {sqlResult: sqlResult});
-
-  // res.send(sqlResult);
-
-  // res.send(sqlResult);
-  // let article = Article.find({}, function(err, articles){
-  //   res.send('articles2.ejs', sqlResult);
-  //   res.render('articles2.ejs', {articles: articles});
-  // });
+  connection.query("SELECT * FROM blog_posts", function (err, result, fields) {
+    sqlResult = result;
+    console.log(sqlResult);
+  });
+  connection.query(sql, function(err) {
+    if (err) throw err;
+    res.render('new-blog.ejs', {title: 'Data Saved', message: 'Data saved successfully'});
+  })
+  connection.end();
 });
 
-// app.listen(3000, () => { 
-//   console.log('Server is listening on port 3000') 
-// });
+app.get('/new-blog', (req, res) => {
+  res.render('new-blog.ejs', {sqlResult: sqlResult});
+});
 
 const path = require('path');
 
