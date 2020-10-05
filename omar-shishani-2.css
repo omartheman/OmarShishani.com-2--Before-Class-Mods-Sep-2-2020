@@ -772,8 +772,8 @@ html  {
 .text-main__grid-module {
   display: grid;
   gap: 1em 1em;
-  grid-template-rows: calc(33%-(2em/3)) calc(33%-(2em/3)) calc(33%-(2em/3));
-  grid-template-columns: calc(33%-(2em/3)) calc(33%-(2em/3)) calc(33%-(2em/3));
+  grid-template-rows: calc(25% - (3em/4)) calc(25% - (3em/4)) calc(25% - (3em/4))  calc(25% - (3em/4));
+  grid-template-columns: calc(33% - (2em/3)) calc(33% - (2em/3)) calc(33% - (2em/3));
   grid-template-areas:
     "top        top       top"
     "hours-in   mins-in   secs-in"
@@ -782,7 +782,6 @@ html  {
   max-width: 100%;
 }
 .text-main__grid-module--reset {
-  background-color: pink;
   grid-area: last;
   max-height: 100%;
   max-width: 100%;
@@ -797,7 +796,9 @@ html  {
   width: 90%;
 }
 .text-main__grid-module--top {
-  background-color: pink;
+  background-color: rgb(147, 211, 168);
+  border: 2px solid black;
+  border-radius: 5px;
   grid-area: top;
   max-height: 100%;
   max-width: 100%;
@@ -820,6 +821,7 @@ html  {
   user-select: none; 
 }
 .text-main__grid-module--inputs-form {
+  padding: 0.5em;
   display: flex;
   justify-content: space-evenly;
 }
@@ -836,7 +838,8 @@ html  {
   width: auto;
 }
 .text-main__grid-module--choice {
-  background-color: lightblue;
+  background-color: rgb(224, 137, 240);
+  border-radius: 5px;
   grid-area: choice;
   max-height: 100%;
   max-width: 100%;
@@ -845,7 +848,6 @@ html  {
 .text-main__grid-module--foot {
   align-items: center; 
   justify-content: center;
-  background-color: lightcyan;
   display: flex;
   grid-area: foot;
   max-height: 100%;
@@ -855,12 +857,13 @@ html  {
 .text-main__grid-module--timer-display{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .text-main__grid--style-2 {
   display: grid; 
   gap: 1rem 1rem;
-  grid-template-columns: calc(33%-(2rem/3)) calc(33%-(2rem/3)) calc(33%-(2rem/3));
-  grid-template-rows: calc(50%-(1rem/2)) calc(50%-(1rem/2));
+  grid-template-columns: calc(33% - (2rem/3)) calc(33% - (2rem/3)) calc(33% - (2rem/3));
+  grid-template-rows: calc(50% - (1rem/2)) calc(50% - (1rem/2));
   grid-template-areas: 
     "top     main    main"
     "foot    main    main";
