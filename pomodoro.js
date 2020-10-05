@@ -43,6 +43,18 @@ let audioPause = () => {
 }
 
 let timerPlaceholderZeros = () => {
+  if (hours === "") {
+    hours = 0;
+    placeHours = 0;
+  }
+  if (minutes === "") {
+    minutes = 0;
+    placeMins = 0;
+  }
+  if (seconds === "") {
+    seconds = 0;
+    placeSecs = 0;
+  }
   if (hours < 10 || minutes < 10 || seconds < 10) {
     if (hours < 10){
       placeHours = 0
@@ -92,7 +104,9 @@ $(document).ready(
       audioPause();
       setTimeFromInputs();
       timerPlaceholderZeros();
+      console.log(hours, minutes, seconds);
       showTimeRemaining();
+      console.log(hours)
     });
     $(".timer__button--pause").click(function(){
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
