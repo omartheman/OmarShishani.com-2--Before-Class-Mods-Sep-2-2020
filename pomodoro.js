@@ -104,9 +104,7 @@ $(document).ready(
       audioPause();
       setTimeFromInputs();
       timerPlaceholderZeros();
-      console.log(hours, minutes, seconds);
       showTimeRemaining();
-      console.log(hours)
     });
     $(".timer__button--pause").click(function(){
       document.querySelector('.timer__button--pause').classList.toggle('timer__button--clicked');
