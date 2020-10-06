@@ -113,8 +113,12 @@ $(document).ready(
       }
       console.log('reset entered')
       timerOnOffChecker = -1;
+      placeHours = "";
+      placeMins = "";
+      placeSecs = "";
       audioPause();
       setTimeFromInputs();
+      console.log(placeHours, placeMins, placeSecs)
       timerPlaceholderZeros();
       showTimeRemaining();
     });
