@@ -24,7 +24,13 @@ let setTimeFromInputs = () => {
   seconds = $(".timer__seconds-input").val();
 }
 let showTimeRemaining = () => {
+  console.log('inside showTimeRemaining')
+  console.log(placeMins)
+  console.log(minutes)
+  console.log(timeRemaining)
   timeRemaining = `<span class="timer__span--values">${placeHours}${hours}:${placeMins}${minutes}:${placeSecs}${seconds}</span>`;
+  console.log(timeRemaining)
+
   $(".text-main__grid-module--top").html(timeRemaining);  
 }
 
@@ -43,6 +49,9 @@ let audioPause = () => {
 }
 
 let timerPlaceholderZeros = () => {
+  // These first three 'ifs' add two zeros to the initial hrs/sec/min display, when play button is first pressed. These are added if no value is entered for hrs/mins/secs
+  console.log('inside timerPlaceholderZeros')
+  console.log(`inside timerPlaceholderZeros, placeMins = ${placeMins}, minutes = ${minutes}`)
   if (hours === "") {
     hours = 0;
     placeHours = 0;
@@ -55,13 +64,16 @@ let timerPlaceholderZeros = () => {
     seconds = 0;
     placeSecs = 0;
   }
-  if (hours < 10 || minutes < 10 || seconds < 10) {
+  else if (hours < 10 || minutes < 10 || seconds < 10) {
+    
+  console.log('entering first "else" in timerPlaceholderZeros');
     if (hours < 10){
       placeHours = 0
     } else {
       placeHours = ""
     }
     if (minutes < 10){
+      console.log('setting placeMins to 0')
       placeMins = 0
     } else {
       placeMins = ""
@@ -126,10 +138,8 @@ $(document).ready(
 
 let timerCountdown = () => {
   let timerInterval = setInterval(function (){
-    console.log('timerCountdown interval entered')
     if (timerOnOffChecker === -1) {
       clearInterval(timerInterval);
-      console.log('timer countdown cleared')
       return
     }
 
@@ -153,6 +163,8 @@ let timerCountdown = () => {
       placeSecs = ""
       showTimeRemaining();
     } else if (minutes >= 1 && seconds >= 0) {
+      console.log('inside timerCountdown > timerINterval')
+      console.log(minutes, placeMins)
       seconds--; 
       showTimeRemaining();
     } else if (minutes <= 1 && seconds > 0) {
