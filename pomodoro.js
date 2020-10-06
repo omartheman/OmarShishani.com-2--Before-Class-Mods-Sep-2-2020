@@ -143,12 +143,12 @@ let timerCountdown = () => {
       return
     }
 
-    timerPlaceholderZeros();
     // error in inital zero caused here
     if (hours >= 1 && minutes >= 1 && seconds <= 0) {
       minutes--;
       seconds = 59;
       placeSecs = ""
+      timerPlaceholderZeros();
       showTimeRemaining();
     } else if (hours >= 1 && minutes <= 0 && seconds <= 0) {
       hours--;
@@ -156,24 +156,30 @@ let timerCountdown = () => {
       seconds = 59;  
       placeMins = ""
       placeSecs = ""
+      timerPlaceholderZeros();
       showTimeRemaining();
     } else if (minutes >= 1 && seconds <= 0) {
       minutes--;
       seconds = 59;
       placeSecs = ""
+      timerPlaceholderZeros();
       showTimeRemaining();
     } else if (minutes >= 1 && seconds >= 0) {
       console.log('inside timerCountdown > timerINterval')
       console.log(minutes, placeMins)
       seconds--; 
+      timerPlaceholderZeros();
       showTimeRemaining();
     } else if (minutes <= 1 && seconds > 0) {
       seconds--; 
+      timerPlaceholderZeros();
       showTimeRemaining();
     } else if (seconds <= 0) {
+      timerPlaceholderZeros();
       showTimeRemaining();
       if (timerOnOffChecker === -1) {
         setTimeFromInputs();
+        timerPlaceholderZeros();
         timerCountdown;
       } 
       clearInterval(timerInterval);
