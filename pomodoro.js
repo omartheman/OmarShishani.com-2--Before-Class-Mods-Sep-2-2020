@@ -137,11 +137,37 @@ $(document).ready(
       timerCountdown();
       audioPause();
     });
+    $(".text-main__grid-module--quick-5").click(function(){
+      hours = 0;
+      minutes = 5;
+      seconds = 0;
+      changeBlankToZero();
+      timerPlaceholderZeros();
+      showTimeRemaining();
+    });
+    $(".text-main__grid-module--quick-10").click(function(){
+      hours = 0;
+      minutes = 10;
+      seconds = 0;
+      changeBlankToZero();
+      timerPlaceholderZeros();
+      showTimeRemaining();
+    });
+    $(".text-main__grid-module--quick-20").click(function(){
+      hours = 0;
+      minutes = 20;
+      seconds = 0;
+      changeBlankToZero();
+      timerPlaceholderZeros();
+      showTimeRemaining();
+    });
   }
 );
 
+
 let timerCountdown = () => {
   let timerInterval = setInterval(function (){
+    console.log(hours, minutes, seconds)
     if (timerOnOffChecker === -1) {
       clearInterval(timerInterval);
       return

@@ -772,14 +772,44 @@ html  {
 .text-main__grid-module {
   display: grid;
   gap: 1em 1em;
-  grid-template-rows: calc(25% - (3em/4)) calc(25% - (3em/4)) calc(25% - (3em/4))  calc(25% - (3em/4));
+  grid-template-rows: calc(20% - (4em/5)) calc(20% - (4em/5)) calc(20% - (4em/5)) calc(20% - (4em/5)) calc(20% - (4em/5));
   grid-template-columns: calc(33% - (2em/3)) calc(33% - (2em/3)) calc(33% - (2em/3));
   grid-template-areas:
     "top        top       top"
     "hours-in   mins-in   secs-in"
+    "quick-5    quick-10  quick-20"
     "choice     choice    choice"
     "bot       foot      last";
   max-width: 100%;
+}
+.text-main__grid-module--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-main__grid-module--button-1 {
+  background-color: rgb(198, 217, 243);
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+.text-main__grid-module--quick-5 {
+  grid-area: quick-5;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+.text-main__grid-module--quick-10 {
+  grid-area: quick-10;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+.text-main__grid-module--quick-20 {
+  grid-area: quick-20;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
 }
 .text-main__grid-module--reset {
   grid-area: last;
