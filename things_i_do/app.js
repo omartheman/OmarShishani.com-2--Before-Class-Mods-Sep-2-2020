@@ -10,18 +10,16 @@ let sqlResult;
 
 let connection = mysql.createConnection({
   host: 'localhost', 
-  user: 'omarnaod',
+  user: 'omarnaod_omar',
   password: '3yeDroplets!',
   database: 'omarnaod_articles'
 });
-
 
 connection.query("SELECT * FROM Accounts", function (err, result, fields) {
   if (err) throw err;
   sqlResult = result;
   console.log(sqlResult);
 });
-
 
 app.use(express.static(__dirname + '../..'));
 
@@ -44,10 +42,9 @@ app.get('/articles2', (req, res) => {
   //   res.render('articles2.ejs', {articles: articles});
   // });
 });
-
-// app.listen(3000, () => { 
-//   console.log('Server is listening on port 3000') 
-// });
+app.get('/articles2/articles3', (req, res) => {
+  res.send("this is articles 3")
+})
 
 const path = require('path');
 
@@ -56,6 +53,8 @@ app.get('/contracting', (req, res) => {
     path.join(__dirname, '../', 'contracting.html'))
 });
 
-app.listen(process.env.PORT || 3000 || 27016 || 27015 || 27017, process.env.IP, function(){
-  console.log('Server is running on port 3000');
+const port = process.env.PORT || 3000 || 27016 || 27015 || 27017; 
+
+app.listen(port, process.env.IP, function(){
+  console.log(`Server is running now on port ${port}`);
 });
