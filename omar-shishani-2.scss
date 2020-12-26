@@ -747,7 +747,7 @@
     width: calc(50% - 1.5rem);
   }
   .text-main--2 {
-    margin: 5rem 1rem 1rem 0.5rem;
+    margin: 3rem 1rem 1rem 0.5rem;
   }
   .text-main--clear {
     clear: left;
@@ -972,7 +972,7 @@
   }
   .text-main__list-itm--photo-man {
     float: left;
-    width: calc(100% - 3.2rem);
+    width: calc(100% - 3.4rem);
   }
   .text-main__text {
     float: left;
@@ -1399,6 +1399,8 @@
     }
     .text-main__list-itm--photo-man {
       padding-bottom: 0;
+      
+      width: calc(100%);
     }
     .text-main__text--ps {
       width: 100%;
