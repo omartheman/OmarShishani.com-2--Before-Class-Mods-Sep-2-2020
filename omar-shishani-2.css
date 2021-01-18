@@ -530,6 +530,16 @@ main {
   stroke: var(--os-border-color);
 }
 
+@media (max-width: 1170px) {
+  .pomodoro-quick-start-text {
+    display: none;
+  }
+}
+
+.pomodoro-quick-start-time-values {
+  text-align: center;
+}
+
 .profile-pic {
   border-radius: 100%;
   display: block;
